@@ -1,0 +1,437 @@
+{
+  "language": {
+    "english": "Anglais",
+    "french": "Français",
+    "german": "Allemand",
+    "select": "Choisir la langue"
+  },
+  "nav": {
+    "home": "Accueil",
+    "products": "Produits",
+    "expertise": "Expertise",
+    "about": "À Propos",
+    "contact": "Contact",
+    "dashboard": "Tableau de Bord",
+    "news": "Actualités"
+  },
+  "header": {
+    "login": "Connexion",
+    "admin": "Admin"
+  },
+  "home": {
+    "intro": "Découvrez TP@CK",
+    "title": "L'avenir des solutions d'emballage {highlight}intelligentes{/highlight}",
+    "description": "TP@CK révolutionne l'emballage avec une intégration informatique avancée, des certifications environnementales et des avantages opérationnels conçus pour le paysage commercial moderne.",
+    "demo": "Demander une démo",
+    "video": "Regarder la vidéo",
+    "certification": "Certifié pour tous les principaux marchés internationaux",
+    "wms_integration": "Intégration WMS",
+    "wms_compatibility": "Compatible avec tous les systèmes majeurs",
+    "ai_maintenance": "Maintenance prédictive IA",
+    "downtime_reduction": "Réduit les temps d'arrêt de 74%",
+    "hero": {
+      "title": "Solutions d'Emballage Révolutionnaires",
+      "subtitle": "Intégration de Technologies Avancées pour les Entreprises Modernes",
+      "cta": "Explorez Nos Solutions"
+    },
+    "features": {
+      "title": "Pourquoi Choisir TP@CK",
+      "subtitle": "Nos machines sont conçues avec précision, efficacité et fiabilité à l'esprit",
+      "sectionLabel": "Différenciateurs Clés",
+      "sectionTitle": "Ce qui Distingue TP@CK des Solutions Traditionnelles",
+      "sectionDescription": "TP@CK utilise une technologie de pointe pour offrir une solution d'emballage plus efficace, respectueuse de l'environnement et adaptable à vos besoins commerciaux.",
+      "keyBenefits": "Avantages Clés",
+      "inAction": "en action",
+      "learnMore": "En savoir plus",
+      "integration": {
+        "title": "Intégration IT",
+        "description": "Compatibilité transparente avec tous les principaux systèmes WMS/WCS permettant une gestion efficace des entrepôts.",
+        "benefit1": "Compatible avec tous les principaux fournisseurs WMS",
+        "benefit2": "Suivi des stocks en temps réel",
+        "benefit3": "Optimisation automatisée des flux de travail",
+        "benefit4": "Interface de contrôle centralisée"
+      },
+      "certifications": {
+        "title": "Certifications Environnementales",
+        "description": "Certification UL pour le marché américain et conformité aux normes internationales pour une exploitation mondiale.",
+        "benefit1": "Certifié UL pour le marché américain",
+        "benefit2": "ISO 14001 gestion environnementale",
+        "benefit3": "Marquage CE pour conformité européenne",
+        "benefit4": "Classe énergétique A++"
+      },
+      "ai": {
+        "title": "IA IConnect",
+        "description": "Système de maintenance prédictive qui réduit les temps d'arrêt et prolonge la durée de vie opérationnelle de la machine.",
+        "benefit1": "Réduction de 74% des temps d'arrêt imprévus",
+        "benefit2": "Alertes prédictives de défaillance des composants",
+        "benefit3": "Planification automatique de la maintenance",
+        "benefit4": "Diagnostics et support à distance"
+      },
+      "operational": {
+        "title": "Avantages Opérationnels",
+        "description": "Métriques d'efficacité améliorées qui offrent un ROI mesurable grâce à des améliorations opérationnelles.",
+        "benefit1": "Vitesses d'emballage 30% plus rapides",
+        "benefit2": "Réduction de 20% de la consommation de matériaux",
+        "benefit3": "Consommation d'énergie réduite de 15%",
+        "benefit4": "Fonctionnement en double mode pour la flexibilité"
+      }
+    },
+    "products": {
+      "title": "Nos Machines",
+      "subtitle": "Découvrez notre gamme de solutions d'emballage avancées",
+      "viewDetails": "Voir les détails",
+      "range": "Gamme de Produits",
+      "heading": "Choisissez la Machine TP@CK Parfaite pour Vos Besoins",
+      "description": "Notre gamme de solutions d'emballage est conçue pour répondre à diverses échelles et exigences opérationnelles, des petites entreprises aux grandes entreprises.",
+      "viewButton": "Voir les Spécifications",
+      "helpText": "Besoin d'aide pour choisir la bonne solution? Nos experts peuvent vous fournir une recommandation personnalisée.",
+      "compareButton": "Comparer Tous les Produits"
+    }
+  },
+  "testimonials": {
+    "sectionLabel": "Histoires de Réussite Clients",
+    "sectionTitle": "Approuvé par les Leaders de l'Industrie",
+    "sectionDescription": "Écoutez directement nos clients parler de la façon dont les solutions innovantes de TP@CK ont transformé leurs opérations et livré des résultats mesurables.",
+    "trustedBy": "Approuvé par des Entreprises du Monde Entier",
+    "quote1": "Le TP@CK T30 a transformé nos opérations d'entrepôt. L'intégration WMS était transparente, et nous avons constaté une augmentation de 32% de l'efficacité d'emballage dès le premier mois.",
+    "name1": "Sarah Johnson",
+    "title1": "Directrice des Opérations",
+    "company1": "Global Logistics Inc.",
+    "quote2": "Ce qui m'a le plus impressionné chez TP@CK, c'est le système de maintenance prédictive. Nous n'avons eu aucun temps d'arrêt inattendu depuis l'implémentation, ce qui est sans précédent pour notre exploitation 24/7.",
+    "name2": "Michael Rodriguez",
+    "title2": "Chef de Production",
+    "company2": "FastShip Enterprises",
+    "quote3": "En tant qu'entreprise engagée dans la durabilité, les certifications environnementales des systèmes TP@CK ont été un facteur décisif. La réduction des déchets matériels a également contribué à notre résultat final.",
+    "name3": "Emma Chen",
+    "title3": "Responsable Développement Durable",
+    "company3": "EcoPackage Solutions",
+    "quote4": "Le système T50 a dépassé nos attentes en termes de débit. Le mode de fonctionnement double nous donne la flexibilité d'adapter aux fluctuations saisonnières de la demande sans compromettre la qualité.",
+    "name4": "Thomas Weber",
+    "title4": "Directeur Technique",
+    "company4": "European Distribution GmbH"
+  },
+  "markets": {
+    "sectionLabel": "Solutions par Industrie",
+    "sectionTitle": "Marchés Cibles",
+    "sectionDescription": "Nos solutions d'emballage sont conçues pour répondre aux exigences spécifiques de diverses industries, offrant une valeur exceptionnelle et une efficacité opérationnelle.",
+    "learnMore": "En savoir plus sur TP@CK pour",
+    "logistics": {
+      "title": "Logisticiens",
+      "description": "TP@CK offre aux logisticiens une intégration optimale avec leurs systèmes WMS/WCS, permettant une traçabilité en temps réel et une gestion efficace des flux. En réduisant les coûts de transport et en améliorant l'utilisation de l'espace, TP@CK est la solution idéale pour optimiser les chaînes d'approvisionnement et répondre aux demandes évolutives du secteur logistique."
+    },
+    "distribution": {
+      "title": "Grandes Distributions",
+      "description": "Les réseaux de grande distribution bénéficient d'une solution d'emballage fiable et performante. TP@CK minimise les déchets et optimise les espaces de stockage, assurant une meilleure gestion des approvisionnements et des réductions significatives des coûts logistiques. Adaptée aux exigences élevées du secteur, TP@CK offre une solution innovante pour maintenir l'avantage concurrentiel."
+    },
+    "ecommerce": {
+      "title": "E-commerce",
+      "description": "Pour le secteur du e-commerce, TP@CK représente une solution sur mesure qui allie rapidité, flexibilité et responsabilité environnementale. Avec un emballage personnalisé et optimisé, TP@CK réduit les coûts de transport et améliore l'expérience client tout en répondant aux attentes croissantes en matière de durabilité et d'innovation."
+    },
+    "cuisine": {
+      "title": "Cuisinistes",
+      "description": "Les cuisinistes trouveront dans TP@CK une solution parfaitement adaptée à leurs besoins, alliant robustesse et attrait esthétique. En assurant une protection optimale des produits et une utilisation efficace de l'espace, TP@CK valorise les produits tout en réduisant les coûts. Cette solution innovante est particulièrement pertinente pour les installations nécessitant haute performance et forte rentabilité."
+    }
+  },
+  "dashboard": {
+    "title": "Tableau de Bord d'État des Machines en Temps Réel",
+    "subtitle": "Surveillez l'état opérationnel, les métriques de production et les indicateurs de performance de toutes les machines TP@CK en temps réel.",
+    "stats": {
+      "totalProduction": "Production Totale",
+      "avgEfficiency": "Efficacité Moyenne",
+      "machinesRunning": "Machines en Marche"
+    },
+    "viewFull": "Voir le Tableau de Bord Complet",
+    "accessText": "Accédez au tableau de bord administrateur pour des analyses et contrôles détaillés"
+  },
+  "products": {
+    "header": {
+      "label": "Notre Gamme de Produits",
+      "title": "Choisissez la Machine TP@CK Parfaite pour Vos Besoins",
+      "description": "Notre gamme de solutions d'emballage est conçue pour répondre à diverses échelles et exigences opérationnelles, des petites entreprises aux grandes entreprises."
+    },
+    "features": {
+      "title": "Différenciateurs Clés",
+      "description": "Toutes les machines TP@CK partagent ces caractéristiques révolutionnaires qui les distinguent des solutions traditionnelles, avec des spécifications adaptées aux exigences de capacité de chaque modèle.",
+      "integration": {
+        "title": "Intégration IT",
+        "description": "Compatibilité transparente avec tous les principaux systèmes WMS/WCS permettant une gestion efficace des entrepôts.",
+        "benefit1": "Compatibilité avec tous les principaux fournisseurs WMS",
+        "benefit2": "Suivi des stocks en temps réel",
+        "benefit3": "Optimisation automatisée des flux de travail"
+      },
+      "certifications": {
+        "title": "Certifications",
+        "description": "Certification UL pour le marché américain et conformité aux normes internationales pour une exploitation mondiale.",
+        "benefit1": "Certifié UL pour le marché américain",
+        "benefit2": "ISO 14001 gestion environnementale",
+        "benefit3": "Marquage CE pour conformité européenne"
+      },
+      "ai": {
+        "title": "IA e-Connect",
+        "description": "Système de maintenance prédictive qui réduit les temps d'arrêt et prolonge la durée de vie opérationnelle de la machine.",
+        "benefit1": "Réduction de 74% des temps d'arrêt imprévus",
+        "benefit2": "Alertes prédictives de défaillance des composants",
+        "benefit3": "Diagnostics et support à distance"
+      }
+    },
+    "specs": {
+      "title": "Spécifications Clés"
+    },
+    "benefits": {
+      "title": "Avantages"
+    },
+    "list": {
+      "title": "Notre Gamme de Produits"
+    },
+    "viewDetails": "Voir les Détails",
+    "t20": {
+      "tagline": "Solution d'emballage compacte d'entrée de gamme idéale pour les petites et moyennes entreprises",
+      "description": "Le T20 est une solution robuste pour les entreprises ayant des besoins de production modérés. Son encombrement compact le rend parfait pour les installations à espace limité tout en maintenant d'excellentes performances et fiabilité.",
+      "specs": {
+        "0": "Débit: Jusqu'à 20 colis/heure",
+        "1": "Encombrement: 2,4m x 1,6m",
+        "2": "Alimentation: 380V, 8kW"
+      },
+      "benefits": {
+        "0": "Conception économe en espace",
+        "1": "Facile à utiliser et à entretenir",
+        "2": "Faible consommation d'énergie",
+        "3": "Intégration transparente WMS"
+      },
+      "feature1": "Débit: Jusqu'à 20 colis/heure",
+      "feature2": "Encombrement: 2,4m x 1,6m",
+      "feature3": "Alimentation: 380V, 8kW"
+    },
+    "t30": {
+      "tagline": "Système d'emballage milieu de gamme avec vitesse et flexibilité améliorées",
+      "description": "Le T30 offre l'équilibre parfait entre performance et polyvalence. Conçu pour les entreprises en croissance, il offre un débit accru tout en maintenant l'efficacité opérationnelle et la fiabilité.",
+      "specs": {
+        "0": "Débit: Jusqu'à 30 colis/heure",
+        "1": "Encombrement: 3,2m x 2,1m",
+        "2": "Alimentation: 380V, 12kW"
+      },
+      "benefits": {
+        "0": "Capacités avancées de manutention des matériaux",
+        "1": "Modes de fonctionnement double pour différents types de produits",
+        "2": "Intégration WMS/WCS améliorée",
+        "3": "Maintenance prédictive avec AI e-connect"
+      },
+      "feature1": "Débit: Jusqu'à 30 colis/heure",
+      "feature2": "Encombrement: 3,2m x 2,1m",
+      "feature3": "Alimentation: 380V, 12kW"
+    },
+    "t50": {
+      "tagline": "Solution d'emballage haute performance pour les opérations à l'échelle de l'entreprise",
+      "description": "Le T50 est notre solution premium pour les opérations à grande échelle nécessitant un débit maximal et une fiabilité. Avec une automatisation avancée et des contrôles intelligents, il représente le summum de la technologie d'emballage.",
+      "specs": {
+        "0": "Débit: Jusqu'à 50 colis/heure",
+        "1": "Encombrement: 4,5m x 2,8m",
+        "2": "Alimentation: 380V, 18kW"
+      },
+      "benefits": {
+        "0": "Capacité de débit leader du secteur",
+        "1": "Capacités d'automatisation complètes",
+        "2": "Optimisation opérationnelle avancée pilotée par IA",
+        "3": "Intégration complète des systèmes d'entreprise"
+      },
+      "feature1": "Débit: Jusqu'à 50 colis/heure",
+      "feature2": "Encombrement: 4,5m x 2,8m",
+      "feature3": "Alimentation: 380V, 18kW"
+    }
+  },
+  "machine": {
+    "status": {
+      "running": "En marche",
+      "stopped": "Arrêté",
+      "maintenance": "En maintenance"
+    },
+    "metrics": {
+      "productsToday": "Produits aujourd'hui",
+      "timeRunning": "Temps de fonctionnement",
+      "progress": "Progression de production",
+      "efficiency": "Taux d'efficacité",
+      "temperature": "Température",
+      "workload": "Charge de travail",
+      "lastMaintenance": "Dernière maintenance",
+      "details": "Détails"
+    },
+    "efficiency": {
+      "excellent": "Excellent",
+      "good": "Bon",
+      "average": "Moyen",
+      "low": "Faible"
+    },
+    "warning": {
+      "default": "Alerte active"
+    },
+    "info": {
+      "specs": "Spécifications",
+      "integration": "Intégration"
+    },
+    "specs": {
+      "throughput": "Débit",
+      "dimensions": "Dimensions",
+      "weight": "Poids",
+      "power": "Alimentation",
+      "air": "Consommation d'air",
+      "control": "Système de contrôle",
+      "materials": "Matériaux",
+      "tempRange": "Temp. opérationnelle",
+      "connectivity": "Connectivité"
+    },
+    "integration": {
+      "wms": "WMS",
+      "api": "Doc API",
+      "dataExchange": "Échange de données",
+      "monitoring": "Surveillance",
+      "remote": "Accès distant"
+    }
+  },
+  "admin": {
+    "login": {
+      "title": "Connexion Admin",
+      "subtitle": "Accès sécurisé pour les administrateurs TP@CK. Seul le personnel autorisé peut continuer.",
+      "username": "Nom d'utilisateur",
+      "password": "Mot de passe",
+      "usernamePlaceholder": "Entrez votre nom d'utilisateur",
+      "passwordPlaceholder": "Entrez votre mot de passe",
+      "loginButton": "Connexion",
+      "loggingIn": "Connexion en cours...",
+      "forgotPassword": "Mot de passe oublié? Contactez votre administrateur système.",
+      "showDemo": "Afficher les comptes de démonstration"
+    },
+    "dashboard": {
+      "title": "Tableau de Bord Administrateur",
+      "welcome": "Bienvenue dans le panneau de contrôle administratif TP@CK.",
+      "controlPanel": "Panneau de Contrôle des Machines",
+      "backToSite": "Retour au Site",
+      "logout": "Déconnexion",
+      "demoNotice": "Ceci est une démonstration du tableau de bord administrateur avec contrôle d'accès basé sur les rôles. Dans un environnement de production, des mesures de sécurité supplémentaires seraient mises en œuvre.",
+      "analytics": {
+        "title": "{machine} Analyses de Performance",
+        "subtitle": "Données historiques de performance et analyse des tendances",
+        "timeRanges": {
+          "24h": "24h",
+          "7d": "7j",
+          "30d": "30j",
+          "90d": "90j"
+        },
+        "periodLabels": {
+          "24h": "Dernières 24 heures",
+          "7d": "7 derniers jours",
+          "30d": "30 derniers jours",
+          "90d": "90 derniers jours"
+        },
+        "charts": "Graphiques de Performance",
+        "summary": "Vue d'Ensemble",
+        "current": "Actuel",
+        "average": "Moyenne",
+        "min": "Min",
+        "max": "Max",
+        "increase": "augmentation",
+        "decrease": "diminution",
+        "noData": "Aucune donnée disponible pour cette machine",
+        "summaryTitle": "Résumé des Performances",
+        "insights": "Aperçus de Performance",
+        "efficiencyInsight": "{machine} a maintenu un taux d'efficacité moyen de {rate}% sur la période sélectionnée.",
+        "productionInsight": "La production maximale a été observée le {date} avec {units} unités.",
+        "temperatureHighInsight": "Des alertes de température élevée ont eu lieu {count} fois pendant cette période.",
+        "temperatureNormalInsight": "La température est restée dans la plage optimale pendant toute la période.",
+        "metrics": {
+          "efficiency": "Taux d'Efficacité",
+          "production": "Volume de Production",
+          "temperature": "Température",
+          "workload": "Charge de Travail",
+          "uptime": "Temps de Fonctionnement"
+        }
+      },
+      "controls": {
+        "title": "Contrôle des Paramètres Machine",
+        "description": "Modifiez les paramètres des machines. Les changements seront reflétés en temps réel sur le tableau de bord.",
+        "selectMachine": "Sélectionner une Machine",
+        "machineStatus": "État de la Machine",
+        "warningStatus": "État d'Alerte",
+        "enableWarning": "Activer l'Alerte",
+        "clearWarning": "Effacer l'Alerte",
+        "products": "Total des Produits Produits Aujourd'hui",
+        "timeRunning": "Temps de Fonctionnement (HH:MM:SS)",
+        "progress": "Progression de Production",
+        "efficiency": "Taux d'Efficacité",
+        "temperature": "Température (°C)",
+        "workload": "Charge de Travail",
+        "maintenance": "Date de Dernière Maintenance",
+        "viewOnly": "Vous avez un accès en lecture seule. Pour modifier les paramètres des machines, veuillez vous connecter avec un compte opérateur ou administrateur.",
+        "lastUpdated": "Dernière mise à jour:",
+        "realTime": "Les changements sont appliqués en temps réel"
+      },
+      "monitor": {
+        "title": "Tableau de Bord d'État",
+        "viewAnalytics": "Voir les Analyses"
+      },
+      "system": {
+        "title": "Paramètres Système",
+        "description": "Configurez les paramètres et préférences du système global",
+        "readOnly": "Lecture seule",
+        "info": {
+          "title": "Informations Système",
+          "description": "Ceci est une démonstration de la fonctionnalité du panneau de contrôle admin avec des autorisations basées sur les rôles.",
+          "viewOnly": "Vous avez un accès en lecture seule aux paramètres système.",
+          "version": "Version du Système:",
+          "lastSync": "Dernière Synchronisation:",
+          "justNow": "À l'instant (temps réel)",
+          "apiStatus": "État de l'API:",
+          "connected": "Connecté",
+          "currentUser": "Utilisateur Actuel:"
+        },
+        "advancedSettings": "Paramètres Système Avancés",
+        "advancedDescription": "Accédez aux options de configuration avancées pour les administrateurs",
+        "email": "Email de Notification Système",
+        "backup": "Fréquence de Sauvegarde",
+        "backupOptions": {
+          "hourly": "Horaire",
+          "daily": "Quotidien",
+          "weekly": "Hebdomadaire"
+        },
+        "saveSettings": "Enregistrer les Paramètres"
+      }
+    },
+    "roles": {
+      "admin": "Accès Administrateur",
+      "operator": "Accès Opérateur",
+      "viewer": "Accès Observateur",
+      "adminDesc": "Vous avez des autorisations complètes pour contrôler tous les paramètres des machines et les paramètres système.",
+      "operatorDesc": "Vous pouvez contrôler les paramètres des machines mais ne pouvez pas modifier les paramètres système.",
+      "viewerDesc": "Vous avez un accès en lecture seule pour surveiller les machines. Les contrôles sont désactivés."
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 TP@CK by Tecnimodern. Tous droits réservés.",
+    "links": {
+      "privacy": "Politique de Confidentialité",
+      "terms": "Conditions d'Utilisation",
+      "contact": "Contactez-Nous"
+    }
+  },
+  "news": {
+    "hero_title": "Actualités TP@CK",
+    "hero_subtitle": "Restez informé des dernières innovations, annonces et perspectives de notre équipe",
+    "latest": "Articles Récents",
+    "featured": "À la Une",
+    "categories": "Catégories",
+    "all": "Tous les Articles",
+    "read_more": "Lire Plus",
+    "published_on": "Publié le",
+    "minutes_read": "min de lecture",
+    "share": "Partager",
+    "related": "Articles Connexes",
+    "tag_innovations": "Innovations",
+    "tag_company": "Nouvelles d'Entreprise",
+    "tag_partnerships": "Partenariats",
+    "tag_technology": "Technologie",
+    "tag_insights": "Perspectives Industrielles",
+    "tag_events": "Événements",
+    "search_placeholder": "Rechercher des articles...",
+    "no_results": "Aucun article trouvé correspondant à votre recherche.",
+    "filter_by": "Filtrer par"
+  }
+}

@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White */
+    --foreground: 0 0% 0%; /* Black */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 0 0% 0%; /* Black */
+
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 0 0% 0%; /* Black */
+
+    --primary: 0 75% 45%; /* Red */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 0 0% 0%; /* Black */
+    --secondary-foreground: 0 0% 100%; /* White */
+
+    --muted: 0 0% 90%; /* Light Gray */
+    --muted-foreground: 0 0% 40%; /* Dark Gray */
+
+    --accent: 0 75% 45%; /* Red */
+    --accent-foreground: 0 0% 100%; /* White */
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 75% 45%; /* Red */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 0%; /* Black */
+    --foreground: 0 0% 100%; /* White */
+
+    --card: 0 0% 0%; /* Black */
+    --card-foreground: 0 0% 100%; /* White */
+
+    --popover: 0 0% 0%; /* Black */
+    --popover-foreground: 0 0% 100%; /* White */
+
+    --primary: 0 75% 45%; /* Red */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 0 0% 100%; /* White */
+    --secondary-foreground: 0 0% 0%; /* Black */
+
+    --muted: 0 0% 15%; /* Very Dark Gray */
+    --muted-foreground: 0 0% 70%; /* Light Gray */
+
+    --accent: 0 75% 45%; /* Red */
+    --accent-foreground: 0 0% 100%; /* White */
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 75% 45%; /* Red */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* TP@CK Custom Components */
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  .section-padding {
+    @apply py-12 md:py-16 lg:py-24;
+  }
+
+  .heading-xl {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter;
+  }
+
+  .heading-lg {
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight;
+  }
+
+  .heading-md {
+    @apply text-xl md:text-2xl font-semibold tracking-tight;
+  }
+
+  .heading-sm {
+    @apply text-lg md:text-xl font-medium;
+  }
+
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/80;
+  }
+
+  .red-gradient {
+    @apply bg-gradient-to-r from-primary to-primary/80;
+  }
+
+  .dark-gradient {
+    @apply bg-gradient-to-r from-secondary to-secondary/90;
+  }
+}

@@ -1,0 +1,465 @@
+{
+  "language": {
+    "english": "English",
+    "french": "French",
+    "german": "German",
+    "select": "Select Language"
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "expertise": "Expertise",
+    "about": "About",
+    "contact": "Contact",
+    "dashboard": "Dashboard",
+    "news": "News"
+  },
+  "header": {
+    "login": "Login",
+    "admin": "Admin"
+  },
+  "home": {
+    "intro": "Introducing TP@CK",
+    "title": "The Future of {highlight}Intelligent{/highlight} Packaging Solutions",
+    "description": "TP@CK revolutionizes packaging with advanced IT integration, environmental certifications, and operational advantages designed for the modern business landscape.",
+    "demo": "Request a Demo",
+    "video": "Watch Video",
+    "certification": "Certified for all major international markets",
+    "wms_integration": "WMS Integration",
+    "wms_compatibility": "Compatible with all major systems",
+    "ai_maintenance": "AI Predictive Maintenance",
+    "downtime_reduction": "Reduces downtime by 74%",
+    "hero": {
+      "title": "Revolutionary Packaging Solutions",
+      "subtitle": "Advanced Technology Integration for Modern Businesses",
+      "cta": "Explore Our Solutions"
+    },
+    "features": {
+      "title": "Why Choose TP@CK",
+      "subtitle": "Our machines are designed with precision, efficiency and reliability in mind",
+      "sectionLabel": "Key Differentiators",
+      "sectionTitle": "What Sets TP@CK Apart from Legacy Solutions",
+      "sectionDescription": "TP@CK leverages cutting-edge technology to deliver a packaging solution that is more efficient, environmentally responsible, and adaptable to your business needs.",
+      "keyBenefits": "Key Benefits",
+      "inAction": "in action",
+      "learnMore": "Learn more",
+      "integration": {
+        "title": "IT Integration",
+        "description": "Seamless compatibility with all major WMS/WCS systems enables efficient warehouse management.",
+        "benefit1": "Compatible with all major WMS providers",
+        "benefit2": "Real-time inventory tracking",
+        "benefit3": "Automated workflow optimization",
+        "benefit4": "Centralized control interface"
+      },
+      "certifications": {
+        "title": "Environmental Certifications",
+        "description": "UL certification for the US market and international standards compliance for global operation.",
+        "benefit1": "UL certified for US market",
+        "benefit2": "ISO 14001 environmental management",
+        "benefit3": "CE marked for European compliance",
+        "benefit4": "Energy efficiency rating A++"
+      },
+      "ai": {
+        "title": "AI IConnect",
+        "description": "Predictive maintenance system that reduces downtime and extends the machine's operational life.",
+        "benefit1": "74% reduction in unexpected downtime",
+        "benefit2": "Predictive component failure alerts",
+        "benefit3": "Automatic maintenance scheduling",
+        "benefit4": "Remote diagnostics and support"
+      },
+      "operational": {
+        "title": "Operational Advantages",
+        "description": "Enhanced efficiency metrics that deliver measurable ROI through operational improvements.",
+        "benefit1": "30% faster packaging speeds",
+        "benefit2": "20% reduction in material consumption",
+        "benefit3": "15% lower energy consumption",
+        "benefit4": "Dual-mode operation for flexibility"
+      }
+    },
+    "products": {
+      "title": "Our Machines",
+      "subtitle": "Discover our range of advanced packaging solutions",
+      "viewDetails": "View Details",
+      "range": "Product Range",
+      "heading": "Choose the Perfect TP@CK Machine for Your Needs",
+      "description": "Our range of packaging solutions is designed to meet various operational scales and requirements, from small businesses to large enterprises.",
+      "viewButton": "View Specifications",
+      "helpText": "Need help choosing the right solution? Our experts can provide a customized recommendation.",
+      "compareButton": "Compare All Products"
+    }
+  },
+  "testimonials": {
+    "sectionLabel": "Client Success Stories",
+    "sectionTitle": "Trusted by Industry Leaders",
+    "sectionDescription": "Hear directly from our clients about how TP@CK's innovative solutions have transformed their operations and delivered measurable results.",
+    "trustedBy": "Trusted By Companies Worldwide",
+    "quote1": "The TP@CK T30 has transformed our warehouse operations. The WMS integration was seamless, and we've seen a 32% increase in packaging efficiency within the first month.",
+    "name1": "Sarah Johnson",
+    "title1": "Operations Director",
+    "company1": "Global Logistics Inc.",
+    "quote2": "What impressed me most about TP@CK was the predictive maintenance system. We've had zero unexpected downtime since implementation, which is unprecedented for our 24/7 operation.",
+    "name2": "Michael Rodriguez",
+    "title2": "Head of Production",
+    "company2": "FastShip Enterprises",
+    "quote3": "As a company committed to sustainability, the environmental certifications of TP@CK's systems were a deciding factor. The reduced material waste has also contributed to our bottom line.",
+    "name3": "Emma Chen",
+    "title3": "Sustainability Manager",
+    "company3": "EcoPackage Solutions",
+    "quote4": "The T50 system exceeded our throughput expectations. The dual-mode operation gives us flexibility to adapt to seasonal demand fluctuations without compromising on quality.",
+    "name4": "Thomas Weber",
+    "title4": "Technical Director",
+    "company4": "European Distribution GmbH"
+  },
+  "markets": {
+    "sectionLabel": "Industry Solutions",
+    "sectionTitle": "Target Markets",
+    "sectionDescription": "Our packaging solutions are tailored to meet the specific requirements of various industries, delivering exceptional value and operational efficiency.",
+    "learnMore": "Learn more about TP@CK for",
+    "logistics": {
+      "title": "Logistics",
+      "description": "TP@CK offers logisticians an optimal integration with their WMS/WCS systems, enabling real-time traceability and efficient flow management. By reducing transport costs and improving space utilization, TP@CK is the ideal solution to optimize supply chains and meet the evolving demands of the logistics sector."
+    },
+    "distribution": {
+      "title": "Large Distribution",
+      "description": "Large distribution networks benefit from a reliable and high-performance packaging solution. TP@CK minimizes waste and optimizes storage spaces, ensuring better supply management and significant reductions in logistical costs. Tailored to the high demands of the sector, TP@CK delivers an innovative solution to maintain competitive advantage."
+    },
+    "ecommerce": {
+      "title": "E-commerce",
+      "description": "For the e-commerce sector, TP@CK represents a tailor-made solution that combines speed, flexibility, and environmental responsibility. With customized, optimized packaging, TP@CK reduces transport costs and enhances the customer experience while meeting increasing expectations for sustainability and innovation."
+    },
+    "cuisine": {
+      "title": "Kitchen Industry",
+      "description": "Cuisinists will find in TP@CK a solution perfectly suited to their needs, combining robustness with aesthetic appeal. By ensuring optimal product protection and efficient space utilization, TP@CK adds value to products while reducing costs. This innovative solution is particularly relevant for installations requiring high performance and strong profitability."
+    }
+  },
+  "cta": {
+    "tagline": "Ready to Transform Your Packaging?",
+    "heading": "Schedule a Personalized Demo of TP@CK Solutions",
+    "description": "Our experts will guide you through the features that matter most to your operation and provide a tailored recommendation based on your specific needs.",
+    "demoButton": "Request a Demo",
+    "exploreButton": "Explore Products",
+    "stat1": "Average Efficiency Increase",
+    "stat2": "Technical Support",
+    "stat3": "Countries Served"
+  },
+  "dashboard": {
+    "title": "Real-Time Machine Status Dashboard",
+    "subtitle": "Monitor the operational status, production metrics, and performance indicators of all TP@CK machines in real-time.",
+    "stats": {
+      "totalProduction": "Total Production",
+      "avgEfficiency": "Avg. Efficiency",
+      "machinesRunning": "Machines Running"
+    },
+    "viewFull": "View Full Dashboard",
+    "accessText": "Access the admin dashboard for detailed analytics and controls"
+  },
+  "products": {
+    "header": {
+      "label": "Our Product Range",
+      "title": "Choose the Perfect TP@CK Machine for Your Needs",
+      "description": "Our range of packaging solutions is designed to meet various operational scales and requirements, from small businesses to large enterprises."
+    },
+    "features": {
+      "title": "Key Differentiators",
+      "description": "All TP@CK machines share these revolutionary features that set them apart from legacy solutions, with specifications tailored to each model's capacity requirements.",
+      "integration": {
+        "title": "IT Integration",
+        "description": "Seamless compatibility with all major WMS/WCS systems enables efficient warehouse management.",
+        "benefit1": "Compatibility with all major WMS providers",
+        "benefit2": "Real-time inventory tracking",
+        "benefit3": "Automated workflow optimization"
+      },
+      "certifications": {
+        "title": "Certifications",
+        "description": "UL certification for the US market and international standards compliance for global operation.",
+        "benefit1": "UL certified for US market",
+        "benefit2": "ISO 14001 environmental management",
+        "benefit3": "CE marked for European compliance"
+      },
+      "ai": {
+        "title": "AI e-Connect",
+        "description": "Predictive maintenance system that reduces downtime and extends the machine's operational life.",
+        "benefit1": "74% reduction in unexpected downtime",
+        "benefit2": "Predictive component failure alerts",
+        "benefit3": "Remote diagnostics and support"
+      }
+    },
+    "specs": {
+      "title": "Key Specifications"
+    },
+    "benefits": {
+      "title": "Benefits"
+    },
+    "list": {
+      "title": "Our Product Range"
+    },
+    "viewDetails": "View Details",
+    "t20": {
+      "tagline": "Compact, entry-level packaging solution ideal for small to medium businesses",
+      "description": "The T20 is a robust solution for businesses with moderate output requirements. Its compact footprint makes it perfect for facilities with limited space while maintaining excellent performance and reliability.",
+      "specs": {
+        "0": "Throughput: Up to 20 packages/hour",
+        "1": "Footprint: 2.4m x 1.6m",
+        "2": "Power: 380V, 8kW"
+      },
+      "benefits": {
+        "0": "Space-efficient design",
+        "1": "Easy to operate and maintain",
+        "2": "Low energy consumption",
+        "3": "Seamless WMS integration"
+      },
+      "feature1": "Throughput: Up to 20 packages/hour",
+      "feature2": "Footprint: 2.4m x 1.6m",
+      "feature3": "Power: 380V, 8kW"
+    },
+    "t30": {
+      "tagline": "Mid-range packaging system with enhanced speed and flexibility",
+      "description": "The T30 offers the perfect balance of performance and versatility. Designed for growing enterprises, it delivers increased throughput while maintaining operational efficiency and reliability.",
+      "specs": {
+        "0": "Throughput: Up to 30 packages/hour",
+        "1": "Footprint: 3.2m x 2.1m",
+        "2": "Power: 380V, 12kW"
+      },
+      "benefits": {
+        "0": "Advanced material handling capabilities",
+        "1": "Dual operation modes for different product types",
+        "2": "Enhanced WMS/WCS integration",
+        "3": "Predictive maintenance with AI e-connect"
+      },
+      "feature1": "Throughput: Up to 30 packages/hour",
+      "feature2": "Footprint: 3.2m x 2.1m",
+      "feature3": "Power: 380V, 12kW"
+    },
+    "t50": {
+      "tagline": "High-performance packaging solution for enterprise-scale operations",
+      "description": "The T50 is our premium solution for large-scale operations requiring maximum throughput and reliability. With advanced automation and intelligent controls, it represents the pinnacle of packaging technology.",
+      "specs": {
+        "0": "Throughput: Up to 50 packages/hour",
+        "1": "Footprint: 4.5m x 2.8m",
+        "2": "Power: 380V, 18kW"
+      },
+      "benefits": {
+        "0": "Industry-leading throughput capacity",
+        "1": "Comprehensive automation capabilities",
+        "2": "Advanced AI-driven operational optimization",
+        "3": "Full enterprise system integration"
+      },
+      "feature1": "Throughput: Up to 50 packages/hour",
+      "feature2": "Footprint: 4.5m x 2.8m",
+      "feature3": "Power: 380V, 18kW"
+    }
+  },
+  "machine": {
+    "status": {
+      "running": "Running",
+      "stopped": "Stopped",
+      "maintenance": "Under Maintenance"
+    },
+    "metrics": {
+      "productsToday": "Products Today",
+      "timeRunning": "Time Running",
+      "progress": "Production Progress",
+      "efficiency": "Efficiency Rate",
+      "temperature": "Temperature",
+      "workload": "Workload",
+      "lastMaintenance": "Last Maintenance",
+      "details": "Details"
+    },
+    "efficiency": {
+      "excellent": "Excellent",
+      "good": "Good",
+      "average": "Average",
+      "low": "Low"
+    },
+    "warning": {
+      "default": "Warning alert active"
+    },
+    "info": {
+      "specs": "Specifications",
+      "integration": "Integration"
+    },
+    "specs": {
+      "throughput": "Throughput",
+      "dimensions": "Dimensions",
+      "weight": "Weight",
+      "power": "Power",
+      "air": "Air Consumption",
+      "control": "Control System",
+      "materials": "Materials",
+      "tempRange": "Operating Temp",
+      "connectivity": "Connectivity"
+    },
+    "integration": {
+      "wms": "WMS",
+      "api": "API Doc",
+      "dataExchange": "Data Exchange",
+      "monitoring": "Monitoring",
+      "remote": "Remote Access"
+    }
+  },
+  "admin": {
+    "login": {
+      "title": "Admin Login",
+      "subtitle": "Secure access for TP@CK administrators. Only authorized personnel may proceed.",
+      "username": "Username",
+      "password": "Password",
+      "usernamePlaceholder": "Enter your username",
+      "passwordPlaceholder": "Enter your password",
+      "loginButton": "Login",
+      "loggingIn": "Logging in...",
+      "forgotPassword": "Forgot your password? Contact your system administrator.",
+      "showDemo": "Show demo accounts"
+    },
+    "dashboard": {
+      "title": "Admin Dashboard",
+      "welcome": "Welcome to the TP@CK administrative control panel.",
+      "controlPanel": "Machine Control Panel",
+      "backToSite": "Back to Site",
+      "logout": "Logout",
+      "demoNotice": "This is a demonstration of the admin dashboard with role-based access control. In a production environment, additional security measures would be implemented.",
+      "analytics": {
+        "title": "{machine} Performance Analytics",
+        "subtitle": "Historical performance data and trends analysis",
+        "timeRanges": {
+          "24h": "24h",
+          "7d": "7d",
+          "30d": "30d",
+          "90d": "90d"
+        },
+        "charts": "Performance Charts",
+        "summary": "Summary View",
+        "current": "Current",
+        "average": "Average",
+        "min": "Min",
+        "max": "Max",
+        "increase": "increase",
+        "decrease": "decrease",
+        "noData": "No data available for this machine",
+        "summaryTitle": "Performance Summary",
+        "insights": "Performance Insights",
+        "efficiencyInsight": "{machine} has maintained an average efficiency rate of {rate}% over the selected period.",
+        "productionInsight": "Peak production was observed on {date} with {units} units.",
+        "temperatureHighInsight": "High temperature alerts occurred {count} times during this period.",
+        "temperatureNormalInsight": "Temperature has remained within optimal range throughout the period.",
+        "metrics": {
+          "efficiency": "Efficiency Rate",
+          "production": "Production Volume",
+          "temperature": "Temperature",
+          "workload": "Workload",
+          "uptime": "Uptime"
+        },
+        "technicalSpecs": "Technical Specifications",
+        "integration": "Integration & Connectivity",
+        "specs": {
+          "throughput": "Throughput Capacity",
+          "dimensions": "Physical Dimensions",
+          "weight": "Weight",
+          "power": "Power Requirements",
+          "air": "Air Consumption",
+          "control": "Control System",
+          "materials": "Supported Materials",
+          "tempRange": "Operating Temperature",
+          "connectivity": "Connectivity",
+          "download": "Download Technical Documentation"
+        },
+        "integration": {
+          "wms": "WMS Compatibility",
+          "api": "API Documentation",
+          "dataExchange": "Data Exchange Protocols",
+          "monitoring": "Real-Time Monitoring",
+          "remote": "Remote Management",
+          "apiKey": "API Access",
+          "apiInstruction": "Download complete API documentation for system integration:",
+          "apiButton": "Access API Documentation"
+        }
+      },
+      "controls": {
+        "title": "Machine Parameters Control",
+        "description": "Modify machine settings and parameters. Changes will be reflected in real-time on the dashboard.",
+        "selectMachine": "Select Machine",
+        "machineStatus": "Machine Status",
+        "warningStatus": "Warning Status",
+        "enableWarning": "Enable Warning",
+        "clearWarning": "Clear Warning",
+        "products": "Total Products Produced Today",
+        "timeRunning": "Time Running (HH:MM:SS)",
+        "progress": "Production Progress",
+        "efficiency": "Efficiency Rate",
+        "temperature": "Temperature (°C)",
+        "workload": "Workload",
+        "maintenance": "Last Maintenance Date",
+        "viewOnly": "You have view-only access. To modify machine parameters, please log in with an operator or admin account.",
+        "lastUpdated": "Last updated:",
+        "realTime": "Changes are applied in real-time"
+      },
+      "monitor": {
+        "title": "Status Dashboard",
+        "viewAnalytics": "View Analytics"
+      },
+      "system": {
+        "title": "System Settings",
+        "description": "Configure global system parameters and preferences",
+        "readOnly": "Read-only",
+        "info": {
+          "title": "System Information",
+          "description": "This is a demonstration of the admin control panel functionality with role-based permissions.",
+          "viewOnly": "You have view-only access to system settings.",
+          "version": "System Version:",
+          "lastSync": "Last Sync:",
+          "justNow": "Just now (real-time)",
+          "apiStatus": "API Status:",
+          "connected": "Connected",
+          "currentUser": "Current User:"
+        },
+        "advancedSettings": "Advanced System Settings",
+        "advancedDescription": "Access advanced configuration options for administrators",
+        "email": "System Notification Email",
+        "backup": "Backup Frequency",
+        "backupOptions": {
+          "hourly": "Hourly",
+          "daily": "Daily",
+          "weekly": "Weekly"
+        },
+        "saveSettings": "Save Settings"
+      }
+    },
+    "roles": {
+      "admin": "Administrator Access",
+      "operator": "Operator Access",
+      "viewer": "Viewer Access",
+      "adminDesc": "You have full permissions to control all machine parameters and settings.",
+      "operatorDesc": "You can control machine parameters but cannot change system settings.",
+      "viewerDesc": "You have read-only access to monitor machines. Controls are disabled."
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 TP@CK by Tecnimodern. All rights reserved.",
+    "links": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "contact": "Contact Us"
+    }
+  },
+  "news": {
+    "hero_title": "What's New at TP@CK",
+    "hero_subtitle": "Stay up to date with the latest innovations, announcements, and insights from our team",
+    "latest": "Latest Articles",
+    "featured": "Featured Stories",
+    "categories": "Categories",
+    "all": "All Articles",
+    "read_more": "Read More",
+    "published_on": "Published on",
+    "minutes_read": "min read",
+    "share": "Share",
+    "related": "Related Articles",
+    "tag_innovations": "Innovations",
+    "tag_company": "Company News",
+    "tag_partnerships": "Partnerships",
+    "tag_technology": "Technology",
+    "tag_insights": "Industry Insights",
+    "tag_events": "Events",
+    "search_placeholder": "Search articles...",
+    "no_results": "No articles found matching your search.",
+    "filter_by": "Filter by"
+  }
+}
