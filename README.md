@@ -1,4 +1,3 @@
-```markdown
 # TP@CK Website Redesign
 
 Welcome to the **TP@CK Website Redesign** project! This repository contains the source code, design assets, and documentation for the redesign of the TP@CK website – the innovative packaging solution by Tecnimodern. This README aims to provide a comprehensive guide to the project, from its inception and objectives to detailed instructions for installation, development, and contribution.
