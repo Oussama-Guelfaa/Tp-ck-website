@@ -260,7 +260,7 @@ export function EcoHeroSection() {
   const [videoOpen, setVideoOpen] = useState(false);
   const [bgVideoVisible, setBgVideoVisible] = useState(false);
   const bgVideoRef = useRef<HTMLVideoElement>(null);
-  const sectionRef = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   // Typing effect for the headline
   const headlineText = "Smart, Sustainable, and Designed for Earth";
@@ -429,7 +429,7 @@ export function EcoHeroSection() {
       </div>
       
       {/* Background video section that appears below the content */}
-      <div ref={sectionRef as React.RefObject<HTMLDivElement>} className="w-full relative" style={{ height: '80vh' }}>
+      <div ref={sectionRef} className="w-full relative" style={{ height: '80vh' }}>
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: bgVideoVisible ? 1 : 0 }}

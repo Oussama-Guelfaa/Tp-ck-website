@@ -2,86 +2,219 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Card } from "@/components/ui/card";
-import { Quote } from "lucide-react";
-import { useTranslation } from "@/components/ui/language-selector";
-import type { CarouselApi } from "@/components/ui/carousel";
+import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "../../components/ui/language-selector";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
+// Define testimonial type
 interface Testimonial {
   id: number;
-  quoteKey: string;
   quote: string;
   name: string;
   title: string;
   company: string;
   logo: string;
+  rating: number;
 }
 
-const getTestimonials = (t: (key: string, fallback?: string) => string): Testimonial[] => [
+// Testimonial data
+const testimonials: Testimonial[] = [
   {
     id: 1,
-    quoteKey: "testimonials.quote1",
-    quote: t("testimonials.quote1", "The TP@CK T30 has transformed our warehouse operations. The WMS integration was seamless, and we've seen a 32% increase in packaging efficiency within the first month."),
-    name: t("testimonials.name1", "Mohamed amine Hanchouch"),
-    title: t("testimonials.title1", "Operations Director"),
-    company: t("testimonials.company1", "Global Logistics Inc."),
+    quote: "The TP@CK T30 has transformed our warehouse operations. The WMS integration was seamless, and we've seen a 32% increase in packaging efficiency within the first month.",
+    name: "Mohamed Amine H.",
+    title: "Operations Director",
+    company: "Global Logistics Inc.",
     logo: "/images/schneider_logo.png",
+    rating: 5,
   },
   {
     id: 2,
-    quoteKey: "testimonials.quote2",
-    quote: t("testimonials.quote2", "What impressed me most about TP@CK was the predictive maintenance system. We've had zero unexpected downtime since implementation, which is unprecedented for our 24/7 operation."),
-    name: t("testimonials.name2", "Noa Akayad"),
-    title: t("testimonials.title2", "Head of Production"),
-    company: t("testimonials.company2", "FastShip Enterprises"),
+    quote: "What impressed me most about TP@CK was the predictive maintenance system. We've had zero unexpected downtime since implementation, which is unprecedented for our 24/7 operation.",
+    name: "Noa A.",
+    title: "Head of Production",
+    company: "FastShip Enterprises",
     logo: "/images/zalando_logo.png",
+    rating: 5,
   },
   {
     id: 3,
-    quoteKey: "testimonials.quote3",
-    quote: t("testimonials.quote3", "As a company committed to sustainability, the environmental certifications of TP@CK's systems were a deciding factor. The reduced material waste has also contributed to our bottom line."),
-    name: t("testimonials.name3", "Oussama Guelfaa"),
-    title: t("testimonials.title3", "Sustainability Manager"),
-    company: t("testimonials.company3", "EcoPackage Solutions"),
+    quote: "As a company committed to sustainability, the environmental certifications of TP@CK's systems were a deciding factor. The reduced material waste has also contributed to our bottom line.",
+    name: "Oussama G.",
+    title: "Sustainability Manager",
+    company: "EcoPackage Solutions",
     logo: "/images/CGP_logo.png",
+    rating: 5,
   },
   {
     id: 4,
-    quoteKey: "testimonials.quote4",
-    quote: t("testimonials.quote4", "The T50 system exceeded our throughput expectations. The dual-mode operation gives us flexibility to adapt to seasonal demand fluctuations without compromising on quality."),
-    name: t("testimonials.name4", "Oussama Guelfaa"),
-    title: t("testimonials.title4", "Technical Director"),
-    company: t("testimonials.company4", "European Distribution GmbH"),
+    quote: "The T50 system exceeded our throughput expectations. The dual-mode operation gives us flexibility to adapt to seasonal demand fluctuations without compromising on quality.",
+    name: "Thomas K.",
+    title: "Technical Director",
+    company: "European Distribution GmbH",
     logo: "/images/branopac_logo.png",
+    rating: 5,
   },
 ];
 
+// Testimonial Card Component
+const TestimonialCard = ({ testimonial, direction }: { testimonial: Testimonial; direction: number }) => {
+  // Card variants for entrance animation
+  const cardVariants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+      rotateY: direction > 0 ? 30 : -30,
+      scale: 0.8,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      rotateY: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        type: "spring",
+        stiffness: 300,
+        damping: 30,
+      },
+    },
+    exit: (direction: number) => ({
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0,
+      rotateY: direction < 0 ? 30 : -30,
+      scale: 0.8,
+      transition: {
+        duration: 0.5,
+      },
+    }),
+  };
+
+  // Rating stars
+  const renderRating = (rating: number) => {
+    return (
+      <div className="flex space-x-1 mb-4">
+        {[...Array(5)].map((_, i) => (
+          <Star
+            key={i}
+            className={`h-4 w-4 ${
+              i < rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"
+            }`}
+          />
+        ))}
+      </div>
+    );
+  };
+
+  return (
+    <motion.div
+      className="bg-white rounded-xl shadow-xl overflow-hidden w-full max-w-3xl mx-auto"
+      custom={direction}
+      variants={cardVariants}
+      initial="enter"
+      animate="center"
+      exit="exit"
+      whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+      style={{ transformPerspective: "1200px" }}
+    >
+      <div className="p-8 md:p-10 relative">
+        {/* Background gradient elements */}
+        <div className="absolute -top-24 -right-24 w-48 h-48 rounded-full bg-green-100/50 blur-3xl"></div>
+        <div className="absolute -bottom-24 -left-24 w-48 h-48 rounded-full bg-red-100/50 blur-3xl"></div>
+        
+        {/* Quote mark */}
+        <div className="relative mb-6">
+          <svg 
+            width="48" 
+            height="48" 
+            viewBox="0 0 48 48" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+            className="text-green-600/20"
+          >
+            <path 
+              d="M14.4 24H8.4C7.2 24 6 22.8 6 21.6V15.6C6 14.4 7.2 13.2 8.4 13.2H14.4C15.6 13.2 16.8 14.4 16.8 15.6V21.6C16.8 22.8 15.6 24 14.4 24ZM33.6 24H27.6C26.4 24 25.2 22.8 25.2 21.6V15.6C25.2 14.4 26.4 13.2 27.6 13.2H33.6C34.8 13.2 36 14.4 36 15.6V21.6C36 22.8 34.8 24 33.6 24ZM14.4 43.2H8.4C7.2 43.2 6 42 6 40.8V34.8C6 33.6 7.2 32.4 8.4 32.4H14.4C15.6 32.4 16.8 33.6 16.8 34.8V40.8C16.8 42 15.6 43.2 14.4 43.2ZM33.6 43.2H27.6C26.4 43.2 25.2 42 25.2 40.8V34.8C25.2 33.6 26.4 32.4 27.6 32.4H33.6C34.8 32.4 36 33.6 36 34.8V40.8C36 42 34.8 43.2 33.6 43.2Z" 
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+        
+        {/* Rating */}
+        {renderRating(testimonial.rating)}
+        
+        {/* Quote text */}
+        <motion.p 
+          className="text-xl md:text-2xl font-medium text-gray-800 mb-8 leading-relaxed relative z-10"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
+          "{testimonial.quote}"
+        </motion.p>
+        
+        {/* Author info and company logo */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between mt-8 pt-6 border-t border-gray-100">
+          <motion.div 
+            className="mb-4 md:mb-0"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
+            <p className="font-semibold text-gray-900 text-lg">{testimonial.name}</p>
+            <p className="text-gray-600 text-sm">{testimonial.title}, {testimonial.company}</p>
+          </motion.div>
+          
+          <motion.div 
+            className="h-12 w-24 relative bg-white rounded-md p-1 shadow-sm"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
+            <Image
+              src={testimonial.logo}
+              alt={testimonial.company}
+              fill
+              className="object-contain"
+            />
+          </motion.div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
 export function TestimonialsSection() {
   const { t } = useTranslation();
-  const testimonials = getTestimonials(t);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [[activeIndex, direction], setActiveIndex] = useState([0, 0]);
   const [isAutoScrolling, setIsAutoScrolling] = useState(true);
-  const carouselRef = useRef<HTMLDivElement>(null);
   const autoScrollTimerRef = useRef<NodeJS.Timeout | null>(null);
-  const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
-
+  
+  // Translate testimonials
+  const translatedTestimonials = testimonials.map(testimonial => ({
+    ...testimonial,
+    quote: t(`testimonials.quote${testimonial.id}`, testimonial.quote),
+    name: t(`testimonials.name${testimonial.id}`, testimonial.name),
+    title: t(`testimonials.title${testimonial.id}`, testimonial.title),
+    company: t(`testimonials.company${testimonial.id}`, testimonial.company),
+  }));
+  
   // Handle auto-scrolling
   useEffect(() => {
     // Clear any existing timer when the component mounts or dependencies change
     if (autoScrollTimerRef.current) {
       clearInterval(autoScrollTimerRef.current);
     }
-
-    // Only set up auto-scrolling if it's enabled and API is available
-    if (isAutoScrolling && carouselApi) {
+    
+    // Only set up auto-scrolling if it's enabled
+    if (isAutoScrolling) {
       autoScrollTimerRef.current = setInterval(() => {
-        const nextIndex = (activeIndex + 1) % testimonials.length;
-        carouselApi.scrollTo(nextIndex);
-      }, 7000);
+        setActiveIndex(prev => {
+          const nextIndex = (prev[0] + 1) % translatedTestimonials.length;
+          return [nextIndex, 1]; // Moving forward
+        });
+      }, 8000);
     }
-
+    
     // Cleanup function to clear the interval when the component unmounts
     return () => {
       if (autoScrollTimerRef.current) {
@@ -89,63 +222,76 @@ export function TestimonialsSection() {
         autoScrollTimerRef.current = null;
       }
     };
-  }, [testimonials.length, isAutoScrolling, activeIndex, carouselApi]);
-
-  // Handle manual navigation
-  const handleNavigate = (index: number) => {
-    // Temporarily disable auto-scrolling when user manually navigates
+  }, [translatedTestimonials.length, isAutoScrolling, activeIndex]);
+  
+  // Handle navigation
+  const navigate = (newDirection: number) => {
     setIsAutoScrolling(false);
-
-    // Scroll the carousel to the selected index if API is available
-    if (carouselApi) {
-      carouselApi.scrollTo(index);
-    }
-
+    
+    setActiveIndex(prev => {
+      let nextIndex;
+      if (newDirection > 0) {
+        nextIndex = (prev[0] + 1) % translatedTestimonials.length;
+      } else {
+        nextIndex = (prev[0] - 1 + translatedTestimonials.length) % translatedTestimonials.length;
+      }
+      return [nextIndex, newDirection];
+    });
+    
+    // Re-enable auto-scrolling after a delay
+    setTimeout(() => {
+      setIsAutoScrolling(true);
+    }, 10000);
+  };
+  
+  // Handle dot navigation
+  const goToSlide = (index: number) => {
+    setIsAutoScrolling(false);
+    
+    setActiveIndex(prev => {
+      const newDirection = index > prev[0] ? 1 : -1;
+      return [index, newDirection];
+    });
+    
     // Re-enable auto-scrolling after a delay
     setTimeout(() => {
       setIsAutoScrolling(true);
     }, 10000);
   };
 
-  // Update activeIndex when carousel changes
-  useEffect(() => {
-    if (!carouselApi) return;
-
-    const onSelect = () => {
-      setActiveIndex(carouselApi.selectedScrollSnap());
-    };
-
-    carouselApi.on("select", onSelect);
-
-    return () => {
-      carouselApi.off("select", onSelect);
-    };
-  }, [carouselApi]);
-
   return (
-    <section className="bg-white py-20 md:py-28">
-      <div className="container-custom">
+    <section className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-b from-gray-50 to-white">
+      {/* Background elements */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-gray-100/80 to-transparent"></div>
+        <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-green-50 blur-3xl opacity-50"></div>
+        <div className="absolute -bottom-20 -left-20 w-96 h-96 rounded-full bg-red-50 blur-3xl opacity-50"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.span
-            className="text-primary font-semibold text-sm uppercase tracking-wider"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            className="inline-block px-4 py-1.5 bg-green-50 text-green-700 font-medium text-sm rounded-full mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
             {t("testimonials.sectionLabel", "Client Success Stories")}
           </motion.span>
+          
           <motion.h2
-            className="heading-lg mt-2 mb-4"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            {t("testimonials.sectionTitle", "Trusted by Industry Leaders")}
+            <span className="text-green-700">Trusted</span> by Industry Leaders
           </motion.h2>
+          
           <motion.p
-            className="text-gray-600"
+            className="text-lg text-gray-600 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -154,81 +300,101 @@ export function TestimonialsSection() {
             {t("testimonials.sectionDescription", "Hear directly from our clients about how TP@CK's innovative solutions have transformed their operations and delivered measurable results.")}
           </motion.p>
         </div>
-
-        <Carousel
-          ref={carouselRef}
-          className="w-full max-w-5xl mx-auto"
-          setApi={setCarouselApi}
-        >
-          <CarouselContent>
-            {testimonials.map((testimonial) => (
-              <CarouselItem key={testimonial.id}>
-                <Card className="border-none shadow-lg p-8 md:p-12 overflow-hidden bg-white hover:bg-gray-50 group hover:shadow-xl transition-all duration-300">
-                  <div className="flex flex-col items-center text-center md:text-left">
-                    <Quote className="h-12 w-12 text-primary/30 mb-6 group-hover:text-primary/40 transition-colors duration-300" />
-                    <p className="text-xl md:text-2xl font-medium text-gray-800 mb-8 group-hover:text-black transition-colors duration-300 italic leading-relaxed">
-                      "{testimonial.quote}"
-                    </p>
-                    <div className="flex flex-col items-center">
-                      <div className="h-14 w-14 relative flex-shrink-0 bg-white rounded-full p-1 shadow-sm group-hover:shadow-md transition-all duration-300 mb-4">
-                        <Image
-                          src={testimonial.logo}
-                          alt={testimonial.company}
-                          fill
-                          className="object-contain"
-                        />
-                      </div>
-                      <div className="text-center">
-                        <p className="font-semibold text-black text-lg">{testimonial.name}</p>
-                        <p className="text-gray-600">{testimonial.title}, {testimonial.company}</p>
-                      </div>
-                    </div>
-                  </div>
-                </Card>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <div className="flex justify-center mt-8 space-x-2">
-            <CarouselPrevious className="relative inset-auto mx-2" />
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => handleNavigate(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  index === activeIndex ? "bg-primary" : "bg-gray-300"
-                }`}
-                aria-label={`Go to testimonial ${index + 1}`}
-              />
-            ))}
-            <CarouselNext className="relative inset-auto mx-2" />
+        
+        {/* Testimonial cards carousel */}
+        <div className="relative max-w-4xl mx-auto min-h-[400px] md:min-h-[350px] mb-16">
+          <AnimatePresence custom={direction} mode="wait">
+            <TestimonialCard
+              key={activeIndex}
+              testimonial={translatedTestimonials[activeIndex]}
+              direction={direction}
+            />
+          </AnimatePresence>
+          
+          {/* Navigation buttons */}
+          <div className="absolute -bottom-16 left-0 right-0 flex justify-center items-center gap-4 mt-8">
+            <motion.button
+              className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => navigate(-1)}
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </motion.button>
+            
+            <div className="flex items-center space-x-3">
+              {translatedTestimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === activeIndex ? "bg-green-600" : "bg-gray-300 hover:bg-gray-400"
+                  }`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                >
+                  {index === activeIndex && (
+                    <motion.div
+                      className="absolute inset-0 rounded-full bg-green-400"
+                      initial={{ scale: 1, opacity: 0.5 }}
+                      animate={{ scale: [1, 1.8], opacity: [0.5, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop" }}
+                    />
+                  )}
+                </button>
+              ))}
+            </div>
+            
+            <motion.button
+              className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => navigate(1)}
+              aria-label="Next testimonial"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </motion.button>
           </div>
-        </Carousel>
-
+        </div>
+        
         {/* Company logos */}
-        <div className="mt-20">
-          <p className="text-center text-sm text-gray-500 mb-8 uppercase font-semibold tracking-wider">
+        <motion.div 
+          className="mt-24 pt-12 border-t border-gray-100"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <p className="text-center text-sm text-gray-500 mb-10 uppercase font-medium tracking-wider">
             {t("testimonials.trustedBy", "Trusted By Companies Worldwide")}
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            {testimonials.map((testimonial) => (
+          
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
+            {translatedTestimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.id}
-                className="w-24 h-16 md:w-32 md:h-20 relative grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110 bg-white rounded-lg p-2 hover:shadow-md"
+                className="w-28 h-20 md:w-32 md:h-24 relative grayscale hover:grayscale-0 transition-all duration-500"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 * testimonial.id }}
+                transition={{ duration: 0.5, delay: 0.1 * index }}
+                whileHover={{ 
+                  scale: 1.1,
+                  transition: { type: "spring", stiffness: 300, damping: 10 }
+                }}
               >
-                <Image
-                  src={testimonial.logo}
-                  alt={testimonial.company}
-                  fill
-                  className="object-contain"
-                />
+                <div className="absolute inset-0 bg-white rounded-lg shadow-sm p-3 flex items-center justify-center">
+                  <Image
+                    src={testimonial.logo}
+                    alt={testimonial.company}
+                    fill
+                    className="object-contain p-2"
+                  />
+                </div>
               </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

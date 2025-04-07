@@ -8,7 +8,7 @@ interface DummyModelProps {
   position: [number, number, number];
   rotation: [number, number, number];
   scale: number | [number, number, number];
-  [key: string]: unknown;
+  [key: string]: any;
 }
 
 // This component creates a simple 3D model to use as a placeholder
