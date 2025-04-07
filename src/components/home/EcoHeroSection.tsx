@@ -429,7 +429,7 @@ export function EcoHeroSection() {
       </div>
       
       {/* Background video section that appears below the content */}
-      <div ref={sectionRef} className="w-full relative" style={{ height: '80vh' }}>
+      <div ref={sectionRef as React.RefObject<HTMLDivElement>} className="w-full relative" style={{ height: '80vh' }}>
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: bgVideoVisible ? 1 : 0 }}

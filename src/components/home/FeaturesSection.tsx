@@ -8,7 +8,9 @@ import { ArrowRight, Check, Server, Shield, Cpu, BarChart3, Leaf, Recycle } from
 import { useTranslation } from "@/components/ui/language-selector";
 
 // Define features with translation keys
-const getFeatures = (t: any) => [
+import { TFunction } from "i18next";
+
+const getFeatures = (t: TFunction) => [
   {
     id: "integration",
     title: t("home.features.integration.title", "IT Integration"),
