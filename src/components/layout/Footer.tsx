@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Phone, Mail, MapPin } from "lucide-react";
+import { ArrowRight, Phone, Mail, MapPin, Leaf, Recycle, TreePine } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { useTranslation } from "@/components/ui/language-selector";
@@ -42,7 +42,19 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-black text-white pt-16 pb-8">
+    <footer className="bg-white text-gray-800 pt-16 pb-8 relative overflow-hidden border-t border-gray-100">
+      {/* Subtle eco pattern background */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <div className="absolute h-32 w-32 top-[10%] left-[5%] rotate-12">
+          <TreePine className="h-full w-full text-green-200" />
+        </div>
+        <div className="absolute h-40 w-40 bottom-[15%] right-[10%] -rotate-12">
+          <Leaf className="h-full w-full text-green-200" />
+        </div>
+        <div className="absolute h-24 w-24 top-[40%] right-[25%] rotate-45">
+          <Recycle className="h-full w-full text-green-200" />
+        </div>
+      </div>
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           <div className="space-y-6">
@@ -55,7 +67,8 @@ export function Footer() {
                 className="h-10 w-auto"
               />
             </Link>
-            <p className="text-gray-400 text-sm max-w-xs">
+            <p className="text-gray-300 text-sm max-w-xs flex items-start gap-2">
+              <Leaf className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
               Pioneering the future of packaging technology with AI integration and sustainable solutions.
             </p>
             <div className="flex space-x-4">
@@ -63,7 +76,7 @@ export function Footer() {
                 href="https://www.linkedin.com/company/tpack-fr/posts/?feedView=all"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary transition-colors"
+                className="text-gray-600 hover:text-primary transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg
@@ -80,7 +93,7 @@ export function Footer() {
                 href="https://www.youtube.com/@Tecnimodern"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary transition-colors"
+                className="text-gray-600 hover:text-primary transition-colors"
                 aria-label="YouTube"
               >
                 <svg
@@ -104,7 +117,7 @@ export function Footer() {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-white transition-colors text-sm"
+                      className="text-gray-600 hover:text-primary transition-colors text-sm"
                     >
                       {link.name}
                     </Link>
@@ -133,7 +146,7 @@ export function Footer() {
                 <Mail className="h-5 w-5 text-primary" />
                 <a
                   href="mailto:info@tpack-solutions.com"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-gray-600 hover:text-primary transition-colors text-sm"
                 >
                   info@tpack-solutions.com
                 </a>
@@ -142,7 +155,7 @@ export function Footer() {
           </div>
         </div>
 
-        <Separator className="my-8 bg-gray-800" />
+        <Separator className="my-8 bg-gray-200" />
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
@@ -152,19 +165,19 @@ export function Footer() {
           <div className="flex gap-6">
             <Link
               href="/privacy-policy"
-              className="text-gray-400 hover:text-white transition-colors text-sm"
+              className="text-gray-600 hover:text-primary transition-colors text-sm"
             >
               {t("footer.links.privacy", "Privacy Policy")}
             </Link>
             <Link
               href="/terms"
-              className="text-gray-400 hover:text-white transition-colors text-sm"
+              className="text-gray-600 hover:text-primary transition-colors text-sm"
             >
               {t("footer.links.terms", "Terms of Service")}
             </Link>
             <Link
               href="/contact"
-              className="text-gray-400 hover:text-white transition-colors text-sm"
+              className="text-gray-600 hover:text-primary transition-colors text-sm"
             >
               {t("footer.links.contact", "Contact Us")}
             </Link>

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Leaf, Recycle, TreePine } from "lucide-react";
 import CountUp from "react-countup";
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "@/components/ui/language-selector";
@@ -72,24 +72,36 @@ export function CtaSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-black py-20 md:py-24">
+    <section className="bg-white py-20 md:py-24 relative overflow-hidden border-t border-gray-100">
+      {/* Eco-friendly background elements */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <div className="absolute h-40 w-40 top-[5%] left-[10%] rotate-12">
+          <TreePine className="h-full w-full text-green-200" />
+        </div>
+        <div className="absolute h-48 w-48 bottom-[5%] right-[10%] -rotate-12">
+          <Leaf className="h-full w-full text-green-200" />
+        </div>
+        <div className="absolute h-32 w-32 top-[40%] right-[25%] rotate-45">
+          <Recycle className="h-full w-full text-green-200" />
+        </div>
+      </div>
       <div className="container-custom">
         <div className="max-w-5xl mx-auto">
-          <div className="bg-gradient-to-r from-primary/20 to-primary/5 rounded-3xl p-10 md:p-16 relative overflow-hidden">
+          <div className="bg-gradient-to-r from-green-50 to-white rounded-3xl p-10 md:p-16 relative overflow-hidden border border-green-100">
             {/* Decorative elements */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full -translate-y-1/2 translate-x-1/4 blur-2xl"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 rounded-full translate-y-1/2 -translate-x-1/4 blur-2xl"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-green-200/30 rounded-full -translate-y-1/2 translate-x-1/4 blur-2xl"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-green-200/30 rounded-full translate-y-1/2 -translate-x-1/4 blur-2xl"></div>
 
             <div className="relative z-10">
               <div className="text-center mb-10">
                 <motion.span
-                  className="inline-block bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold mb-4"
+                  className="inline-flex items-center bg-green-600 text-white px-4 py-1 rounded-full text-sm font-semibold mb-4"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
                 >
-                  {t("cta.tagline", "Ready to Transform Your Packaging?")}
+                  <Leaf className="mr-1.5 h-3.5 w-3.5" /> {t("cta.tagline", "Ready to Transform Your Packaging?")}
                 </motion.span>
                 <motion.h2
                   className="heading-lg text-white mb-6"
@@ -124,7 +136,7 @@ export function CtaSection() {
                   </Button>
                 </Link>
                 <Link href="/products">
-                  <Button variant="outline" className="border-white text-white hover:bg-white hover:text-black px-8 py-6 h-auto">
+                  <Button variant="outline" className="border-green-300 text-green-700 hover:bg-green-100 hover:text-green-800 px-8 py-6 h-auto">
                     {t("cta.exploreButton", "Explore Products")}
                   </Button>
                 </Link>

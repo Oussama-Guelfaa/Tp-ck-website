@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat } from "next/font/google";
+import { Inter, Roboto } from "next/font/google";
 import "./globals.css";
 import { MachineProvider } from "@/lib/MachineContext";
 import { AuthProvider } from "@/lib/AuthContext";
 import { TranslationProvider } from "@/components/ui/language-selector";
+import { LoadingScreen } from "@/components/ui/loading-screen";
 
 // Font configuration
 const inter = Inter({
@@ -12,11 +13,11 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const montserrat = Montserrat({
+const roboto = Roboto({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-montserrat",
-  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-roboto",
+  weight: ["400", "500", "700", "900"],
 });
 
 export const metadata: Metadata = {
@@ -31,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${montserrat.variable}`}>
+    <html lang="en" className={`${inter.variable} ${roboto.variable}`}>
       <body className="antialiased">
         <AuthProvider>
           <MachineProvider>

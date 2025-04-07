@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowRight, Check, Server, Shield, Cpu, BarChart3 } from "lucide-react";
+import { ArrowRight, Check, Server, Shield, Cpu, BarChart3, Leaf, Recycle } from "lucide-react";
 import { useTranslation } from "@/components/ui/language-selector";
 
 // Define features with translation keys
@@ -89,7 +89,16 @@ export function FeaturesSection() {
   const features = getFeatures(t);
 
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-white py-20 md:py-28 relative overflow-hidden">
+      {/* Eco-friendly background elements */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <div className="absolute h-32 w-32 top-[15%] left-[5%] rotate-12">
+          <Leaf className="h-full w-full text-green-200" />
+        </div>
+        <div className="absolute h-40 w-40 bottom-[10%] right-[5%] -rotate-12">
+          <Recycle className="h-full w-full text-green-200" />
+        </div>
+      </div>
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.span
@@ -122,7 +131,7 @@ export function FeaturesSection() {
         </div>
 
         <Tabs defaultValue="integration" value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 bg-gray-100 p-1 rounded-lg mb-8">
+          <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 bg-white p-1 rounded-lg mb-8 border border-gray-200">
             {features.map((feature) => (
               <TabsTrigger
                 key={feature.id}
@@ -184,7 +193,7 @@ export function FeaturesSection() {
 
                 <div className="lg:col-span-3">
                   <motion.div
-                    className="relative rounded-2xl overflow-hidden aspect-video bg-gray-100"
+                    className="relative rounded-2xl overflow-hidden aspect-video bg-white border border-gray-100"
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -196,7 +205,7 @@ export function FeaturesSection() {
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/80 to-transparent p-6">
                       <div className="flex justify-between items-center">
                         <p className="text-white font-medium">{feature.title} {t("home.features.inAction", "in action")}</p>
                         <div className="flex items-center text-white text-sm">

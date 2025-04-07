@@ -1,0 +1,177 @@
+.carouselContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slide:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.iconContainer:hover {
+  transform: scale(1.05);
+}
+
+.benefitItem {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.benefitItem:hover {
+  transform: translateX(5px);
+}
+
+.benefitIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.learnMoreLink {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.learnMoreLink:hover {
+  text-decoration: underline;
+}
+
+.learnMoreLink:hover svg {
+  transform: translateX(3px);
+}
+
+.navigationButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navigationButton:hover {
+  background-color: #f9f9f9;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.navigationButtonPrev {
+  left: 1rem;
+}
+
+.navigationButtonNext {
+  right: 1rem;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #e2e8f0;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicatorActive {
+  width: 24px;
+  background-color: #1a202c;
+}
+
+/* Pattern backgrounds */
+.circuitPattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 50 H100 M50 0 V100 M25 25 H75 V75 H25 Z' stroke='%23D32F2F' stroke-width='1' fill='none' /%3E%3C/svg%3E");
+  background-size: 50px 50px;
+}
+
+.leafPattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30,70 Q50,20 70,70 T30,70 Z' stroke='%232E7D32' stroke-width='1' fill='none' /%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
+
+.aiPattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='40' stroke='%230288D1' stroke-width='1' fill='none' /%3E%3Cpath d='M30,50 L70,50 M50,30 L50,70' stroke='%230288D1' stroke-width='1' /%3E%3C/svg%3E");
+  background-size: 70px 70px;
+}
+
+.operationalPattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20,80 L40,40 L60,60 L80,20' stroke='%236A1B9A' stroke-width='2' fill='none' /%3E%3C/svg%3E");
+  background-size: 80px 80px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navigationButton {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .navigationButtonPrev {
+    left: 0.5rem;
+  }
+  
+  .navigationButtonNext {
+    right: 0.5rem;
+  }
+}
+
+/* Animation keyframes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+.pulseAnimation {
+  animation: pulse 3s infinite ease-in-out;
+}

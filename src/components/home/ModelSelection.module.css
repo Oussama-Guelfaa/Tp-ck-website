@@ -1,0 +1,219 @@
+/* ModelSelection.module.css */
+.container {
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  background-image: url('/images/grid-pattern.svg');
+  background-size: 30px 30px;
+  background-repeat: repeat;
+  background-position: center center;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.8), transparent);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to top, rgba(255,255,255,0.8), transparent);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.modelCard {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.modelCard:hover {
+  border-color: rgba(255, 51, 51, 0.3);
+  box-shadow: 0 15px 40px rgba(255, 51, 51, 0.2);
+}
+
+.modelLabel {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: bold;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  text-shadow: none;
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modelLabel.t20 {
+  background: linear-gradient(135deg, rgba(255, 51, 51, 0.8), rgba(255, 51, 51, 0.6));
+}
+
+.modelLabel.t30 {
+  background: linear-gradient(135deg, rgba(51, 51, 255, 0.8), rgba(51, 51, 255, 0.6));
+}
+
+.modelLabel.t50 {
+  background: linear-gradient(135deg, rgba(51, 255, 51, 0.8), rgba(51, 255, 51, 0.6));
+}
+
+.canvasContainer {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  margin: 0 auto;
+  max-width: 95%;
+}
+
+.detailsPanel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  color: #333;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.featureDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 12px;
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+.featureDot.t20 {
+  background-color: #ff3333;
+  box-shadow: 0 0 10px rgba(255, 51, 51, 0.5);
+}
+
+.featureDot.t30 {
+  background-color: #3333ff;
+  box-shadow: 0 0 10px rgba(51, 51, 255, 0.5);
+}
+
+.featureDot.t50 {
+  background-color: #33ff33;
+  box-shadow: 0 0 10px rgba(51, 255, 51, 0.5);
+}
+
+.actionButton {
+  background: linear-gradient(135deg, #ff3333, #cc0000);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(255, 51, 51, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.actionButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.5s ease;
+}
+
+.actionButton:hover::before {
+  left: 100%;
+}
+
+.actionButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 51, 51, 0.4);
+}
+
+.actionButton:active {
+  transform: translateY(1px);
+}
+
+.loadingSpinner {
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #ff3333;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.pageTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #333333, #666666);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  letter-spacing: -0.5px;
+  position: relative;
+}
+
+.pageTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ff3333, transparent);
+  border-radius: 3px;
+}
+
+.pageSubtitle {
+  color: #666666;
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.logoIcon {
+  filter: drop-shadow(0 0 10px rgba(255, 51, 51, 0.5));
+}

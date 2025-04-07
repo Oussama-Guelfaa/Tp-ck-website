@@ -76,11 +76,11 @@ export function ProductsSection() {
   return (
     <section
       ref={containerRef}
-      className="relative bg-black py-20 md:py-28 overflow-hidden"
+      className="relative bg-white py-20 md:py-28 overflow-hidden"
     >
       {/* Dynamic background */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/5 z-0"
+        className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent z-0"
         style={{ opacity: bgOpacity }}
       />
 
@@ -102,7 +102,7 @@ export function ProductsSection() {
             {t("home.products.range", "Product Range")}
           </motion.span>
           <motion.h2
-            className="heading-lg text-white mt-2 mb-4"
+            className="heading-lg text-gray-900 mt-2 mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -111,7 +111,7 @@ export function ProductsSection() {
             {t("home.products.heading", "Choose the Perfect TP@CK Machine for Your Needs")}
           </motion.h2>
           <motion.p
-            className="text-gray-300"
+            className="text-gray-600"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -174,13 +174,13 @@ export function ProductsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <p className="text-gray-300 mb-6">
+          <p className="text-gray-600 mb-6">
             {t("home.products.helpText", "Need help choosing the right solution? Our experts can provide a customized recommendation.")}
           </p>
           <Link href="/products">
             <Button
               variant="outline"
-              className="border-white text-black hover:bg-white hover:text-black transition-colors duration-300"
+              className="border-primary text-primary hover:bg-primary/10 hover:text-primary transition-colors duration-300"
             >
               {t("home.products.compareButton", "Compare All Products")} <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>

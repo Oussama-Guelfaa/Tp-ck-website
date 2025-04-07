@@ -37,33 +37,6 @@ const marketResearchAreas = [
   },
 ];
 
-const industries = [
-  {
-    name: "Pharmaceutical",
-    description: "The pharmaceutical industry faces strict regulatory requirements for packaging, with needs for serialization, tamper evidence, and contamination prevention.",
-    challenges: ["Regulatory compliance (FDA, EMA)", "Product integrity", "Serialization requirements"],
-    solutions: ["Validated GMP-compliant processes", "Sterile packaging capabilities", "Track-and-trace integration"],
-  },
-  {
-    name: "Electronics",
-    description: "Electronic components require specialized packaging to prevent ESD damage, moisture exposure, and physical shocks during transportation.",
-    challenges: ["ESD protection", "Moisture sensitivity", "Component fragility"],
-    solutions: ["ESD-safe packaging processes", "Humidity-controlled packaging", "Precision foam inserts"],
-  },
-  {
-    name: "E-commerce",
-    description: "E-commerce fulfillment requires efficient, scalable packaging solutions that protect products while minimizing shipping costs.",
-    challenges: ["Variable product sizes", "High volume processing", "Shipping cost optimization"],
-    solutions: ["Dynamic package sizing", "High-throughput capabilities", "Integrated shipping label application"],
-  },
-  {
-    name: "Automotive",
-    description: "Automotive parts vary greatly in size and fragility, requiring versatile packaging solutions that ensure parts arrive undamaged.",
-    challenges: ["Heavy component handling", "Complex part geometries", "Just-in-time delivery"],
-    solutions: ["Reinforced packaging for heavy parts", "Custom designed inserts", "High-speed processing"],
-  },
-];
-
 export default function ExpertisePage() {
   return (
     <MainLayout>
@@ -139,7 +112,7 @@ export default function ExpertisePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {marketResearchAreas.map((area, index) => (
+            {marketResearchAreas.map((area) => (
               <div
                 key={area.title}
                 className="bg-white p-8 rounded-xl shadow-sm"
@@ -149,58 +122,6 @@ export default function ExpertisePage() {
                 </div>
                 <h3 className="text-xl font-bold mb-3">{area.title}</h3>
                 <p className="text-gray-600">{area.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Industry Expertise Section */}
-      <section className="py-16 bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="heading-lg mb-4">Industry-Specific Expertise</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              Our research extends across diverse industries, each with unique packaging challenges and requirements.
-            </p>
-          </div>
-
-          <div className="space-y-12">
-            {industries.map((industry, index) => (
-              <div
-                key={industry.name}
-                className="bg-gray-50 rounded-xl overflow-hidden"
-              >
-                <div className="p-8">
-                  <h3 className="heading-md text-primary mb-4">{industry.name}</h3>
-                  <p className="text-gray-600 mb-6">{industry.description}</p>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="text-lg font-semibold mb-3">Key Challenges</h4>
-                      <ul className="space-y-2">
-                        {industry.challenges.map((challenge, idx) => (
-                          <li key={idx} className="flex items-start">
-                            <div className="w-2 h-2 bg-primary rounded-full mr-2 mt-2"></div>
-                            <span>{challenge}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h4 className="text-lg font-semibold mb-3">TP@CK Solutions</h4>
-                      <ul className="space-y-2">
-                        {industry.solutions.map((solution, idx) => (
-                          <li key={idx} className="flex items-start">
-                            <div className="w-2 h-2 bg-primary rounded-full mr-2 mt-2"></div>
-                            <span>{solution}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
               </div>
             ))}
           </div>

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, ChevronDown, Shield } from "lucide-react";
+import { Menu, X, ChevronDown, Shield, Leaf } from "lucide-react";
 import { useTranslation } from "@/components/ui/language-selector";
 
 import {
@@ -63,8 +63,8 @@ export function Header() {
     <header
       className={`sticky top-0 z-50 w-full ${
         isScrolled
-          ? "bg-white shadow-md dark:bg-gray-900"
-          : "bg-white/80 backdrop-blur-md dark:bg-gray-900/80"
+          ? "bg-white shadow-md shadow-gray-100/50 dark:bg-gray-900"
+          : "bg-white/95 backdrop-blur-md dark:bg-gray-900/80 border-b border-gray-100"
       } transition-all duration-300`}
     >
       <div className="container-custom mx-auto">
@@ -90,7 +90,7 @@ export function Header() {
               <div key={item.name} className="relative group">
                 {item.children ? (
                   <button
-                    className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary hover:bg-gray-100 rounded-md transition-colors dark:text-gray-200 dark:hover:bg-gray-800"
+                    className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md transition-colors dark:text-gray-200 dark:hover:bg-gray-800/50"
                     onClick={() => toggleDropdown(item.name)}
                   >
                     {item.name}
@@ -103,7 +103,7 @@ export function Header() {
                 ) : (
                   <Link
                     href={item.href}
-                    className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary hover:bg-gray-100 rounded-md transition-colors dark:text-gray-200 dark:hover:bg-gray-800"
+                    className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md transition-colors dark:text-gray-200 dark:hover:bg-gray-800/50"
                   >
                     {item.name}
                   </Link>
@@ -121,7 +121,7 @@ export function Header() {
                       <Link
                         key={child.name}
                         href={child.href}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary dark:text-gray-200 dark:hover:bg-gray-700"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary dark:text-gray-200 dark:hover:bg-gray-800/50"
                       >
                         {child.name}
                       </Link>
@@ -231,8 +231,8 @@ export function Header() {
 
                   <div className="border-t pt-4">
                     <Link href="/admin/login">
-                      <Button className="w-full bg-primary hover:bg-primary/90 text-white">
-                        <Shield className="h-4 w-4 mr-2" />
+                      <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
+                        <Leaf className="h-4 w-4 mr-2" />
                         {t("header.admin", "Admin")}
                       </Button>
                     </Link>

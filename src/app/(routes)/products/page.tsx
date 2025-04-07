@@ -82,13 +82,31 @@ export default function ProductsPage() {
               {t("products.header.title", "Choose the Perfect TP@CK Machine for Your Needs")}
             </motion.h1>
             <motion.p
-              className="text-gray-300 text-lg md:text-xl"
+              className="text-gray-300 text-lg md:text-xl mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               {t("products.header.description", "Our range of packaging solutions is designed to meet various operational scales and requirements, from small businesses to large enterprises.")}
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <Link
+                href="/model-selection"
+                className="inline-flex items-center px-5 py-2 bg-white text-primary rounded-lg shadow-md hover:bg-gray-50 transition-colors"
+              >
+                <span className="mr-2">View 3D Models</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>

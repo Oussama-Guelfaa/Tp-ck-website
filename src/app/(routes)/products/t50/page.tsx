@@ -53,11 +53,11 @@ export default function T50ProductPage() {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-black pt-32 pb-16 md:pt-36 md:pb-24">
+      <section className="relative overflow-hidden bg-white pt-32 pb-16 md:pt-36 md:pb-24">
         {/* Background gradient */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/70"></div>
-          <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_30%,rgba(176,0,0,0.15),transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-transparent"></div>
+          <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_30%,rgba(255,0,0,0.05),transparent_50%)]"></div>
         </div>
 
         <div className="container-custom relative z-10">
@@ -71,28 +71,28 @@ export default function T50ProductPage() {
                 <span className="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm font-medium mb-4">
                   Enterprise-Grade Solution
                 </span>
-                <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
+                <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
                   TP@CK <span className="text-primary">T50</span>
                 </h1>
-                <p className="text-xl text-gray-300 mb-6">
+                <p className="text-xl text-gray-600 mb-6">
                   High-performance packaging solution for large-scale operations requiring maximum throughput and reliability.
                 </p>
                 <div className="space-y-4 mb-8">
                   <div className="flex items-start">
                     <Check className="text-primary mr-3 mt-1 flex-shrink-0" />
-                    <p className="text-gray-300">Industry-leading throughput for high-volume operations</p>
+                    <p className="text-gray-600">Industry-leading throughput for high-volume operations</p>
                   </div>
                   <div className="flex items-start">
                     <Check className="text-primary mr-3 mt-1 flex-shrink-0" />
-                    <p className="text-gray-300">Flexible dual-mode processing with automatic material optimization</p>
+                    <p className="text-gray-600">Flexible dual-mode processing with automatic material optimization</p>
                   </div>
                   <div className="flex items-start">
                     <Check className="text-primary mr-3 mt-1 flex-shrink-0" />
-                    <p className="text-gray-300">Enterprise-level analytics with business intelligence integration</p>
+                    <p className="text-gray-600">Enterprise-level analytics with business intelligence integration</p>
                   </div>
                   <div className="flex items-start">
                     <Check className="text-primary mr-3 mt-1 flex-shrink-0" />
-                    <p className="text-gray-300">Complete global certification package for worldwide deployment</p>
+                    <p className="text-gray-600">Complete global certification package for worldwide deployment</p>
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -489,14 +489,14 @@ export default function T50ProductPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-black py-16">
+      <section className="bg-white py-16 border-t border-gray-100">
         <div className="container-custom">
-          <div className="bg-gradient-to-r from-primary/20 to-primary/5 rounded-2xl p-8 md:p-12">
+          <div className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl p-8 md:p-12 border border-primary/10">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
                 Ready to Transform Your Enterprise Packaging?
               </h2>
-              <p className="text-gray-300 mb-8">
+              <p className="text-gray-600 mb-8">
                 Schedule a personalized demo to see the T50 in action and discover how it can
                 revolutionize your high-volume packaging operations.
               </p>
@@ -507,7 +507,7 @@ export default function T50ProductPage() {
                   </Button>
                 </Link>
                 <Link href="/products">
-                  <Button variant="outline" className="border-white text-white hover:bg-white/10 px-6 py-6 h-auto">
+                  <Button variant="outline" className="border-primary/30 text-primary hover:bg-primary/5 px-6 py-6 h-auto">
                     Explore Other Models
                   </Button>
                 </Link>
