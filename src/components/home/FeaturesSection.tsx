@@ -88,7 +88,7 @@ const itemVariants = {
 export function FeaturesSection() {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("integration");
-  const features = getFeatures(t);
+  const features = getFeatures(t as unknown as TFunction);
 
   return (
     <section className="bg-white py-20 md:py-28 relative overflow-hidden">
