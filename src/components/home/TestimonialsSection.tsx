@@ -43,7 +43,7 @@ const testimonials: Testimonial[] = [
     name: "Oussama G.",
     title: "testimonials.quotes.3.title",
     company: "testimonials.quotes.3.company",
-    logo: "/images/CGP_logo.png",
+    logo: "/images/CGp_logo.png",
     rating: 5,
   },
   {

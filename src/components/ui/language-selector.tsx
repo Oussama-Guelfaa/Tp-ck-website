@@ -27,10 +27,13 @@ import enTranslations from '@/i18n/locales/en.json';
 import frTranslations from '@/i18n/locales/fr.json';
 import deTranslations from '@/i18n/locales/de.json';
 
-const translationsMap = {
-  en: enTranslations,
-  fr: frTranslations,
-  de: deTranslations
+// Define a type for our translations
+type TranslationData = Record<string, unknown>;
+
+const translationsMap: Record<Language, TranslationData> = {
+  en: enTranslations as TranslationData,
+  fr: frTranslations as TranslationData,
+  de: deTranslations as TranslationData
 };
 
 type TranslationContextType = {
@@ -56,7 +59,7 @@ export function TranslationProvider({ children }: { children: React.ReactNode })
   // Set initial language from localStorage, but only on client side
   useEffect(() => {
     setMounted(true);
-    const savedLanguage = localStorage.getItem('tpack_language') as Language;
+    const savedLanguage = localStorage.getItem('app_language') as Language;
     if (savedLanguage && ['en', 'fr', 'de'].includes(savedLanguage)) {
       setLanguage(savedLanguage);
     }
@@ -75,13 +78,13 @@ export function TranslationProvider({ children }: { children: React.ReactNode })
     if (!mounted) return fallback; // During SSR, return fallback
 
     const keys = key.split('.');
-    // Use a more specific type instead of any
-    let value: Record<string, unknown> = translationsMap[language] || translationsMap.en;
+    // Get the translation data for the current language or fall back to English
+    let value: unknown = translationsMap[language] || translationsMap.en;
 
     for (const k of keys) {
-      if (value && typeof value === 'object' && k in value) {
-        // Safe type assertion since we've checked that value is an object and k is a key
-        value = value[k] as Record<string, unknown>;
+      if (value && typeof value === 'object' && k in (value as Record<string, unknown>)) {
+        // Navigate through the nested translation object
+        value = (value as Record<string, unknown>)[k];
       } else {
         return fallback;
       }
@@ -92,7 +95,7 @@ export function TranslationProvider({ children }: { children: React.ReactNode })
 
   const changeLanguage = useCallback((newLang: Language) => {
     setLanguage(newLang);
-    localStorage.setItem('tpack_language', newLang);
+    localStorage.setItem('app_language', newLang);
     // No need to reload the page - React will automatically re-render components
   }, []);
 
