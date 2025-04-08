@@ -195,7 +195,7 @@ This project is licensed under the [MIT License](LICENSE).
 For any questions or feedback regarding the TP@CK Website Redesign project, please contact:
 
 - **Project Lead:** Oussama Guelfaa
-- **Client Representative:** Monsieur Guillard 
+- **Client Representative:** Monsieur Guihard 
 - **Technical Advisor:** Monsieur Roberton 
 
 We look forward to collaborating and continuously improving the website!
