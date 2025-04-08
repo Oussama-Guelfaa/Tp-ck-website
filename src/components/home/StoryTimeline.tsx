@@ -10,7 +10,7 @@ interface TimelineCheckpoint {
   id: number;
   title: string;
   content: string;
-  icon: React.ComponentType<{ className?: string; size?: number; color?: string }>;
+  icon: React.ComponentType<any>; // Use a more flexible type for Lucide icons
   iconBg: string;
   year?: string;
 }
