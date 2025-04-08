@@ -60,18 +60,28 @@ export function TranslationProvider({ children }: { children: React.ReactNode })
     if (savedLanguage && ['en', 'fr', 'de'].includes(savedLanguage)) {
       setLanguage(savedLanguage);
     }
-  }, []);
+
+    // Update the HTML lang attribute
+    const htmlElement = document.getElementById('html-root') as HTMLHtmlElement;
+    if (htmlElement) {
+      htmlElement.lang = language;
+    }
+  }, [language]);
+
+  // The first useEffect already handles updating the lang attribute
 
   // Memoize the translation function to prevent recreating it on each render
   const t = useCallback((key: string, fallback: string = key): string => {
     if (!mounted) return fallback; // During SSR, return fallback
 
     const keys = key.split('.');
-    let value: any = translationsMap[language] || translationsMap.en;
+    // Use a more specific type instead of any
+    let value: Record<string, unknown> = translationsMap[language] || translationsMap.en;
 
     for (const k of keys) {
       if (value && typeof value === 'object' && k in value) {
-        value = value[k];
+        // Safe type assertion since we've checked that value is an object and k is a key
+        value = value[k] as Record<string, unknown>;
       } else {
         return fallback;
       }

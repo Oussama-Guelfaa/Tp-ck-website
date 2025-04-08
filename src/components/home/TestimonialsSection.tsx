@@ -17,41 +17,41 @@ interface Testimonial {
   rating: number;
 }
 
-// Testimonial data
+// Testimonial data - these will be translated in the component
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    quote: "The TP@CK T30 has transformed our warehouse operations. The WMS integration was seamless, and we've seen a 32% increase in packaging efficiency within the first month.",
+    quote: "testimonials.quotes.1.text",
     name: "Mohamed Amine H.",
-    title: "Operations Director",
-    company: "Global Logistics Inc.",
+    title: "testimonials.quotes.1.title",
+    company: "testimonials.quotes.1.company",
     logo: "/images/schneider_logo.png",
     rating: 5,
   },
   {
     id: 2,
-    quote: "What impressed me most about TP@CK was the predictive maintenance system. We've had zero unexpected downtime since implementation, which is unprecedented for our 24/7 operation.",
+    quote: "testimonials.quotes.2.text",
     name: "Noa A.",
-    title: "Head of Production",
-    company: "FastShip Enterprises",
+    title: "testimonials.quotes.2.title",
+    company: "testimonials.quotes.2.company",
     logo: "/images/zalando_logo.png",
     rating: 5,
   },
   {
     id: 3,
-    quote: "As a company committed to sustainability, the environmental certifications of TP@CK's systems were a deciding factor. The reduced material waste has also contributed to our bottom line.",
+    quote: "testimonials.quotes.3.text",
     name: "Oussama G.",
-    title: "Sustainability Manager",
-    company: "EcoPackage Solutions",
+    title: "testimonials.quotes.3.title",
+    company: "testimonials.quotes.3.company",
     logo: "/images/CGP_logo.png",
     rating: 5,
   },
   {
     id: 4,
-    quote: "The T50 system exceeded our throughput expectations. The dual-mode operation gives us flexibility to adapt to seasonal demand fluctuations without compromising on quality.",
+    quote: "testimonials.quotes.4.text",
     name: "Thomas K.",
-    title: "Technical Director",
-    company: "European Distribution GmbH",
+    title: "testimonials.quotes.4.title",
+    company: "testimonials.quotes.4.company",
     logo: "/images/branopac_logo.png",
     rating: 5,
   },
@@ -121,29 +121,29 @@ const TestimonialCard = ({ testimonial, direction }: { testimonial: Testimonial;
         {/* Background gradient elements */}
         <div className="absolute -top-24 -right-24 w-48 h-48 rounded-full bg-green-100/50 blur-3xl"></div>
         <div className="absolute -bottom-24 -left-24 w-48 h-48 rounded-full bg-red-100/50 blur-3xl"></div>
-        
+
         {/* Quote mark */}
         <div className="relative mb-6">
-          <svg 
-            width="48" 
-            height="48" 
-            viewBox="0 0 48 48" 
-            fill="none" 
+          <svg
+            width="48"
+            height="48"
+            viewBox="0 0 48 48"
+            fill="none"
             xmlns="http://www.w3.org/2000/svg"
             className="text-green-600/20"
           >
-            <path 
-              d="M14.4 24H8.4C7.2 24 6 22.8 6 21.6V15.6C6 14.4 7.2 13.2 8.4 13.2H14.4C15.6 13.2 16.8 14.4 16.8 15.6V21.6C16.8 22.8 15.6 24 14.4 24ZM33.6 24H27.6C26.4 24 25.2 22.8 25.2 21.6V15.6C25.2 14.4 26.4 13.2 27.6 13.2H33.6C34.8 13.2 36 14.4 36 15.6V21.6C36 22.8 34.8 24 33.6 24ZM14.4 43.2H8.4C7.2 43.2 6 42 6 40.8V34.8C6 33.6 7.2 32.4 8.4 32.4H14.4C15.6 32.4 16.8 33.6 16.8 34.8V40.8C16.8 42 15.6 43.2 14.4 43.2ZM33.6 43.2H27.6C26.4 43.2 25.2 42 25.2 40.8V34.8C25.2 33.6 26.4 32.4 27.6 32.4H33.6C34.8 32.4 36 33.6 36 34.8V40.8C36 42 34.8 43.2 33.6 43.2Z" 
+            <path
+              d="M14.4 24H8.4C7.2 24 6 22.8 6 21.6V15.6C6 14.4 7.2 13.2 8.4 13.2H14.4C15.6 13.2 16.8 14.4 16.8 15.6V21.6C16.8 22.8 15.6 24 14.4 24ZM33.6 24H27.6C26.4 24 25.2 22.8 25.2 21.6V15.6C25.2 14.4 26.4 13.2 27.6 13.2H33.6C34.8 13.2 36 14.4 36 15.6V21.6C36 22.8 34.8 24 33.6 24ZM14.4 43.2H8.4C7.2 43.2 6 42 6 40.8V34.8C6 33.6 7.2 32.4 8.4 32.4H14.4C15.6 32.4 16.8 33.6 16.8 34.8V40.8C16.8 42 15.6 43.2 14.4 43.2ZM33.6 43.2H27.6C26.4 43.2 25.2 42 25.2 40.8V34.8C25.2 33.6 26.4 32.4 27.6 32.4H33.6C34.8 32.4 36 33.6 36 34.8V40.8C36 42 34.8 43.2 33.6 43.2Z"
               fill="currentColor"
             />
           </svg>
         </div>
-        
+
         {/* Rating */}
         {renderRating(testimonial.rating)}
-        
+
         {/* Quote text */}
-        <motion.p 
+        <motion.p
           className="text-xl md:text-2xl font-medium text-gray-800 mb-8 leading-relaxed relative z-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -151,10 +151,10 @@ const TestimonialCard = ({ testimonial, direction }: { testimonial: Testimonial;
         >
           "{testimonial.quote}"
         </motion.p>
-        
+
         {/* Author info and company logo */}
         <div className="flex flex-col md:flex-row md:items-center justify-between mt-8 pt-6 border-t border-gray-100">
-          <motion.div 
+          <motion.div
             className="mb-4 md:mb-0"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -163,8 +163,8 @@ const TestimonialCard = ({ testimonial, direction }: { testimonial: Testimonial;
             <p className="font-semibold text-gray-900 text-lg">{testimonial.name}</p>
             <p className="text-gray-600 text-sm">{testimonial.title}, {testimonial.company}</p>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="h-12 w-24 relative bg-white rounded-md p-1 shadow-sm"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -188,23 +188,23 @@ export function TestimonialsSection() {
   const [[activeIndex, direction], setActiveIndex] = useState([0, 0]);
   const [isAutoScrolling, setIsAutoScrolling] = useState(true);
   const autoScrollTimerRef = useRef<NodeJS.Timeout | null>(null);
-  
+
   // Translate testimonials
   const translatedTestimonials = testimonials.map(testimonial => ({
     ...testimonial,
-    quote: t(`testimonials.quote${testimonial.id}`, testimonial.quote),
-    name: t(`testimonials.name${testimonial.id}`, testimonial.name),
-    title: t(`testimonials.title${testimonial.id}`, testimonial.title),
-    company: t(`testimonials.company${testimonial.id}`, testimonial.company),
+    quote: t(testimonial.quote, "The TP@CK system has transformed our operations."),
+    name: testimonial.name, // Names are kept as is
+    title: t(testimonial.title, "Manager"),
+    company: t(testimonial.company, "Company"),
   }));
-  
+
   // Handle auto-scrolling
   useEffect(() => {
     // Clear any existing timer when the component mounts or dependencies change
     if (autoScrollTimerRef.current) {
       clearInterval(autoScrollTimerRef.current);
     }
-    
+
     // Only set up auto-scrolling if it's enabled
     if (isAutoScrolling) {
       autoScrollTimerRef.current = setInterval(() => {
@@ -214,7 +214,7 @@ export function TestimonialsSection() {
         });
       }, 8000);
     }
-    
+
     // Cleanup function to clear the interval when the component unmounts
     return () => {
       if (autoScrollTimerRef.current) {
@@ -223,11 +223,11 @@ export function TestimonialsSection() {
       }
     };
   }, [translatedTestimonials.length, isAutoScrolling, activeIndex]);
-  
+
   // Handle navigation
   const navigate = (newDirection: number) => {
     setIsAutoScrolling(false);
-    
+
     setActiveIndex(prev => {
       let nextIndex;
       if (newDirection > 0) {
@@ -237,22 +237,22 @@ export function TestimonialsSection() {
       }
       return [nextIndex, newDirection];
     });
-    
+
     // Re-enable auto-scrolling after a delay
     setTimeout(() => {
       setIsAutoScrolling(true);
     }, 10000);
   };
-  
+
   // Handle dot navigation
   const goToSlide = (index: number) => {
     setIsAutoScrolling(false);
-    
+
     setActiveIndex(prev => {
       const newDirection = index > prev[0] ? 1 : -1;
       return [index, newDirection];
     });
-    
+
     // Re-enable auto-scrolling after a delay
     setTimeout(() => {
       setIsAutoScrolling(true);
@@ -267,7 +267,7 @@ export function TestimonialsSection() {
         <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-green-50 blur-3xl opacity-50"></div>
         <div className="absolute -bottom-20 -left-20 w-96 h-96 rounded-full bg-red-50 blur-3xl opacity-50"></div>
       </div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.span
@@ -279,7 +279,7 @@ export function TestimonialsSection() {
           >
             {t("testimonials.sectionLabel", "Client Success Stories")}
           </motion.span>
-          
+
           <motion.h2
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
             initial={{ opacity: 0, y: 20 }}
@@ -289,7 +289,7 @@ export function TestimonialsSection() {
           >
             <span className="text-green-700">Trusted</span> by Industry Leaders
           </motion.h2>
-          
+
           <motion.p
             className="text-lg text-gray-600 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
@@ -300,7 +300,7 @@ export function TestimonialsSection() {
             {t("testimonials.sectionDescription", "Hear directly from our clients about how TP@CK's innovative solutions have transformed their operations and delivered measurable results.")}
           </motion.p>
         </div>
-        
+
         {/* Testimonial cards carousel */}
         <div className="relative max-w-4xl mx-auto min-h-[400px] md:min-h-[350px] mb-16">
           <AnimatePresence custom={direction} mode="wait">
@@ -310,7 +310,7 @@ export function TestimonialsSection() {
               direction={direction}
             />
           </AnimatePresence>
-          
+
           {/* Navigation buttons */}
           <div className="absolute -bottom-16 left-0 right-0 flex justify-center items-center gap-4 mt-8">
             <motion.button
@@ -322,7 +322,7 @@ export function TestimonialsSection() {
             >
               <ChevronLeft className="h-5 w-5" />
             </motion.button>
-            
+
             <div className="flex items-center space-x-3">
               {translatedTestimonials.map((_, index) => (
                 <button
@@ -344,7 +344,7 @@ export function TestimonialsSection() {
                 </button>
               ))}
             </div>
-            
+
             <motion.button
               className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors"
               whileHover={{ scale: 1.05 }}
@@ -356,9 +356,9 @@ export function TestimonialsSection() {
             </motion.button>
           </div>
         </div>
-        
+
         {/* Company logos */}
-        <motion.div 
+        <motion.div
           className="mt-24 pt-12 border-t border-gray-100"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -368,7 +368,7 @@ export function TestimonialsSection() {
           <p className="text-center text-sm text-gray-500 mb-10 uppercase font-medium tracking-wider">
             {t("testimonials.trustedBy", "Trusted By Companies Worldwide")}
           </p>
-          
+
           <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
             {translatedTestimonials.map((testimonial, index) => (
               <motion.div
@@ -378,7 +378,7 @@ export function TestimonialsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 * index }}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.1,
                   transition: { type: "spring", stiffness: 300, damping: 10 }
                 }}

@@ -25,6 +25,7 @@ import {
   DialogTitle,
 } from "../../components/ui/dialog";
 import { useTypingEffect } from "../../hooks/useTypingEffect";
+import { HeroModel } from "./HeroModel";
 
 // Animated background component with organic shapes
 const AnimatedBackground = () => {
@@ -218,6 +219,7 @@ const AnimatedBackground = () => {
 
 // Stats component
 const EcoStats = () => {
+  const { t } = useTranslation();
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-green-100 shadow-sm">
       <div className="flex flex-col items-center text-center">
@@ -225,7 +227,7 @@ const EcoStats = () => {
           <Recycle className="h-6 w-6" />
         </div>
         <div className={`${styles.countUp} text-2xl font-bold text-green-800`}>30%</div>
-        <div className="text-xs text-green-700">Waste Reduction</div>
+        <div className="text-xs text-green-700">{t('home.stats.waste', 'Waste Reduction')}</div>
       </div>
 
       <div className="flex flex-col items-center text-center">
@@ -233,7 +235,7 @@ const EcoStats = () => {
           <Zap className="h-6 w-6" />
         </div>
         <div className={`${styles.countUp} text-2xl font-bold text-green-800`}>40%</div>
-        <div className="text-xs text-green-700">Energy Efficient</div>
+        <div className="text-xs text-green-700">{t('home.stats.energy', 'Energy Efficient')}</div>
       </div>
 
       <div className="flex flex-col items-center text-center">
@@ -241,7 +243,7 @@ const EcoStats = () => {
           <Globe className="h-6 w-6" />
         </div>
         <div className={`${styles.countUp} text-2xl font-bold text-green-800`}>100+</div>
-        <div className="text-xs text-green-700">Global Certifications</div>
+        <div className="text-xs text-green-700">{t('home.stats.certifications', 'Global Certifications')}</div>
       </div>
 
       <div className="flex flex-col items-center text-center">
@@ -249,7 +251,7 @@ const EcoStats = () => {
           <Leaf className="h-6 w-6" />
         </div>
         <div className={`${styles.countUp} text-2xl font-bold text-green-800`}>5M+</div>
-        <div className="text-xs text-green-700">Trees Saved</div>
+        <div className="text-xs text-green-700">{t('home.stats.trees', 'Trees Saved')}</div>
       </div>
     </div>
   );
@@ -319,9 +321,15 @@ export function EcoHeroSection() {
         {/* Animated background elements */}
         <AnimatedBackground />
 
-        {/* Main content - centered vertically and horizontally */}
-        <div className="container mx-auto px-4 sm:px-6 relative z-20">
-          <div className="max-w-4xl mx-auto text-center">
+        {/* Main content and 3D model container */}
+        <div className="container mx-auto px-4 sm:px-6 relative z-20 flex flex-col md:flex-row items-center">
+          {/* 3D Model - visible on desktop, hidden on mobile initially */}
+          <div className="hidden md:block md:absolute md:inset-0">
+            <HeroModel />
+          </div>
+
+          {/* Text content */}
+          <div className="max-w-xl mx-auto text-center md:text-left md:ml-0 md:mr-auto md:w-1/2">
             <div className="space-y-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -363,8 +371,7 @@ export function EcoHeroSection() {
                     transition={{ duration: 0.5 }}
                     className="text-xl text-gray-600 max-w-xl mx-auto"
                   >
-                    A French-made, auto-sealing packaging solution—no glue, no plastic—designed to reduce waste,
-                    optimize costs, and drive your ecological transition.
+                    {t('home.subheading', 'A French-made, auto-sealing packaging solution—no glue, no plastic—designed to reduce waste, optimize costs, and drive your ecological transition.')}
                   </motion.p>
                 )}
               </AnimatePresence>
@@ -391,7 +398,7 @@ export function EcoHeroSection() {
                           <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
-                        View 3D Models
+                        {t('home.view3dModels', 'View 3D Models')}
                       </Button>
                     </Link>
 
@@ -402,7 +409,7 @@ export function EcoHeroSection() {
                         </Button>
                       </DialogTrigger>
                       <DialogContent className="sm:max-w-[800px] p-0 bg-black border-none">
-                        <DialogTitle className="sr-only">TP@CK Product Overview Video</DialogTitle>
+                        <DialogTitle className="sr-only">{t('home.videoTitle', 'TP@CK Product Overview Video')}</DialogTitle>
                         <div className="relative aspect-video">
                           <div className="absolute inset-0">
                             <iframe
@@ -412,7 +419,7 @@ export function EcoHeroSection() {
                               style={{border: 0}}
                               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                               allowFullScreen
-                              title="TP@CK Product Overview"
+                              title={t('home.videoTitle', 'TP@CK Product Overview')}
                               className="absolute inset-0 w-full h-full"
                             ></iframe>
                           </div>
@@ -435,6 +442,11 @@ export function EcoHeroSection() {
                   </motion.div>
                 )}
               </AnimatePresence>
+
+              {/* 3D Model - visible on mobile only */}
+              <div className="md:hidden w-full h-64 mt-8">
+                <HeroModel />
+              </div>
             </div>
           </div>
         </div>

@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { ChevronDown, Clock, GitBranch, Lightbulb, Target, Sparkles, Wind } from 'lucide-react';
 import styles from './StoryTimeline.module.css';
+import { useTranslation } from '../../components/ui/language-selector';
 
 // Define the timeline checkpoint data structure
 interface TimelineCheckpoint {
@@ -52,12 +53,49 @@ const timelineData: TimelineCheckpoint[] = [
 ];
 
 export function StoryTimeline() {
+  const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
   const [hasScrolled, setHasScrolled] = useState(false);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   });
+
+  // Timeline data with translations
+  const translatedTimelineData: TimelineCheckpoint[] = [
+    {
+      id: 1,
+      title: t('timeline.roots.title', 'Our Roots'),
+      content: t('timeline.roots.content', 'Backed by over five decades of industrial automation expertise, Tp@ck emerged from a rich engineering legacy rooted in French manufacturing excellence.'),
+      icon: Clock,
+      iconBg: "#d32f2f", // Red
+      year: t('timeline.roots.year', '1970s')
+    },
+    {
+      id: 2,
+      title: t('timeline.evolving.title', 'A Craft Evolving'),
+      content: t('timeline.evolving.content', 'Through the years, our engineering philosophy has evolved to meet new demands — combining industrial performance with environmental responsibility.'),
+      icon: GitBranch,
+      iconBg: "#ff9800", // Orange
+      year: t('timeline.evolving.year', '1990s')
+    },
+    {
+      id: 3,
+      title: t('timeline.birth.title', 'The Birth of Tp@ck'),
+      content: t('timeline.birth.content', 'Tp@ck was born from this evolution: an autonomous initiative designed to reshape packaging with zero-waste, eco-conscious automation.'),
+      icon: Lightbulb,
+      iconBg: "#2e7d32", // Green
+      year: t('timeline.birth.year', '2015')
+    },
+    {
+      id: 4,
+      title: t('timeline.mission.title', 'Our Mission Today'),
+      content: t('timeline.mission.content', 'Tp@ck stands for a new generation of packaging: plastic-free, glue-free, and compromise-free. Modular, scalable, and built for tomorrow\'s industry.'),
+      icon: Target,
+      iconBg: "#0288d1", // Blue
+      year: t('timeline.mission.year', 'Today')
+    }
+  ];
 
   // Handle scroll event to hide the scroll prompt
   useEffect(() => {
@@ -142,7 +180,7 @@ export function StoryTimeline() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Our Story & Purpose
+            {t('timeline.title', 'Our Story & Purpose')}
           </motion.h2>
           <motion.div
             className={styles.titleDecoration}
@@ -158,7 +196,7 @@ export function StoryTimeline() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          Discover the journey that shaped our vision for sustainable packaging
+          {t('timeline.subtitle', 'Discover the journey that shaped our vision for sustainable packaging')}
         </motion.p>
 
         {/* Scroll prompt */}
@@ -168,7 +206,7 @@ export function StoryTimeline() {
           animate={{ opacity: hasScrolled ? 0 : 1 }}
           transition={{ duration: 0.5 }}
         >
-          <p>Scroll to explore our journey</p>
+          <p>{t('timeline.scrollPrompt', 'Scroll to explore our journey')}</p>
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
@@ -186,7 +224,7 @@ export function StoryTimeline() {
             transition={{ duration: 1.5, ease: "easeInOut" }}
           ></motion.div>
 
-          {timelineData.map((checkpoint, index) => (
+          {translatedTimelineData.map((checkpoint, index) => (
             <TimelineCheckpoint
               key={checkpoint.id}
               checkpoint={checkpoint}

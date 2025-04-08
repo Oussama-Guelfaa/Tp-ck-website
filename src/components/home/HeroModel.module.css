@@ -1,0 +1,65 @@
+.modelContainer {
+  position: absolute;
+  top: 0;
+  right: 5%; /* Décalé légèrement vers la gauche */
+  width: 45%; /* Largeur réduite pour s'adapter au décalage */
+  height: 70%;
+  z-index: 10;
+  pointer-events: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 1rem; /* Positionné encore plus haut pour s'aligner avec le titre */
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+/* Loading spinner */
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.spinner {
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid rgba(0, 128, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: #4CAF50;
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .modelContainer {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .modelContainer {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin: 2rem auto;
+    order: 2;
+    top: auto;
+    right: auto;
+  }
+}
