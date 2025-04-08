@@ -140,8 +140,8 @@ export function AdvancedScrollAnimation() {
   // Always hide the original static images
   useEffect(() => {
     // Find all static images in both sections
-    const section1Image = document.querySelector('.section1-image');
-    const section2Image = document.querySelector('.section2-image');
+    const section1Image = document.querySelector('.section1-image') as HTMLElement;
+    const section2Image = document.querySelector('.section2-image') as HTMLElement;
 
     // Hide both images completely
     if (section1Image) {
