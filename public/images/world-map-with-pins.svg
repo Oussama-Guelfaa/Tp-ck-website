@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .land {
+      fill: #0288d1;
+      fill-opacity: 0.15;
+      stroke: #0288d1;
+      stroke-width: 0.5;
+      stroke-opacity: 0.5;
+    }
+    .grid {
+      stroke: #0288d1;
+      stroke-width: 0.2;
+      stroke-opacity: 0.1;
+    }
+    .pin {
+      fill: #0288d1;
+    }
+    .pin-glow {
+      fill: #0288d1;
+      fill-opacity: 0.3;
+    }
+    .connection {
+      stroke: #0288d1;
+      stroke-width: 1;
+      stroke-opacity: 0.4;
+      stroke-dasharray: 5,5;
+      fill: none;
+    }
+    .label {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      fill: #0288d1;
+      text-anchor: middle;
+      font-weight: bold;
+    }
+    .description {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      fill: #0288d1;
+      fill-opacity: 0.8;
+      text-anchor: middle;
+    }
+  </style>
+  
+  <!-- Grid lines -->
+  <g class="grid">
+    <!-- Horizontal grid lines -->
+    <line x1="0" y1="100" x2="1200" y2="100" />
+    <line x1="0" y1="200" x2="1200" y2="200" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="0" y1="400" x2="1200" y2="400" />
+    <line x1="0" y1="500" x2="1200" y2="500" />
+    
+    <!-- Vertical grid lines -->
+    <line x1="200" y1="0" x2="200" y2="600" />
+    <line x1="400" y1="0" x2="400" y2="600" />
+    <line x1="600" y1="0" x2="600" y2="600" />
+    <line x1="800" y1="0" x2="800" y2="600" />
+    <line x1="1000" y1="0" x2="1000" y2="600" />
+  </g>
+  
+  <!-- World map simplified paths -->
+  <g class="land">
+    <!-- North America -->
+    <path d="M150,120 C180,100 210,90 240,100 C270,110 300,130 330,120 C360,110 390,90 420,100 C450,110 480,130 510,120 C520,110 530,100 540,110 C550,120 560,130 570,120 C580,110 590,100 600,110 C610,120 620,130 630,120 C640,110 650,100 660,110 C670,120 680,130 690,120 C700,110 710,100 720,110 C730,120 740,130 750,120 C760,110 770,100 780,110 C790,120 800,130 810,120 C820,110 830,100 840,110 C850,120 860,130 870,120 C880,110 890,100 900,110 C910,120 920,130 930,120 C940,110 950,100 960,110 C970,120 980,130 990,120 C1000,110 1010,100 1020,110 C1030,120 1040,130 1050,120 C1060,110 1070,100 1080,110 C1090,120 1100,130 1110,120 C1120,110 1130,100 1140,110 C1150,120 1160,130 1170,120 C1180,110 1190,100 1200,110 L1200,300 L0,300 L0,120 Z" />
+    
+    <!-- South America -->
+    <path d="M300,300 C310,310 320,320 330,310 C340,300 350,290 360,300 C370,310 380,320 390,310 C400,300 410,290 420,300 C430,310 440,320 450,310 C460,300 470,290 480,300 C490,310 500,320 510,310 C520,300 530,290 540,300 C550,310 560,320 570,310 C580,300 590,290 600,300 L600,500 L200,500 L200,300 Z" />
+    
+    <!-- Europe -->
+    <path d="M600,100 C610,90 620,80 630,90 C640,100 650,110 660,100 C670,90 680,80 690,90 C700,100 710,110 720,100 C730,90 740,80 750,90 C760,100 770,110 780,100 C790,90 800,80 810,90 C820,100 830,110 840,100 C850,90 860,80 870,90 C880,100 890,110 900,100 L900,200 L600,200 L600,100 Z" />
+    
+    <!-- Africa -->
+    <path d="M600,200 C610,210 620,220 630,210 C640,200 650,190 660,200 C670,210 680,220 690,210 C700,200 710,190 720,200 C730,210 740,220 750,210 C760,200 770,190 780,200 C790,210 800,220 810,210 C820,200 830,190 840,200 C850,210 860,220 870,210 C880,200 890,190 900,200 L900,400 L600,400 L600,200 Z" />
+    
+    <!-- Asia -->
+    <path d="M900,100 C910,90 920,80 930,90 C940,100 950,110 960,100 C970,90 980,80 990,90 C1000,100 1010,110 1020,100 C1030,90 1040,80 1050,90 C1060,100 1070,110 1080,100 C1090,90 1100,80 1110,90 C1120,100 1130,110 1140,100 C1150,90 1160,80 1170,90 C1180,100 1190,110 1200,100 L1200,300 L900,300 L900,100 Z" />
+    
+    <!-- Australia -->
+    <path d="M900,400 C910,410 920,420 930,410 C940,400 950,390 960,400 C970,410 980,420 990,410 C1000,400 1010,390 1020,400 C1030,410 1040,420 1050,410 C1060,400 1070,390 1080,400 C1090,410 1100,420 1110,410 C1120,400 1130,390 1140,400 C1150,410 1160,420 1170,410 C1180,400 1190,390 1200,400 L1200,500 L900,500 L900,400 Z" />
+  </g>
+  
+  <!-- Connection lines -->
+  <g>
+    <path class="connection" d="M564,228 C450,200 350,180 250,220" />
+    <path class="connection" d="M564,228 C540,150 520,120 500,100" />
+    <path class="connection" d="M564,228 C650,300 750,350 850,320" />
+  </g>
+  
+  <!-- Location pins -->
+  <g>
+    <!-- France -->
+    <circle class="pin-glow" cx="564" cy="228" r="15" />
+    <circle class="pin" cx="564" cy="228" r="8" />
+    <text class="label" x="564" y="208">France</text>
+    <text class="description" x="564" y="188">Headquarters & Manufacturing</text>
+    
+    <!-- Germany -->
+    <circle class="pin-glow" cx="540" cy="220" r="15" />
+    <circle class="pin" cx="540" cy="220" r="8" />
+    <text class="label" x="540" y="200">Germany</text>
+    <text class="description" x="540" y="180">European Distribution</text>
+    
+    <!-- North America -->
+    <circle class="pin-glow" cx="250" cy="220" r="15" />
+    <circle class="pin" cx="250" cy="220" r="8" />
+    <text class="label" x="250" y="200">North America</text>
+    <text class="description" x="250" y="180">Sales & Support</text>
+    
+    <!-- India -->
+    <circle class="pin-glow" cx="850" cy="320" r="15" />
+    <circle class="pin" cx="850" cy="320" r="8" />
+    <text class="label" x="850" y="300">India</text>
+    <text class="description" x="850" y="280">Technology Partner</text>
+  </g>
+</svg>

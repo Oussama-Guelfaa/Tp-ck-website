@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, ArrowLeft, Check, Server, Shield, Cpu, BarChart3, Database, Zap, BrainCircuit, Gauge, Workflow, Award, Leaf, Recycle, Wind } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Recycle, Zap, Award, Package, Leaf, Globe, Truck, Trash2, Flame, Lightbulb } from 'lucide-react';
 import { useTranslation } from '@/components/ui/language-selector';
 import styles from './DifferentiatorsCarousel.module.css';
 
@@ -31,70 +31,113 @@ export function DifferentiatorsCarousel() {
   // Define the differentiators with their respective themes
   const differentiators: Differentiator[] = [
     {
-      id: 'it-integration',
-      title: t('home.differentiators.it.title', 'IT Integration'),
-      description: t('home.differentiators.it.description', 'Seamless compatibility with all major WMS/WCS systems enables efficient warehouse management and real-time data synchronization.'),
+      id: 'plastic-free',
+      title: t('home.differentiators.plastic-free.title', 'Up to 100% Plastic-Free'),
+      description: t('home.differentiators.plastic-free.description', 'Our innovative auto-sealing technology uses recyclable paper materials without requiring glue, tape, or any plastic components.'),
       benefits: [
-        t('home.differentiators.it.benefit1', 'Compatible with all major WMS providers'),
-        t('home.differentiators.it.benefit2', 'Real-time inventory tracking'),
-        t('home.differentiators.it.benefit3', 'Automated workflow optimization'),
-        t('home.differentiators.it.benefit4', 'Centralized control interface'),
-      ],
-      color: '#D32F2F', // Tech red
-      bgColor: 'rgba(211, 47, 47, 0.03)',
-      icon: Server,
-      benefitIcons: [Database, Server, Workflow, Zap],
-      learnMoreLink: '/features/it-integration',
-    },
-    {
-      id: 'environmental',
-      title: t('home.differentiators.environmental.title', 'Environmental Certifications'),
-      description: t('home.differentiators.environmental.description', 'UL certification for the US market and international standards compliance for global operation with eco-friendly materials.'),
-      benefits: [
-        t('home.differentiators.environmental.benefit1', 'UL certified for US market'),
-        t('home.differentiators.environmental.benefit2', 'CE marked for European compliance'),
-        t('home.differentiators.environmental.benefit3', 'ISO 14001 environmental management'),
-        t('home.differentiators.environmental.benefit4', 'Energy efficiency rating A++'),
+        t('home.differentiators.plastic-free.benefit1', 'Auto-sealing with recyclable paper'),
+        t('home.differentiators.plastic-free.benefit2', 'No glue or adhesives required'),
+        t('home.differentiators.plastic-free.benefit3', 'No plastic tape or fasteners'),
+        t('home.differentiators.plastic-free.benefit4', 'Fully biodegradable packaging'),
       ],
       color: '#2E7D32', // Eco green
       bgColor: 'rgba(46, 125, 50, 0.03)',
-      icon: Shield,
-      benefitIcons: [Award, Shield, Leaf, Recycle],
-      learnMoreLink: '/features/environmental-certifications',
+      icon: Recycle,
+      benefitIcons: [Recycle, Leaf, Recycle, Leaf],
+      learnMoreLink: '/features/plastic-free',
     },
     {
-      id: 'ai-iconnect',
-      title: t('home.differentiators.ai.title', 'AI IConnect'),
-      description: t('home.differentiators.ai.description', 'Advanced predictive maintenance system powered by AI that reduces downtime by 74% and extends the machine\'s operational life.'),
+      id: 'energy-consumption',
+      title: t('home.differentiators.energy.title', '-35% Energy Consumption'),
+      description: t('home.differentiators.energy.description', 'Our optimized sealing process significantly reduces energy usage with a lower thermal footprint compared to traditional packaging methods.'),
       benefits: [
-        t('home.differentiators.ai.benefit1', '74% reduction in unexpected downtime'),
-        t('home.differentiators.ai.benefit2', 'Predictive component failure alerts'),
-        t('home.differentiators.ai.benefit3', 'Automatic maintenance scheduling'),
-        t('home.differentiators.ai.benefit4', 'Remote diagnostics and support'),
+        t('home.differentiators.energy.benefit1', 'Optimized sealing process'),
+        t('home.differentiators.energy.benefit2', 'Lower thermal footprint'),
+        t('home.differentiators.energy.benefit3', 'Reduced carbon emissions'),
+        t('home.differentiators.energy.benefit4', 'Energy-efficient operation'),
       ],
-      color: '#0288D1', // Electric blue
+      color: '#FF9800', // Energy orange
+      bgColor: 'rgba(255, 152, 0, 0.03)',
+      icon: Zap,
+      benefitIcons: [Zap, Flame, Lightbulb, Zap],
+      learnMoreLink: '/features/energy-efficiency',
+    },
+    {
+      id: 'ecovadis-certified',
+      title: t('home.differentiators.ecovadis.title', 'EcoVadis Certified'),
+      description: t('home.differentiators.ecovadis.description', 'Our solutions are EcoVadis certified, verifying our commitment to sustainability and ethical compliance throughout our supply chain and operations.'),
+      benefits: [
+        t('home.differentiators.ecovadis.benefit1', 'Verified sustainability practices'),
+        t('home.differentiators.ecovadis.benefit2', 'Ethical compliance certification'),
+        t('home.differentiators.ecovadis.benefit3', 'Supply chain transparency'),
+        t('home.differentiators.ecovadis.benefit4', 'Environmental responsibility'),
+      ],
+      color: '#2E7D32', // Eco green
+      bgColor: 'rgba(46, 125, 50, 0.03)',
+      icon: Award,
+      benefitIcons: [Award, Award, Globe, Leaf],
+      learnMoreLink: '/features/certifications',
+    },
+    {
+      id: 'zero-overpackaging',
+      title: t('home.differentiators.zero-overpackaging.title', 'Zero Overpackaging'),
+      description: t('home.differentiators.zero-overpackaging.description', 'Our intelligent sizing technology creates perfectly fitted packaging for each product, eliminating the need for fillers and reducing material waste.'),
+      benefits: [
+        t('home.differentiators.zero-overpackaging.benefit1', 'Intelligent sizing = no fillers'),
+        t('home.differentiators.zero-overpackaging.benefit2', 'Custom-fit packaging for each product'),
+        t('home.differentiators.zero-overpackaging.benefit3', 'Elimination of void fill materials'),
+        t('home.differentiators.zero-overpackaging.benefit4', 'Reduced packaging waste'),
+      ],
+      color: '#2E7D32', // Eco green
+      bgColor: 'rgba(46, 125, 50, 0.03)',
+      icon: Package,
+      benefitIcons: [Package, Package, Trash2, Recycle],
+      learnMoreLink: '/features/zero-overpackaging',
+    },
+    {
+      id: 'logistics-costs',
+      title: t('home.differentiators.logistics.title', '-25% Logistic Costs'),
+      description: t('home.differentiators.logistics.description', 'Our volume-optimized packaging reduces shipping space requirements, resulting in fewer trips, lower transportation costs, and reduced CO₂ emissions.'),
+      benefits: [
+        t('home.differentiators.logistics.benefit1', 'Volume-optimized packaging'),
+        t('home.differentiators.logistics.benefit2', 'Fewer transportation trips'),
+        t('home.differentiators.logistics.benefit3', 'Reduced CO₂ emissions'),
+        t('home.differentiators.logistics.benefit4', 'Lower shipping costs'),
+      ],
+      color: '#0288D1', // Blue
       bgColor: 'rgba(2, 136, 209, 0.03)',
-      icon: Cpu,
-      benefitIcons: [BrainCircuit, Zap, Cpu, Server],
-      learnMoreLink: '/features/ai-iconnect',
+      icon: Truck,
+      benefitIcons: [Truck, Truck, Globe, Globe],
+      learnMoreLink: '/features/logistics-optimization',
     },
     {
-      id: 'operational',
-      title: t('home.differentiators.operational.title', 'Operational Advantages'),
-      description: t('home.differentiators.operational.description', 'Enhanced efficiency metrics that deliver measurable ROI through operational improvements and workflow optimization.'),
+      id: 'recyclable-materials',
+      title: t('home.differentiators.recyclable.title', '100% Recyclable Materials'),
+      description: t('home.differentiators.recyclable.description', 'We exclusively use paper, kraft, and cardboard materials that are 100% recyclable, avoiding composite materials that complicate the recycling process.'),
       benefits: [
-        t('home.differentiators.operational.benefit1', '30% faster packaging speeds'),
-        t('home.differentiators.operational.benefit2', '20% reduction in material consumption'),
-        t('home.differentiators.operational.benefit3', '15% lower energy consumption'),
-        t('home.differentiators.operational.benefit4', 'Dual-mode operation for flexibility'),
+        t('home.differentiators.recyclable.benefit1', 'Paper, kraft, cardboard only'),
+        t('home.differentiators.recyclable.benefit2', 'No composite materials'),
+        t('home.differentiators.recyclable.benefit3', 'Easy single-stream recycling'),
+        t('home.differentiators.recyclable.benefit4', 'Supports circular economy'),
       ],
-      color: '#6A1B9A', // Dynamic purple
-      bgColor: 'rgba(106, 27, 154, 0.03)',
-      icon: BarChart3,
-      benefitIcons: [Gauge, BarChart3, Wind, Workflow],
-      learnMoreLink: '/features/operational-advantages',
+      color: '#2E7D32', // Eco green
+      bgColor: 'rgba(46, 125, 50, 0.03)',
+      icon: Leaf,
+      benefitIcons: [Recycle, Leaf, Recycle, Globe],
+      learnMoreLink: '/features/recyclable-materials',
     },
   ];
+
+  // Define slide navigation functions with useCallback
+  const nextSlide = useCallback(() => {
+    setDirection(1);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % differentiators.length);
+  }, [differentiators.length]);
+
+  const prevSlide = useCallback(() => {
+    setDirection(-1);
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + differentiators.length) % differentiators.length);
+  }, [differentiators.length]);
 
   // Handle auto-play functionality
   useEffect(() => {
@@ -109,7 +152,7 @@ export function DifferentiatorsCarousel() {
         clearInterval(autoPlayRef.current);
       }
     };
-  }, [isAutoPlaying, currentIndex]);
+  }, [isAutoPlaying, nextSlide]);
 
   // Handle touch events for mobile swipe
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -133,20 +176,10 @@ export function DifferentiatorsCarousel() {
     setTimeout(() => setIsAutoPlaying(true), 5000);
   };
 
-  const nextSlide = () => {
-    setDirection(1);
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % differentiators.length);
-  };
-
-  const prevSlide = () => {
-    setDirection(-1);
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + differentiators.length) % differentiators.length);
-  };
-
-  const goToSlide = (index: number) => {
+  const goToSlide = useCallback((index: number) => {
     setDirection(index > currentIndex ? 1 : -1);
     setCurrentIndex(index);
-  };
+  }, [currentIndex]);
 
   // Animation variants
   const slideVariants = {
@@ -288,24 +321,34 @@ export function DifferentiatorsCarousel() {
                     }}
                   ></div>
 
-                  {/* Circuit pattern for IT Integration */}
-                  {currentDifferentiator.id === 'it-integration' && (
-                    <div className={styles.circuitPattern} style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 50 H100 M50 0 V100 M25 25 H75 V75 H25 Z' stroke='${encodeURIComponent(currentDifferentiator.color)}' stroke-width='1' fill='none' /%3E%3C/svg%3E")` }}></div>
+                  {/* Recycle pattern for Plastic-Free */}
+                  {currentDifferentiator.id === 'plastic-free' && (
+                    <div className={styles.recyclePattern} style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30,70 C40,40 60,40 70,70 M30,70 L50,40 L70,70 Z' stroke='${encodeURIComponent(currentDifferentiator.color)}' stroke-width='1' fill='none' /%3E%3C/svg%3E")` }}></div>
                   )}
 
-                  {/* Leaf pattern for Environmental */}
-                  {currentDifferentiator.id === 'environmental' && (
-                    <div className={styles.leafPattern} style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30,70 Q50,20 70,70 T30,70 Z' stroke='${encodeURIComponent(currentDifferentiator.color)}' stroke-width='1' fill='none' /%3E%3C/svg%3E")` }}></div>
+                  {/* Energy pattern */}
+                  {currentDifferentiator.id === 'energy-consumption' && (
+                    <div className={styles.energyPattern} style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50,20 L40,50 L60,50 L50,80' stroke='${encodeURIComponent(currentDifferentiator.color)}' stroke-width='2' fill='none' /%3E%3C/svg%3E")` }}></div>
                   )}
 
-                  {/* AI pattern for AI IConnect */}
-                  {currentDifferentiator.id === 'ai-iconnect' && (
-                    <div className={styles.aiPattern} style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='40' stroke='${encodeURIComponent(currentDifferentiator.color)}' stroke-width='1' fill='none' /%3E%3Cpath d='M30,50 L70,50 M50,30 L50,70' stroke='${encodeURIComponent(currentDifferentiator.color)}' stroke-width='1' /%3E%3C/svg%3E")` }}></div>
+                  {/* Certificate pattern for EcoVadis */}
+                  {currentDifferentiator.id === 'ecovadis-certified' && (
+                    <div className={styles.certificatePattern} style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='30' stroke='${encodeURIComponent(currentDifferentiator.color)}' stroke-width='1' fill='none' /%3E%3Cpath d='M35,50 L45,60 L65,40' stroke='${encodeURIComponent(currentDifferentiator.color)}' stroke-width='1' /%3E%3C/svg%3E")` }}></div>
                   )}
 
-                  {/* Operational pattern */}
-                  {currentDifferentiator.id === 'operational' && (
-                    <div className={styles.operationalPattern} style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20,80 L40,40 L60,60 L80,20' stroke='${encodeURIComponent(currentDifferentiator.color)}' stroke-width='2' fill='none' /%3E%3C/svg%3E")` }}></div>
+                  {/* Package pattern for Zero Overpackaging */}
+                  {currentDifferentiator.id === 'zero-overpackaging' && (
+                    <div className={styles.packagePattern} style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='30' y='30' width='40' height='40' stroke='${encodeURIComponent(currentDifferentiator.color)}' stroke-width='1' fill='none' /%3E%3Cpath d='M30,30 L50,10 L70,30 M50,10 L50,30 M70,30 L90,50 L70,70 M90,50 L70,50' stroke='${encodeURIComponent(currentDifferentiator.color)}' stroke-width='1' fill='none' /%3E%3C/svg%3E")` }}></div>
+                  )}
+
+                  {/* Logistics pattern */}
+                  {currentDifferentiator.id === 'logistics-costs' && (
+                    <div className={styles.logisticsPattern} style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20,80 L40,60 L60,70 L80,40' stroke='${encodeURIComponent(currentDifferentiator.color)}' stroke-width='2' fill='none' /%3E%3Ccircle cx='20' cy='80' r='3' stroke='${encodeURIComponent(currentDifferentiator.color)}' stroke-width='1' fill='${encodeURIComponent(currentDifferentiator.color)}' /%3E%3Ccircle cx='80' cy='40' r='3' stroke='${encodeURIComponent(currentDifferentiator.color)}' stroke-width='1' fill='${encodeURIComponent(currentDifferentiator.color)}' /%3E%3C/svg%3E")` }}></div>
+                  )}
+
+                  {/* Recyclable Materials pattern */}
+                  {currentDifferentiator.id === 'recyclable-materials' && (
+                    <div className={styles.leafPattern} style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30,70 Q50,20 70,70 T30,70 Z' stroke='${encodeURIComponent(currentDifferentiator.color)}' stroke-width='1' fill='none' /%3E%3Cpath d='M50,70 L50,30 M40,40 L50,30 L60,40' stroke='${encodeURIComponent(currentDifferentiator.color)}' stroke-width='1' fill='none' /%3E%3C/svg%3E")` }}></div>
                   )}
 
                   {/* Centered icon */}

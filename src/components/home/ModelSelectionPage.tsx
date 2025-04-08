@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import * as THREE from 'three';
 import styles from './ModelSelection.module.css';
+import ecoStyles from './EcoModelSelection.module.css';
 import { GridFloor, GlowEffect } from './ModelSelectionEffects';
 
 // No custom type definitions needed - using built-in Three.js types
@@ -207,11 +208,15 @@ export default function ModelSelectionPage() {
   };
 
   return (
-    <div className={styles.container}>
-      {/* Background elements */}
+    <div className={`${styles.container} ${ecoStyles.ecoContainer}`}>
+      {/* Eco-friendly texture overlays */}
+      <div className={ecoStyles.cardboardTexture}></div>
+      <div className={ecoStyles.plantPattern}></div>
+
+      {/* Subtle gradient accents */}
       <div className="absolute inset-0 z-0 opacity-5">
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-primary/10 -translate-y-1/2 translate-x-1/4 blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-primary/10 translate-y-1/2 -translate-x-1/4 blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-green-100/10 -translate-y-1/2 translate-x-1/4 blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-green-100/10 translate-y-1/2 -translate-x-1/4 blur-3xl"></div>
       </div>
 
       {/* Header */}
@@ -473,9 +478,10 @@ export default function ModelSelectionPage() {
                   >
                     <cylinderGeometry args={[2, 2, 0.1, 32]} />
                     <meshStandardMaterial
-                      color={model.id === 't20' ? '#ffeeee' : model.id === 't30' ? '#eeeeff' : '#eeffee'}
-                      metalness={0.2}
-                      roughness={0.3}
+                      color={model.id === 't20' ? '#f5f5f5' : model.id === 't30' ? '#f5f5f5' : '#f5f5f5'}
+                      metalness={0.1}
+                      roughness={0.9}
+                      emissive={model.id === 't20' ? '#7cb34233' : model.id === 't30' ? '#7cb34233' : '#7cb34233'}
                     />
                   </mesh>
 

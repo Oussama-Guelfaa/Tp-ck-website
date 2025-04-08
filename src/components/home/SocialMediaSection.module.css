@@ -1,0 +1,135 @@
+.socialMediaSection {
+  padding: 2rem 0 4rem;
+  background: linear-gradient(to bottom, rgba(248, 249, 250, 0.8), rgba(255, 255, 255, 1));
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #f0f0f0;
+  margin-top: -2rem;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #4CAF50, #2196F3);
+  border-radius: 3px;
+}
+
+.iconsContainer {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.iconLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.iconWrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #0077B5; /* LinkedIn blue */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 119, 181, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.iconWrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.iconLink:hover .iconWrapper::before {
+  opacity: 1;
+}
+
+.youtubeIcon {
+  background-color: #FF0000; /* YouTube red */
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2);
+}
+
+.iconLabel {
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.iconLink:hover .iconLabel {
+  color: #0077B5;
+}
+
+.iconLink:hover .youtubeIcon + .iconLabel {
+  color: #FF0000;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .iconsContainer {
+    gap: 1.5rem;
+  }
+  
+  .iconWrapper {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .socialMediaSection {
+    padding: 2rem 0 3rem;
+  }
+  
+  .title {
+    font-size: 1.3rem;
+  }
+  
+  .iconsContainer {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}

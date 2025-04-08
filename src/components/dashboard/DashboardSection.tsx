@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { MachineStatusCard } from "@/components/dashboard/MachineStatusCard";
 import { useMachineContext } from "@/lib/MachineContext";
 import { useTranslation } from "@/components/ui/language-selector";
+import { AppFrame } from "./AppFrame";
 
 export function DashboardSection() {
   const { machines, isLoading } = useMachineContext();
@@ -131,18 +132,22 @@ export function DashboardSection() {
           </div>
         ) : (
           <>
-            <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8"
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              {machines.map((machine) => (
-                <motion.div key={machine.id} variants={itemVariants}>
-                  <MachineStatusCard machine={machine} />
+            <AppFrame title="Live Machine Monitor | Tp@ck OS">
+              <div className="p-6 bg-gray-50">
+                <motion.div
+                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8"
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  {machines.map((machine) => (
+                    <motion.div key={machine.id} variants={itemVariants}>
+                      <MachineStatusCard machine={machine} />
+                    </motion.div>
+                  ))}
                 </motion.div>
-              ))}
-            </motion.div>
+              </div>
+            </AppFrame>
 
             {/* View Full Dashboard Button */}
             <motion.div

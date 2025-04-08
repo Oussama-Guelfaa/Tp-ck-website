@@ -1,0 +1,101 @@
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(200vh + 4rem); /* Couvre exactement les deux premières sections avec un peu de marge */
+  pointer-events: none;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.machineContainer {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 350px;
+  will-change: transform, filter, box-shadow;
+  pointer-events: none;
+  transform-style: preserve-3d;
+}
+
+.machine3d {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.machineImage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, rgba(211, 47, 47, 0.2), transparent);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.imageReflection {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), transparent 30%);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  transform: translateZ(1px);
+}
+
+/* Class to hide original images */
+:global(.hidden-image) {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .machineContainer {
+    width: 400px;
+    height: 280px;
+  }
+
+  /* Adjust final position for tablet */
+  .container {
+    height: calc(200vh + 2rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .machineContainer {
+    width: 300px;
+    height: 210px;
+  }
+
+  /* Adjust final position for small tablet */
+  .container {
+    height: calc(200vh);
+  }
+}
+
+@media (max-width: 640px) {
+  .machineContainer {
+    width: 250px;
+    height: 175px;
+  }
+
+  /* Adjust final position for mobile */
+  .container {
+    height: calc(200vh - 2rem);
+  }
+}

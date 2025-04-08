@@ -35,50 +35,50 @@ const AnimatedBackground = () => {
       <div className={styles.blob1}></div>
       <div className={styles.blob2}></div>
       <div className={styles.blob3}></div>
-      
+
       {/* Animated blobs */}
-      <motion.div 
+      <motion.div
         className="absolute -top-[30%] -right-[10%] w-[70%] h-[70%] rounded-full bg-green-100/30 blur-3xl"
-        animate={{ 
+        animate={{
           scale: [1, 1.05, 1],
           x: [0, 10, 0],
           y: [0, -10, 0],
         }}
-        transition={{ 
+        transition={{
           duration: 15,
           repeat: Infinity,
           repeatType: "reverse"
         }}
       />
-      
-      <motion.div 
+
+      <motion.div
         className="absolute -bottom-[30%] -left-[10%] w-[60%] h-[60%] rounded-full bg-green-200/20 blur-3xl"
-        animate={{ 
+        animate={{
           scale: [1, 1.1, 1],
           x: [0, -15, 0],
           y: [0, 15, 0],
         }}
-        transition={{ 
+        transition={{
           duration: 18,
           repeat: Infinity,
           repeatType: "reverse"
         }}
       />
-      
-      <motion.div 
+
+      <motion.div
         className="absolute top-[20%] left-[30%] w-[40%] h-[40%] rounded-full bg-red-100/20 blur-3xl"
-        animate={{ 
+        animate={{
           scale: [1, 1.15, 1],
           x: [0, 20, 0],
           y: [0, 20, 0],
         }}
-        transition={{ 
+        transition={{
           duration: 20,
           repeat: Infinity,
           repeatType: "reverse"
         }}
       />
-      
+
       {/* Animated particles */}
       <div className="absolute inset-0">
         {Array.from({ length: 20 }).map((_, i) => (
@@ -105,15 +105,15 @@ const AnimatedBackground = () => {
           />
         ))}
       </div>
-      
+
       {/* Floating eco icons with subtle animations */}
-      <motion.div 
+      <motion.div
         className="absolute top-[15%] left-[8%]"
-        animate={{ 
+        animate={{
           y: [0, -10, 0],
           rotate: [0, 5, 0],
         }}
-        transition={{ 
+        transition={{
           duration: 6,
           repeat: Infinity,
           repeatType: "reverse"
@@ -121,14 +121,14 @@ const AnimatedBackground = () => {
       >
         <Leaf className="text-green-500 h-10 w-10 opacity-20" />
       </motion.div>
-      
-      <motion.div 
+
+      <motion.div
         className="absolute top-[25%] right-[12%]"
-        animate={{ 
+        animate={{
           y: [0, 15, 0],
           rotate: [0, -8, 0],
         }}
-        transition={{ 
+        transition={{
           duration: 8,
           repeat: Infinity,
           repeatType: "reverse"
@@ -136,15 +136,15 @@ const AnimatedBackground = () => {
       >
         <Recycle className="text-green-600 h-12 w-12 opacity-15" />
       </motion.div>
-      
-      <motion.div 
+
+      <motion.div
         className="absolute bottom-[20%] left-[15%]"
-        animate={{ 
+        animate={{
           y: [0, 8, 0],
           x: [0, 5, 0],
           rotate: [0, 10, 0],
         }}
-        transition={{ 
+        transition={{
           duration: 7,
           repeat: Infinity,
           repeatType: "reverse"
@@ -152,14 +152,14 @@ const AnimatedBackground = () => {
       >
         <Wind className="text-green-400 h-8 w-8 opacity-20" />
       </motion.div>
-      
-      <motion.div 
+
+      <motion.div
         className="absolute top-[40%] right-[20%]"
-        animate={{ 
+        animate={{
           y: [0, -12, 0],
           rotate: [0, -5, 0],
         }}
-        transition={{ 
+        transition={{
           duration: 9,
           repeat: Infinity,
           repeatType: "reverse"
@@ -167,14 +167,14 @@ const AnimatedBackground = () => {
       >
         <Droplets className="text-blue-400 h-9 w-9 opacity-20" />
       </motion.div>
-      
-      <motion.div 
+
+      <motion.div
         className="absolute bottom-[30%] right-[8%]"
-        animate={{ 
+        animate={{
           y: [0, 10, 0],
           rotate: [0, 8, 0],
         }}
-        transition={{ 
+        transition={{
           duration: 10,
           repeat: Infinity,
           repeatType: "reverse"
@@ -182,14 +182,14 @@ const AnimatedBackground = () => {
       >
         <TreePine className="text-green-500 h-11 w-11 opacity-15" />
       </motion.div>
-      
-      <motion.div 
+
+      <motion.div
         className="absolute top-[60%] left-[25%]"
-        animate={{ 
+        animate={{
           y: [0, -8, 0],
           rotate: [0, -10, 0],
         }}
-        transition={{ 
+        transition={{
           duration: 11,
           repeat: Infinity,
           repeatType: "reverse"
@@ -197,14 +197,14 @@ const AnimatedBackground = () => {
       >
         <Globe className="text-blue-500 h-10 w-10 opacity-15" />
       </motion.div>
-      
-      <motion.div 
+
+      <motion.div
         className="absolute top-[10%] left-[40%]"
-        animate={{ 
+        animate={{
           y: [0, 15, 0],
           rotate: [0, 15, 0],
         }}
-        transition={{ 
+        transition={{
           duration: 12,
           repeat: Infinity,
           repeatType: "reverse"
@@ -227,7 +227,7 @@ const EcoStats = () => {
         <div className={`${styles.countUp} text-2xl font-bold text-green-800`}>30%</div>
         <div className="text-xs text-green-700">Waste Reduction</div>
       </div>
-      
+
       <div className="flex flex-col items-center text-center">
         <div className="text-green-600 mb-1">
           <Zap className="h-6 w-6" />
@@ -235,7 +235,7 @@ const EcoStats = () => {
         <div className={`${styles.countUp} text-2xl font-bold text-green-800`}>40%</div>
         <div className="text-xs text-green-700">Energy Efficient</div>
       </div>
-      
+
       <div className="flex flex-col items-center text-center">
         <div className="text-green-600 mb-1">
           <Globe className="h-6 w-6" />
@@ -243,7 +243,7 @@ const EcoStats = () => {
         <div className={`${styles.countUp} text-2xl font-bold text-green-800`}>100+</div>
         <div className="text-xs text-green-700">Global Certifications</div>
       </div>
-      
+
       <div className="flex flex-col items-center text-center">
         <div className="text-green-600 mb-1">
           <Leaf className="h-6 w-6" />
@@ -263,13 +263,25 @@ export function EcoHeroSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   // Typing effect for the headline
-  const headlineText = "Smart, Sustainable, and Designed for Earth";
+  const headlineText = "Tp@ck: Smart, Sustainable & Profitable Packaging";
+  const [hasTyped, setHasTyped] = useState(false);
+  const [finalText, setFinalText] = useState("");
+
+  // Only use the typing effect if we haven't typed it yet
   const { displayText, isDone, cursorVisible } = useTypingEffect({
-    text: headlineText,
+    text: hasTyped ? "" : headlineText,
     typingSpeed: 45,
     delayBeforeStart: 500,
     showCursor: true,
   });
+
+  // When typing is done, save the final text and mark as typed
+  useEffect(() => {
+    if (isDone && !hasTyped) {
+      setFinalText(headlineText);
+      setHasTyped(true);
+    }
+  }, [isDone, hasTyped, headlineText]);
 
   // Set up intersection observer for background video
   useEffect(() => {
@@ -306,7 +318,7 @@ export function EcoHeroSection() {
       <div className="min-h-screen flex flex-col items-center justify-center pt-24 pb-16 md:pt-32 md:pb-24 relative">
         {/* Animated background elements */}
         <AnimatedBackground />
-        
+
         {/* Main content - centered vertically and horizontally */}
         <div className="container mx-auto px-4 sm:px-6 relative z-20">
           <div className="max-w-4xl mx-auto text-center">
@@ -326,9 +338,9 @@ export function EcoHeroSection() {
               <div className="mb-6">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight font-sans">
                   <span className={styles.gradientText}>
-                    {displayText}
+                    {hasTyped ? finalText : displayText}
                     <AnimatePresence>
-                      {cursorVisible && (
+                      {!hasTyped && cursorVisible && (
                         <motion.span
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
@@ -344,22 +356,22 @@ export function EcoHeroSection() {
 
               {/* Subheading that fades in after typing */}
               <AnimatePresence>
-                {isDone && (
+                {(isDone || hasTyped) && (
                   <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                     className="text-xl text-gray-600 max-w-xl mx-auto"
                   >
-                    Revolutionizing packaging with eco-conscious technology that reduces waste, 
-                    minimizes environmental impact, and maximizes operational efficiency.
+                    A French-made, auto-sealing packaging solution—no glue, no plastic—designed to reduce waste,
+                    optimize costs, and drive your ecological transition.
                   </motion.p>
                 )}
               </AnimatePresence>
 
               {/* CTA buttons that fade in after typing */}
               <AnimatePresence>
-                {isDone && (
+                {(isDone || hasTyped) && (
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -371,7 +383,7 @@ export function EcoHeroSection() {
                         {t('home.demo', 'Request a Demo')} <ArrowRight className="ml-2 h-5 w-5" />
                       </Button>
                     </Link>
-                    
+
                     <Link href="/model-selection">
                       <Button variant="outline" className={`${styles.ecoCta} border-red-300 text-red-700 hover:bg-red-50 h-14 px-6 py-6 text-lg font-medium transition-all duration-300`}>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
@@ -382,7 +394,7 @@ export function EcoHeroSection() {
                         View 3D Models
                       </Button>
                     </Link>
-                    
+
                     <Dialog open={videoOpen} onOpenChange={setVideoOpen}>
                       <DialogTrigger asChild>
                         <Button variant="outline" className={`${styles.ecoCta} border-green-300 text-green-700 hover:bg-green-50 h-14 px-6 py-6 text-lg font-medium transition-all duration-300`}>
@@ -413,7 +425,7 @@ export function EcoHeroSection() {
 
               {/* Eco stats that appear after typing */}
               <AnimatePresence>
-                {isDone && (
+                {(isDone || hasTyped) && (
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -427,10 +439,10 @@ export function EcoHeroSection() {
           </div>
         </div>
       </div>
-      
+
       {/* Background video section that appears below the content */}
       <div ref={sectionRef} className="w-full relative" style={{ height: '80vh' }}>
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: bgVideoVisible ? 1 : 0 }}
           transition={{ duration: 1.5 }}

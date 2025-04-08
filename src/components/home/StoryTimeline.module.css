@@ -1,0 +1,615 @@
+.timelineSection {
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f0f7f0 0%, #e8f5f8 100%);
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  background-image:
+    url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30,10 C35,10 40,15 40,20 C40,25 35,30 30,30 C25,30 20,25 20,20 C20,15 25,10 30,10 Z" fill="%234CAF50" fill-opacity="0.03"/><path d="M70,60 C75,60 80,65 80,70 C80,75 75,80 70,80 C65,80 60,75 60,70 C60,65 65,60 70,60 Z" fill="%232196F3" fill-opacity="0.03"/><path d="M30,60 C35,60 40,65 40,70 C40,75 35,80 30,80 C25,80 20,75 20,70 C20,65 25,60 30,60 Z" fill="%234CAF50" fill-opacity="0.03"/><path d="M70,10 C75,10 80,15 80,20 C80,25 75,30 70,30 C65,30 60,25 60,20 C60,15 65,10 70,10 Z" fill="%232196F3" fill-opacity="0.03"/></svg>');
+  background-size: 100px 100px;
+  position: relative;
+}
+
+.timelineSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(33, 150, 243, 0.05) 100%);
+  z-index: 0;
+  animation: backgroundPulse 15s infinite alternate ease-in-out;
+}
+
+@keyframes backgroundPulse {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.7; }
+}
+
+/* Background decorative elements */
+.bgDecoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Natural texture background */
+.naturalTexture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    url('data:image/svg+xml;utf8,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><path d="M30 16.5l11.2 11.2L30 38.8 18.8 27.7 30 16.5z" stroke="%234CAF50" stroke-width="0.5" fill="none" opacity="0.2"/><circle cx="30" cy="30" r="3" fill="%234CAF50" opacity="0.1"/><circle cx="15" cy="15" r="1.5" fill="%232196F3" opacity="0.1"/><circle cx="45" cy="45" r="1.5" fill="%232196F3" opacity="0.1"/><circle cx="15" cy="45" r="1.5" fill="%234CAF50" opacity="0.1"/><circle cx="45" cy="15" r="1.5" fill="%234CAF50" opacity="0.1"/></svg>');
+  background-size: 60px 60px;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+
+
+/* Animated background elements */
+.animatedBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Animated blobs */
+.blob {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(76, 175, 80, 0.2) 0%, rgba(76, 175, 80, 0) 70%);
+  filter: blur(10px);
+  animation: blobAnimation 20s infinite alternate ease-in-out;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.blob:nth-child(2n) {
+  background: radial-gradient(circle, rgba(33, 150, 243, 0.2) 0%, rgba(33, 150, 243, 0) 70%);
+}
+
+.blob:nth-child(3n) {
+  background: radial-gradient(circle, rgba(139, 195, 74, 0.2) 0%, rgba(139, 195, 74, 0) 70%);
+}
+
+@keyframes blobAnimation {
+  0% { transform: scale(1) translate(0, 0); opacity: 0.3; }
+  33% { transform: scale(1.2) translate(20px, 20px); opacity: 0.5; }
+  66% { transform: scale(0.8) translate(-20px, 10px); opacity: 0.4; }
+  100% { transform: scale(1) translate(0, 0); opacity: 0.3; }
+}
+
+/* Growing lines */
+.growingLine {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(76, 175, 80, 0.1), rgba(33, 150, 243, 0.1));
+  transform-origin: left center;
+  animation: growLine 8s infinite alternate ease-in-out;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+@keyframes growLine {
+  0% { transform-origin: left center; transform: scaleX(0.2) rotate(var(--rotation, 0deg)); opacity: 0.2; }
+  50% { transform-origin: left center; transform: scaleX(1) rotate(var(--rotation, 0deg)); opacity: 0.5; }
+  51% { transform-origin: right center; transform: scaleX(1) rotate(var(--rotation, 0deg)); opacity: 0.5; }
+  100% { transform-origin: right center; transform: scaleX(0.2) rotate(var(--rotation, 0deg)); opacity: 0.2; }
+}
+
+/* Animated gradient overlay */
+.gradientOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.03) 0%, rgba(33, 150, 243, 0.03) 100%);
+  animation: gradientShift 15s infinite alternate ease-in-out;
+  z-index: 0;
+  mix-blend-mode: overlay;
+}
+
+@keyframes gradientShift {
+  0% { opacity: 0.3; background-position: 0% 0%; }
+  100% { opacity: 0.7; background-position: 100% 100%; }
+}
+
+.bgCircle {
+  position: absolute;
+  border-radius: 50%;
+  animation: floatAnimation 15s infinite ease-in-out;
+  z-index: 0;
+}
+
+@keyframes floatAnimation {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(10px, 10px) rotate(5deg); }
+  50% { transform: translate(0, 20px) rotate(0deg); }
+  75% { transform: translate(-10px, 10px) rotate(-5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.bgDots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#333 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+/* Animation for elements */
+@keyframes pulseAnimation {
+  0% { transform: scale(1); opacity: 0.1; }
+  50% { transform: scale(1.2); opacity: 0.2; }
+  100% { transform: scale(1); opacity: 0.1; }
+}
+
+/* Organic shapes */
+.organicShape {
+  position: absolute;
+  opacity: 0.6;
+  z-index: 0;
+  animation: floatSlow 20s infinite ease-in-out;
+}
+
+@keyframes floatSlow {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Wind effect */
+.windEffect {
+  position: absolute;
+  opacity: 0.3;
+  z-index: 0;
+  animation: windMove 15s infinite ease-in-out;
+}
+
+@keyframes windMove {
+  0% { transform: translateX(0) scale(1); opacity: 0.3; }
+  50% { transform: translateX(30px) scale(1.1); opacity: 0.5; }
+  100% { transform: translateX(0) scale(1); opacity: 0.3; }
+}
+
+/* Wave background */
+.waveContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: waveAnimation 15s infinite linear;
+}
+
+@keyframes waveAnimation {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* SVG background shapes */
+.bgShape {
+  position: absolute;
+  opacity: 0.8;
+  animation: rotateAnimation 60s infinite linear;
+  transform-origin: center;
+  z-index: 0;
+}
+
+@keyframes rotateAnimation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.sectionTitleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  gap: 1.5rem;
+}
+
+.titleDecoration {
+  height: 3px;
+  background: linear-gradient(90deg, rgba(46, 125, 50, 0.2), rgba(46, 125, 50, 0.8));
+  border-radius: 3px;
+}
+
+.sectionTitle {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  color: #333;
+  position: relative;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 4rem;
+  line-height: 1.6;
+}
+
+.scrollPrompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+  color: #666;
+  font-size: 1rem;
+}
+
+.scrollPrompt p {
+  margin-bottom: 0.5rem;
+}
+
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.timelineAxis {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 6px;
+  background: linear-gradient(to bottom,
+    rgba(76, 175, 80, 0.3),
+    rgba(46, 125, 50, 0.7),
+    rgba(25, 118, 210, 0.7),
+    rgba(33, 150, 243, 0.5)
+  );
+  transform: translateX(-50%);
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(46, 125, 50, 0.3);
+  overflow: hidden;
+}
+
+.timelineAxis::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.1) 10px,
+    rgba(255, 255, 255, 0.1) 20px
+  );
+}
+
+.timelineAxis::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.5), transparent);
+  animation: shimmerEffect 3s infinite;
+  transform: translateY(-100%);
+}
+
+@keyframes shimmerEffect {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.checkpointContainer {
+  position: relative;
+  margin-bottom: 6rem;
+  display: flex;
+  align-items: flex-start;
+  min-height: 150px;
+}
+
+.checkpointMarker {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  z-index: 2;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  border: 3px solid white;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.2) 70%);
+}
+
+.yearBadge {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: #333;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
+
+.checkpointMarker::after {
+  content: '';
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid rgba(46, 125, 50, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+}
+
+.checkpointContent {
+  width: 45%;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  position: relative;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.checkpointContent:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  border-color: rgba(46, 125, 50, 0.2);
+}
+
+.contentHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 0.8rem;
+}
+
+.iconCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contentFooter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  width: fit-content;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #ddd;
+}
+
+.contentFooter:hover {
+  color: var(--eco-green, #4CAF50);
+  border-bottom-color: var(--eco-green, #4CAF50);
+}
+
+/* Even checkpoints on the right */
+.checkpointContainer:nth-child(even) .checkpointContent {
+  margin-left: auto;
+}
+
+/* Odd checkpoints on the left */
+.checkpointContainer:nth-child(odd) .checkpointContent {
+  margin-right: auto;
+}
+
+.checkpointContent h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--eco-green, #4CAF50);
+}
+
+.checkpointContent p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Connector lines from axis to content */
+.checkpointContainer:nth-child(even) .checkpointContent::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: -20px;
+  width: 20px;
+  height: 2px;
+  background-color: var(--eco-green, #4CAF50);
+}
+
+.checkpointContainer:nth-child(odd) .checkpointContent::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: -20px;
+  width: 20px;
+  height: 2px;
+  background-color: var(--eco-green, #4CAF50);
+}
+
+/* Animated dots on the connector lines */
+.checkpointContainer:nth-child(even) .checkpointContent::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: -10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--eco-green, #4CAF50);
+  animation: moveDot 3s infinite alternate;
+}
+
+.checkpointContainer:nth-child(odd) .checkpointContent::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: -10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--eco-green, #4CAF50);
+  animation: moveDot 3s infinite alternate;
+}
+
+@keyframes moveDot {
+  0% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2.2rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .timelineAxis {
+    left: 30px;
+  }
+
+  .checkpointContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 30px;
+    padding-left: 30px;
+  }
+
+  .checkpointMarker {
+    left: 30px;
+    transform: translateX(-50%);
+  }
+
+  .checkpointContent {
+    width: calc(100% - 60px);
+    margin-left: 30px !important;
+    margin-top: 20px;
+  }
+
+  .checkpointContainer:nth-child(even) .checkpointContent,
+  .checkpointContainer:nth-child(odd) .checkpointContent {
+    margin: 20px 0 0 30px;
+  }
+
+  .checkpointContainer:nth-child(even) .checkpointContent::before,
+  .checkpointContainer:nth-child(odd) .checkpointContent::before {
+    top: -20px;
+    left: 20px;
+    width: 2px;
+    height: 20px;
+    right: auto;
+  }
+
+  .checkpointContainer:nth-child(even) .checkpointContent::after,
+  .checkpointContainer:nth-child(odd) .checkpointContent::after {
+    top: -10px;
+    left: 20px;
+    right: auto;
+    animation: moveDotVertical 3s infinite alternate;
+  }
+
+  @keyframes moveDotVertical {
+    0% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(5px);
+    }
+  }
+
+  .titleDecoration {
+    width: 40px !important;
+  }
+
+  .sectionTitleWrapper {
+    gap: 0.8rem;
+  }
+}

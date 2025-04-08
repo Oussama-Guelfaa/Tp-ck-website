@@ -1,0 +1,192 @@
+/* EcoModelSelection.module.css */
+.ecoContainer {
+  height: 100vh;
+  width: 100%;
+  background-color: #f5f5f5; /* Soft light grey instead of harsh white */
+  position: relative;
+  overflow: hidden;
+  background-image: url('/images/eco-grid-pattern.svg');
+  background-size: 30px 30px;
+  background-repeat: repeat;
+  background-position: center center;
+}
+
+/* Gradient overlays for top and bottom fade effects */
+.ecoContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(245,245,245,0.9), transparent);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.ecoContainer::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to top, rgba(245,245,245,0.9), transparent);
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Cardboard texture overlay */
+.cardboardTexture {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d3c7b5' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* Abstract plant-inspired pattern overlay */
+.plantPattern {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%237cb342' stroke-width='1' stroke-opacity='0.05'%3E%3Cpath d='M20,100 Q50,50 100,80 T180,100'/%3E%3Cpath d='M20,140 Q60,180 100,160 T180,140'/%3E%3Cpath d='M20,60 Q60,20 100,40 T180,60'/%3E%3Ccircle cx='100' cy='100' r='80' stroke-dasharray='5,5'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+/* Eco-friendly canvas container */
+.ecoCanvasContainer {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(124, 179, 66, 0.1);
+  margin: 0 auto;
+  max-width: 95%;
+  background: linear-gradient(to bottom, rgba(245,245,245,0.7), rgba(255,255,255,0.5));
+}
+
+/* Eco-friendly model platform */
+.ecoModelPlatform {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(245,245,245,0.5) 100%);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05), 0 0 0 1px rgba(124, 179, 66, 0.1) inset;
+  backdrop-filter: blur(5px);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.ecoModelPlatform::before {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(124,179,66,0.03) 100%);
+  box-shadow: 0 0 20px rgba(124,179,66,0.1);
+  opacity: 0;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Eco-friendly details panel */
+.ecoDetailsPanel {
+  background: rgba(245, 245, 245, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(124, 179, 66, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  max-width: 400px;
+  color: #333;
+}
+
+/* Eco-friendly action button */
+.ecoActionButton {
+  background: linear-gradient(135deg, #7cb342, #558b2f);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(124, 179, 66, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ecoActionButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.5s ease;
+}
+
+.ecoActionButton:hover::before {
+  left: 100%;
+}
+
+.ecoActionButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(124, 179, 66, 0.4);
+}
+
+.ecoActionButton:active {
+  transform: translateY(1px);
+}
+
+/* Eco-friendly page title */
+.ecoPageTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #558b2f, #7cb342);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  letter-spacing: -0.5px;
+  position: relative;
+}
+
+.ecoPageTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #7cb342, transparent);
+  border-radius: 3px;
+}
+
+.ecoPageSubtitle {
+  color: #666666;
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+}

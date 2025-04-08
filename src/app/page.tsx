@@ -1,9 +1,10 @@
 import { LoadingScreen } from "@/components/ui/loading-screen";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { EcoHeroSection } from "@/components/home/EcoHeroSection";
-import { FeaturesSection } from "@/components/home/FeaturesSection";
+import { StoryTimeline } from "@/components/home/StoryTimeline";
+import { SocialMediaSection } from "@/components/home/SocialMediaSection";
 import { DifferentiatorsCarousel } from "@/components/home/DifferentiatorsCarousel";
-import { ScrollVideoSection } from "@/components/home/ScrollVideoSection";
+import { ModernScrollSection } from "@/components/home/ModernScrollSection";
 import { ProductsSection } from "@/components/home/ProductsSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { CtaSection } from "@/components/home/CtaSection";
@@ -16,11 +17,13 @@ export default function HomePage() {
       <LoadingScreen />
       <MainLayout>
         <EcoHeroSection />
+        <StoryTimeline />
         <DifferentiatorsCarousel />
-        <ScrollVideoSection />
+        <ModernScrollSection />
         <DashboardSection />
         <ProductsSection />
         <TestimonialsSection />
+        <SocialMediaSection />
         <CtaSection />
       </MainLayout>
     </>

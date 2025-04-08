@@ -3,7 +3,6 @@
 import { useRef } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
-import { Vector3 } from 'three';
 
 // Simplified version without post-processing effects
 export function PostProcessingEffects() {
@@ -11,7 +10,7 @@ export function PostProcessingEffects() {
   return null;
 }
 
-// Animated grid floor component
+// Eco-friendly animated grid floor component
 export function GridFloor() {
   const gridRef = useRef<THREE.GridHelper>(null);
 
@@ -23,32 +22,42 @@ export function GridFloor() {
 
   return (
     <group position={[0, -2, 0]}>
-      {/* Infinite grid floor */}
+      {/* Infinite grid floor with eco-friendly green color */}
       <gridHelper
         ref={gridRef}
-        args={[100, 100, '#cccccc', '#e5e5e5']}
+        args={[100, 100, '#7cb342', '#f5f5f5']} // Green primary lines, light grey secondary lines
         position={[0, 0, 0.5]}
         rotation={[Math.PI / 2, 0, 0]}
       />
       <gridHelper
-        args={[100, 100, '#cccccc', '#e5e5e5']}
+        args={[100, 100, '#7cb342', '#f5f5f5']}
         position={[0, 0, 0]}
         rotation={[Math.PI / 2, 0, 0]}
       />
       <gridHelper
-        args={[100, 100, '#cccccc', '#e5e5e5']}
+        args={[100, 100, '#7cb342', '#f5f5f5']}
         position={[0, 0, -0.5]}
         rotation={[Math.PI / 2, 0, 0]}
       />
 
-      {/* Reflective floor */}
+      {/* Reflective floor with eco-friendly light grey color */}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.1, 0]} receiveShadow>
         <planeGeometry args={[100, 100]} />
-        <meshStandardMaterial
-          color="#f5f5f5"
-          metalness={0.2}
-          roughness={0.8}
-          envMapIntensity={0.3}
+        <meshBasicMaterial
+          color="#f5f5f5" // Light grey base color
+          transparent={true}
+          opacity={0.8}
+        />
+      </mesh>
+
+      {/* Subtle cardboard-like texture overlay */}
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.05, 0]}>
+        <planeGeometry args={[100, 100]} />
+        <meshBasicMaterial
+          color="#d3c7b5"
+          opacity={0.03}
+          transparent={true}
+          depthWrite={false}
         />
       </mesh>
     </group>
