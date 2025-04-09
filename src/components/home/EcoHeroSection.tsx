@@ -26,6 +26,7 @@ import {
 } from "../../components/ui/dialog";
 import { useTypingEffect } from "../../hooks/useTypingEffect";
 import { HeroModel } from "./HeroModel";
+import { BeforeAfterSlider } from "./BeforeAfterSlider";
 
 // Animated background component with organic shapes
 const AnimatedBackground = () => {
@@ -221,38 +222,50 @@ const AnimatedBackground = () => {
 const EcoStats = () => {
   const { t } = useTranslation();
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-green-100 shadow-sm">
-      <div className="flex flex-col items-center text-center">
-        <div className="text-green-600 mb-1">
-          <Recycle className="h-6 w-6" />
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+      <motion.div
+        className="flex flex-col items-center text-center p-4 bg-white/90 backdrop-blur-sm rounded-xl border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+        whileHover={{ scale: 1.03 }}
+      >
+        <div className="text-green-600 mb-2 bg-green-50 p-3 rounded-full">
+          <Recycle className="h-7 w-7" />
         </div>
-        <div className={`${styles.countUp} text-2xl font-bold text-green-800`}>30%</div>
-        <div className="text-xs text-green-700">{t('home.stats.waste', 'Waste Reduction')}</div>
-      </div>
+        <div className={`${styles.countUp} text-3xl font-bold text-green-800 mb-1`}>30%</div>
+        <div className="text-sm font-medium text-green-700">{t('home.stats.waste', 'Waste Reduction')}</div>
+      </motion.div>
 
-      <div className="flex flex-col items-center text-center">
-        <div className="text-green-600 mb-1">
-          <Zap className="h-6 w-6" />
+      <motion.div
+        className="flex flex-col items-center text-center p-4 bg-white/90 backdrop-blur-sm rounded-xl border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+        whileHover={{ scale: 1.03 }}
+      >
+        <div className="text-amber-500 mb-2 bg-amber-50 p-3 rounded-full">
+          <Zap className="h-7 w-7" />
         </div>
-        <div className={`${styles.countUp} text-2xl font-bold text-green-800`}>40%</div>
-        <div className="text-xs text-green-700">{t('home.stats.energy', 'Energy Efficient')}</div>
-      </div>
+        <div className={`${styles.countUp} text-3xl font-bold text-amber-600 mb-1`}>40%</div>
+        <div className="text-sm font-medium text-amber-700">{t('home.stats.energy', 'Energy Efficient')}</div>
+      </motion.div>
 
-      <div className="flex flex-col items-center text-center">
-        <div className="text-green-600 mb-1">
-          <Globe className="h-6 w-6" />
+      <motion.div
+        className="flex flex-col items-center text-center p-2 bg-white/90 backdrop-blur-sm rounded-xl border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+        whileHover={{ scale: 1.03 }}
+      >
+        <div className="text-blue-600 mb-2 bg-blue-50 p-3 rounded-full">
+          <Globe className="h-7 w-7" />
         </div>
-        <div className={`${styles.countUp} text-2xl font-bold text-green-800`}>100+</div>
-        <div className="text-xs text-green-700">{t('home.stats.certifications', 'Global Certifications')}</div>
-      </div>
+        <div className={`${styles.countUp} text-2xl font-bold text-blue-800 mb-1`}>EcoVadis</div>
+        <div className="text-sm font-medium text-blue-700">{t('home.stats.Certification', 'Certification')}</div>
+      </motion.div>
 
-      <div className="flex flex-col items-center text-center">
-        <div className="text-green-600 mb-1">
-          <Leaf className="h-6 w-6" />
+      <motion.div
+        className="flex flex-col items-center text-center p-4 bg-white/90 backdrop-blur-sm rounded-xl border border-green-100 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+        whileHover={{ scale: 1.03 }}
+      >
+        <div className="text-green-600 mb-2 bg-green-50 p-3 rounded-full">
+          <Leaf className="h-7 w-7" />
         </div>
-        <div className={`${styles.countUp} text-2xl font-bold text-green-800`}>5M+</div>
-        <div className="text-xs text-green-700">{t('home.stats.trees', 'Trees Saved')}</div>
-      </div>
+        <div className={`${styles.countUp} text-3xl font-bold text-green-800 mb-1`}>98% </div>
+        <div className="text-sm font-medium text-green-700">{t('home.stats.MachineUptime', 'Machine Uptime')}</div>
+      </motion.div>
     </div>
   );
 };
@@ -267,7 +280,7 @@ export function EcoHeroSection() {
   // Typing effect for the headline
   const headlineText = "Tp@ck: Smart, Sustainable & Profitable Packaging";
   const [hasTyped, setHasTyped] = useState(false);
-  const [finalText, setFinalText] = useState("");
+  // Removed unused finalText state
 
   // Only use the typing effect if we haven't typed it yet
   const { displayText, isDone, cursorVisible } = useTypingEffect({
@@ -277,13 +290,12 @@ export function EcoHeroSection() {
     showCursor: true,
   });
 
-  // When typing is done, save the final text and mark as typed
+  // When typing is done, mark as typed
   useEffect(() => {
     if (isDone && !hasTyped) {
-      setFinalText(headlineText);
       setHasTyped(true);
     }
-  }, [isDone, hasTyped, headlineText]);
+  }, [isDone, hasTyped]);
 
   // Set up intersection observer for background video
   useEffect(() => {
@@ -326,6 +338,10 @@ export function EcoHeroSection() {
           {/* 3D Model - visible on desktop, hidden on mobile initially */}
           <div className="hidden md:block md:absolute md:inset-0">
             <HeroModel />
+            {/* BeforeAfter Slider positioned below the 3D model */}
+            <div className="absolute top-[72%] right-[5%] w-[45%] z-10">
+              <BeforeAfterSlider className="rounded-xl shadow-xl" height="220px" />
+            </div>
           </div>
 
           {/* Text content */}
@@ -346,7 +362,11 @@ export function EcoHeroSection() {
               <div className="mb-6">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight font-sans">
                   <span className={styles.gradientText}>
-                    {hasTyped ? finalText : displayText}
+                    {hasTyped ? (
+                      <>
+                        <span className="font-extrabold">Tp@ck:</span> <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-green-600 hover:scale-105 transition-transform inline-block font-normal">Smart</span>, <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-green-500 hover:scale-105 transition-transform inline-block font-normal">Sustainable</span> & <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-green-500 hover:scale-105 transition-transform inline-block font-normal">Profitable</span> <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-green-500 hover:scale-105 transition-transform inline-block font-normal">Pack@ging</span>
+                      </>
+                    ) : displayText}
                     <AnimatePresence>
                       {!hasTyped && cursorVisible && (
                         <motion.span
@@ -371,7 +391,16 @@ export function EcoHeroSection() {
                     transition={{ duration: 0.5 }}
                     className="text-xl text-gray-600 max-w-xl mx-auto"
                   >
-                    {t('home.subheading', 'A French-made, auto-sealing packaging solution—no glue, no plastic—designed to reduce waste, optimize costs, and drive your ecological transition.')}
+                    A French-made, <span className="font-bold text-green-600 relative group">
+                      auto-sealing
+                      <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-green-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                    </span> packaging solution—<span className="font-bold text-red-600 relative group">
+                      no glue
+                      <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                    </span>, <span className="font-bold text-blue-600 relative group">
+                      no plastic
+                      <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                    </span>—designed to reduce waste, optimize costs, and drive your ecological transition.
                   </motion.p>
                 )}
               </AnimatePresence>
@@ -443,14 +472,19 @@ export function EcoHeroSection() {
                 )}
               </AnimatePresence>
 
-              {/* 3D Model - visible on mobile only */}
-              <div className="md:hidden w-full h-64 mt-8">
-                <HeroModel />
+              {/* 3D Model and BeforeAfter Slider - visible on mobile only */}
+              <div className="md:hidden w-full mt-8">
+                <div className="h-64 mb-4">
+                  <HeroModel />
+                </div>
+                <BeforeAfterSlider className="rounded-xl shadow-xl" height="200px" />
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Removed the standalone Before/After Slider Section as it's now integrated in the Hero Section */}
 
       {/* Background video section that appears below the content */}
       <div ref={sectionRef} className="w-full relative" style={{ height: '80vh' }}>

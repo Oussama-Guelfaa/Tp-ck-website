@@ -38,7 +38,6 @@ const getProducts = (t: (key: string, fallback?: string) => string) => [
       t("products.t30.feature6", "Materials Processed: Bois, plastique recyclé, aluminium, acier"),
       t("products.t30.feature7", "Package Size Range: See technical documentation"),
       t("products.t30.feature8", "Operating Temperature: 10°C to 30°C"),
-      t("products.t30.feature9", "Connectivity: Ethernet, Module 4g"),
     ],
     image: "/images/t30-machine.jpg",
     href: "/products/t30",
@@ -102,13 +101,22 @@ export function ProductsSection() {
             {t("home.products.range", "Product Range")}
           </motion.span>
           <motion.h2
-            className="heading-lg text-gray-900 mt-2 mb-4"
+            className="heading-lg mt-2 mb-4 relative inline-block"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            {t("home.products.heading", "Choose the Perfect TP@CK Machine for Your Needs")}
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-700 via-red-600 to-red-500">
+              Choose the Perfect <span className="font-extrabold">TP@CK</span> Machine for Your Needs
+            </span>
+            <motion.div
+              className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-red-500 to-red-300 rounded-full"
+              initial={{ width: 0 }}
+              whileInView={{ width: '100%' }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            />
           </motion.h2>
           <motion.p
             className="text-gray-600"
@@ -144,15 +152,34 @@ export function ProductsSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div className="p-6 transform group-hover:translate-y-[-4px] transition-transform duration-300">
-                <h3 className="text-xl font-bold text-black mb-2">TP@CK {product.name}</h3>
+                <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-700 to-red-500 mb-3"><span className="relative inline-block group">{product.name}
+                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                </span></h3>
                 <p className="text-gray-700 mb-4">{product.description}</p>
-                <ul className="space-y-2 mb-6">
-                  {product.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                      <ChevronRight className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
+                <ul className="space-y-3 mb-6 bg-white/80 backdrop-blur-sm p-3 rounded-lg border border-gray-100 shadow-sm">
+                  {product.features.map((feature, idx) => {
+                    // Extract key specifications with regex
+                    const featureText = feature.toString();
+                    const hasNumber = /\d+/.test(featureText);
+                    const parts = hasNumber ? featureText.split(/:\s*/) : [featureText];
+
+                    return (
+                      <motion.li
+                        key={idx}
+                        className="flex items-start gap-2 text-sm text-gray-700 p-1.5 rounded-md hover:bg-gray-50 transition-all duration-300"
+                        whileHover={{ x: 5 }}
+                      >
+                        <ChevronRight className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
+                        {parts.length > 1 ? (
+                          <span>
+                            <span className="font-medium">{parts[0]}:</span> <span className="font-bold text-red-600">{parts[1]}</span>
+                          </span>
+                        ) : (
+                          <span>{feature}</span>
+                        )}
+                      </motion.li>
+                    );
+                  })}
                 </ul>
                 <Link href={product.href} className="block">
                   <Button
@@ -174,13 +201,13 @@ export function ProductsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
             {t("home.products.helpText", "Need help choosing the right solution? Our experts can provide a customized recommendation.")}
           </p>
           <Link href="/products">
             <Button
               variant="outline"
-              className="border-primary text-primary hover:bg-primary/10 hover:text-primary transition-colors duration-300"
+              className="border-red-500 text-red-600 hover:bg-red-50 hover:text-red-700 transition-all duration-300 shadow-sm hover:shadow group"
             >
               {t("home.products.compareButton", "Compare All Products")} <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>

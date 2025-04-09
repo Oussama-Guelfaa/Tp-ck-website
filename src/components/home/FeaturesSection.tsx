@@ -138,10 +138,24 @@ export function FeaturesSection() {
               <TabsTrigger
                 key={feature.id}
                 value={feature.id}
-                className={`flex items-center gap-2 py-3 data-[state=active]:bg-white data-[state=active]:shadow-sm text-sm md:text-base`}
+                className={`flex items-center gap-2 py-3 data-[state=active]:bg-white data-[state=active]:shadow-sm text-sm md:text-base transition-all duration-300 hover:bg-gray-50`}
               >
-                <feature.icon className={`h-4 w-4 ${activeTab === feature.id ? 'text-primary' : 'text-gray-500'}`} />
-                <span className="hidden md:inline">{feature.title}</span>
+                <div className={`p-1.5 rounded-full ${activeTab === feature.id ?
+                  (feature.id === 'integration' ? 'bg-red-100' :
+                   feature.id === 'certifications' ? 'bg-green-100' :
+                   feature.id === 'ai-connect' ? 'bg-blue-100' : 'bg-purple-100') :
+                  'bg-gray-100'}`}>
+                  <feature.icon className={`h-4 w-4 ${activeTab === feature.id ?
+                    (feature.id === 'integration' ? 'text-red-600' :
+                     feature.id === 'certifications' ? 'text-green-600' :
+                     feature.id === 'ai-connect' ? 'text-blue-600' : 'text-purple-600') :
+                    'text-gray-500'}`} />
+                </div>
+                <span className={`hidden md:inline font-medium ${activeTab === feature.id ?
+                  (feature.id === 'integration' ? 'text-red-600' :
+                   feature.id === 'certifications' ? 'text-green-600' :
+                   feature.id === 'ai-connect' ? 'text-blue-600' : 'text-purple-600') :
+                  'text-gray-700'}`}>{feature.title}</span>
               </TabsTrigger>
             ))}
           </TabsList>
@@ -158,18 +172,30 @@ export function FeaturesSection() {
                     viewport={{ once: true }}
                   >
                     <motion.h3
-                      className="heading-md text-black flex items-center gap-2"
+                      className="heading-md text-black flex items-center gap-3"
                       variants={itemVariants}
                     >
-                      <feature.icon className="h-6 w-6 text-primary" />
-                      {feature.title}
+                      <div className={`p-3 rounded-full flex items-center justify-center ${feature.id === 'integration' ? 'bg-red-100' : feature.id === 'certifications' ? 'bg-green-100' : feature.id === 'ai-connect' ? 'bg-blue-100' : 'bg-purple-100'}`}>
+                        <feature.icon className={`h-7 w-7 ${feature.id === 'integration' ? 'text-red-600' : feature.id === 'certifications' ? 'text-green-600' : feature.id === 'ai-connect' ? 'text-blue-600' : 'text-purple-600'}`} />
+                      </div>
+                      <span className={`${feature.id === 'integration' ? 'bg-clip-text text-transparent bg-gradient-to-r from-red-700 to-red-500' : feature.id === 'certifications' ? 'bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-green-500' : feature.id === 'ai-connect' ? 'bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-blue-500' : 'bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-purple-500'}`}>
+                        {feature.title}
+                      </span>
                     </motion.h3>
 
                     <motion.p
                       className="text-gray-600"
                       variants={itemVariants}
                     >
-                      {feature.description}
+                      {feature.id === 'integration' ? (
+                        <>Seamless compatibility with all major <span className="font-bold text-red-600 px-1 py-0.5 rounded bg-red-50">WMS/WCS</span> systems enables efficient warehouse management.</>
+                      ) : feature.id === 'certifications' ? (
+                        <><span className="font-bold text-green-600 px-1 py-0.5 rounded bg-green-50">UL certification</span> for the US market and international standards compliance for global operation.</>
+                      ) : feature.id === 'ai-connect' ? (
+                        <><span className="font-bold text-blue-600 px-1 py-0.5 rounded bg-blue-50">Predictive maintenance</span> system that reduces downtime and extends the machine's operational life.</>
+                      ) : (
+                        <>Enhanced <span className="font-bold text-purple-600 px-1 py-0.5 rounded bg-purple-50">efficiency metrics</span> that deliver measurable ROI through operational improvements.</>
+                      )}
                     </motion.p>
 
                     <motion.div
@@ -181,11 +207,12 @@ export function FeaturesSection() {
                         {feature.benefits.map((benefit, idx) => (
                           <motion.li
                             key={idx}
-                            className="flex items-start gap-2"
+                            className="flex items-start gap-2 p-2 rounded-lg hover:bg-gray-50 transition-colors duration-300"
                             variants={itemVariants}
+                            whileHover={{ x: 5, transition: { duration: 0.2 } }}
                           >
-                            <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                            <span>{benefit}</span>
+                            <Check className={`h-5 w-5 flex-shrink-0 mt-0.5 ${feature.id === 'integration' ? 'text-red-500' : feature.id === 'certifications' ? 'text-green-500' : feature.id === 'ai-connect' ? 'text-blue-500' : 'text-purple-500'}`} />
+                            <span className="font-medium">{benefit}</span>
                           </motion.li>
                         ))}
                       </ul>

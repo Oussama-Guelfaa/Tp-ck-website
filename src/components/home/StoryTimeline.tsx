@@ -24,7 +24,6 @@ const timelineData: TimelineCheckpoint[] = [
     content: "Backed by over five decades of industrial automation expertise, Tp@ck emerged from a rich engineering legacy rooted in French manufacturing excellence.",
     icon: Clock,
     iconBg: "#d32f2f", // Red
-    year: "1970s"
   },
   {
     id: 2,
@@ -32,7 +31,6 @@ const timelineData: TimelineCheckpoint[] = [
     content: "Through the years, our engineering philosophy has evolved to meet new demands — combining industrial performance with environmental responsibility.",
     icon: GitBranch,
     iconBg: "#ff9800", // Orange
-    year: "1990s"
   },
   {
     id: 3,
@@ -40,7 +38,6 @@ const timelineData: TimelineCheckpoint[] = [
     content: "Tp@ck was born from this evolution: an autonomous initiative designed to reshape packaging with zero-waste, eco-conscious automation.",
     icon: Lightbulb,
     iconBg: "#2e7d32", // Green
-    year: "2015"
   },
   {
     id: 4,
@@ -69,7 +66,6 @@ export function StoryTimeline() {
       content: t('timeline.roots.content', 'Backed by over five decades of industrial automation expertise, Tp@ck emerged from a rich engineering legacy rooted in French manufacturing excellence.'),
       icon: Clock,
       iconBg: "#d32f2f", // Red
-      year: t('timeline.roots.year', '1970s')
     },
     {
       id: 2,
@@ -77,7 +73,6 @@ export function StoryTimeline() {
       content: t('timeline.evolving.content', 'Through the years, our engineering philosophy has evolved to meet new demands — combining industrial performance with environmental responsibility.'),
       icon: GitBranch,
       iconBg: "#ff9800", // Orange
-      year: t('timeline.evolving.year', '1990s')
     },
     {
       id: 3,
@@ -85,7 +80,7 @@ export function StoryTimeline() {
       content: t('timeline.birth.content', 'Tp@ck was born from this evolution: an autonomous initiative designed to reshape packaging with zero-waste, eco-conscious automation.'),
       icon: Lightbulb,
       iconBg: "#2e7d32", // Green
-      year: t('timeline.birth.year', '2015')
+
     },
     {
       id: 4,
@@ -93,7 +88,7 @@ export function StoryTimeline() {
       content: t('timeline.mission.content', 'Tp@ck stands for a new generation of packaging: plastic-free, glue-free, and compromise-free. Modular, scalable, and built for tomorrow\'s industry.'),
       icon: Target,
       iconBg: "#0288d1", // Blue
-      year: t('timeline.mission.year', 'Today')
+
     }
   ];
 

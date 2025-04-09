@@ -119,12 +119,12 @@
 }
 
 .section {
-  min-height: 100vh;
+  min-height: 90vh; /* Reduced from 100vh */
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Changed from center to align content at the top */
   justify-content: center;
   position: relative;
-  padding: 4rem 0;
+  padding: 3rem 0; /* Reduced vertical padding */
 }
 
 .sustainableSection {
@@ -140,36 +140,65 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  display: flex;
+  flex-direction: column;
   position: relative;
   z-index: 2;
 }
 
-/* Standard container (image on right) */
-.standardContainer {
-  grid-template-areas: "text image";
+/* Content layout */
+.textContent {
+  width: 100%;
+  margin-bottom: 1.5rem; /* Reduced bottom margin */
+  padding-top: 2rem; /* Added top padding to position text higher */
 }
 
-.standardContainer .imageContainer {
-  grid-area: image;
+.contentRow {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
 }
 
-.standardContainer .textContent {
-  grid-area: text;
+.ecoDesignRow {
+  margin-top: 2rem;
+  align-items: center;
 }
 
-.reversedContainer {
-  grid-template-areas: "image text";
+.contentRowReversed {
+  flex-direction: row-reverse;
 }
 
-.reversedContainer .imageContainer {
-  grid-area: image;
+.textColumn {
+  flex: 1.2; /* Give text column slightly more space */
 }
 
-.reversedContainer .textContent {
-  grid-area: text;
+.imageColumn {
+  flex: 1;
+  padding-top: 0; /* Remove top padding to align with text */
+  display: flex;
+  align-items: flex-start;
+  height: 450px; /* Set explicit height */
+}
+
+/* Ensure the image stays on the right */
+.rightImage {
+  order: 2; /* Force to be second in the flex container */
+}
+
+.fullWidthImage {
+  width: 100%;
+  margin-top: 1rem; /* Reduced top margin */
+}
+
+/* Specific adjustments for each section */
+.section2Image {
+  margin-top: 3rem;
+}
+
+.section3Image {
+  margin-top: 3rem;
 }
 
 .textContent {
@@ -181,7 +210,7 @@
 .sectionTitle {
   font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem; /* Reduced bottom margin */
   color: #d32f2f;
   line-height: 1.1;
 }
@@ -197,14 +226,14 @@
 .sectionDescription {
   font-size: 1.25rem;
   color: #444;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem; /* Reduced bottom margin */
   line-height: 1.5;
 }
 
 .featureList {
   list-style: none;
   padding: 0;
-  margin: 0 0 2rem;
+  margin: 0 0 1.5rem; /* Reduced bottom margin */
 }
 
 .featureItem {
@@ -251,10 +280,14 @@
 
 .imageContainer {
   position: relative;
-  height: 500px;
+  height: 450px; /* Reduced height */
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.rightImageContainer {
+  margin-left: auto; /* Push to the right */
 }
 
 .machineImage, .sustainableImage, .responsibleImage {
@@ -318,10 +351,12 @@
 
 /* Paper folding animation */
 .paperFoldContainer {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  margin-bottom: 2rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 120px; /* Increased height */
+  margin-bottom: 1rem;
   z-index: 1;
   pointer-events: none;
   perspective: 1000px;
@@ -349,7 +384,7 @@
 
 /* Map section specific layout */
 .mapSectionContainer {
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 0.8fr 1.2fr;
 }
 
 .mapWrapper {
@@ -557,7 +592,25 @@
 
   .imageContainer, .mapWrapper {
     height: 350px;
+  }
+
+  /* Don't apply order: -1 to rows with specific classes */
+  .contentRow:not(.contentRowReversed):not(.ecoDesignRow) .imageContainer {
     order: -1;
+  }
+
+  /* Ensure rightImage stays on the right even on smaller screens */
+  .rightImage {
+    order: 2 !important;
+  }
+
+  /* Ensure contentRowReversed works on all screen sizes */
+  .contentRowReversed {
+    flex-direction: row-reverse !important;
+  }
+
+  .rightImageContainer {
+    margin-left: auto !important;
   }
 
   .pinLabel {

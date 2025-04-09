@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ArrowLeft, Recycle, Zap, Award, Package, Leaf, Globe, Truck, Trash2, Flame, Lightbulb } from 'lucide-react';
@@ -46,22 +47,7 @@ export function DifferentiatorsCarousel() {
       benefitIcons: [Recycle, Leaf, Recycle, Leaf],
       learnMoreLink: '/features/plastic-free',
     },
-    {
-      id: 'energy-consumption',
-      title: t('home.differentiators.energy.title', '-35% Energy Consumption'),
-      description: t('home.differentiators.energy.description', 'Our optimized sealing process significantly reduces energy usage with a lower thermal footprint compared to traditional packaging methods.'),
-      benefits: [
-        t('home.differentiators.energy.benefit1', 'Optimized sealing process'),
-        t('home.differentiators.energy.benefit2', 'Lower thermal footprint'),
-        t('home.differentiators.energy.benefit3', 'Reduced carbon emissions'),
-        t('home.differentiators.energy.benefit4', 'Energy-efficient operation'),
-      ],
-      color: '#FF9800', // Energy orange
-      bgColor: 'rgba(255, 152, 0, 0.03)',
-      icon: Zap,
-      benefitIcons: [Zap, Flame, Lightbulb, Zap],
-      learnMoreLink: '/features/energy-efficiency',
-    },
+
     {
       id: 'ecovadis-certified',
       title: t('home.differentiators.ecovadis.title', 'EcoVadis Certified'),
@@ -96,7 +82,7 @@ export function DifferentiatorsCarousel() {
     },
     {
       id: 'logistics-costs',
-      title: t('home.differentiators.logistics.title', '-25% Logistic Costs'),
+      title: t('home.differentiators.logistics.title', 'Saving Logistic Costs'),
       description: t('home.differentiators.logistics.description', 'Our volume-optimized packaging reduces shipping space requirements, resulting in fewer trips, lower transportation costs, and reduced CO₂ emissions.'),
       benefits: [
         t('home.differentiators.logistics.benefit1', 'Volume-optimized packaging'),
@@ -261,43 +247,125 @@ export function DifferentiatorsCarousel() {
                 background: currentDifferentiator.bgColor,
               }}
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-6 md:p-10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-6 md:p-10 relative overflow-hidden">
                 {/* Content section */}
-                <div className="space-y-6">
-                  <div className="flex items-center space-x-3">
-                    <div
-                      className={`${styles.iconContainer} p-3 rounded-lg`}
-                      style={{ backgroundColor: currentDifferentiator.color }}
+                <div className="space-y-6 z-10">
+                  <div className="flex items-center space-x-4">
+                    <motion.div
+                      className={`${styles.iconContainer} p-5 rounded-xl shadow-lg bg-gradient-to-br`}
+                      style={{
+                        backgroundImage: `linear-gradient(135deg, ${currentDifferentiator.color} 0%, ${currentDifferentiator.color}99 100%)`,
+                        boxShadow: `0 10px 15px -3px ${currentDifferentiator.color}30, 0 4px 6px -4px ${currentDifferentiator.color}20`
+                      }}
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ type: 'spring', stiffness: 300 }}
                     >
-                      <currentDifferentiator.icon className="h-6 w-6 text-white" />
+                      <currentDifferentiator.icon className="h-10 w-10 text-white drop-shadow-md" />
+                    </motion.div>
+                    <div>
+                      <h3 className="text-3xl md:text-5xl font-extrabold bg-clip-text text-transparent relative inline-block"
+                        style={{
+                          backgroundImage: `linear-gradient(135deg, ${currentDifferentiator.color} 0%, ${currentDifferentiator.color}99 100%)`
+                        }}
+                      >
+                        {currentDifferentiator.id === 'plastic-free' ? (
+                          <>100% <span className="text-4xl md:text-6xl">Plastic-Free</span></>
+                        ) : currentDifferentiator.id === 'ecovadis-certified' ? (
+                          <><span className="text-4xl md:text-6xl">EcoVadis</span> Certified</>
+                        ) : currentDifferentiator.id === 'zero-overpackaging' ? (
+                          <>Zero <span className="text-4xl md:text-6xl">Overpackaging</span></>
+                        ) : currentDifferentiator.id === 'logistics-costs' ? (
+                          <>Saving <span className="text-4xl md:text-6xl">Logistic Costs</span></>
+                        ) : (
+                          <><span className="text-4xl md:text-6xl">100% Recyclable</span> Materials</>
+                        )}
+                      </h3>
+                      <motion.div
+                        className="h-1 bg-gradient-to-r rounded-full mt-2"
+                        style={{
+                          backgroundImage: `linear-gradient(to right, ${currentDifferentiator.color}, ${currentDifferentiator.color}50)`
+                        }}
+                        initial={{ width: 0 }}
+                        animate={{ width: '100%' }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                      />
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold" style={{ color: currentDifferentiator.color }}>
-                      {currentDifferentiator.title}
-                    </h3>
                   </div>
 
-                  <p className="text-gray-700 text-lg">
-                    {currentDifferentiator.description}
-                  </p>
+                  <motion.div
+                    className="text-gray-700 text-lg leading-relaxed p-4 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm border border-gray-100"
+                    whileHover={{ boxShadow: `0 10px 15px -3px ${currentDifferentiator.color}20, 0 4px 6px -4px ${currentDifferentiator.color}10` }}
+                  >
+                    {currentDifferentiator.id === 'plastic-free' ? (
+                      <>Our innovative <span className="font-bold text-green-600 relative inline-block group text-xl">auto-sealing technology <span className="absolute bottom-0 left-0 w-full h-0.5 bg-green-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></span> uses recyclable paper materials without requiring glue, tape, or any plastic components.</>
+                    ) : currentDifferentiator.id === 'energy-consumption' ? (
+                      <>Our <span className="font-bold text-orange-600 relative inline-block group text-xl">optimized sealing process <span className="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></span> significantly reduces energy usage with a lower thermal footprint compared to traditional packaging methods.</>
+                    ) : currentDifferentiator.id === 'ecovadis-certified' ? (
+                      <>Our solutions are <span className="font-bold text-green-600 relative inline-block group text-xl">EcoVadis certified <span className="absolute bottom-0 left-0 w-full h-0.5 bg-green-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></span>, verifying our commitment to sustainability and ethical compliance throughout our supply chain and operations.</>
+                    ) : currentDifferentiator.id === 'zero-overpackaging' ? (
+                      <>Our intelligent <span className="font-bold text-orange-600 relative inline-block group text-xl">sizing technology <span className="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></span> creates perfectly fitted packaging for each product, eliminating the need for fillers and reducing material waste.</>
+                    ) : currentDifferentiator.id === 'logistics-costs' ? (
+                      <>Our <span className="font-bold text-blue-600 relative inline-block group text-xl">volume-optimized packaging <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></span> reduces shipping space requirements, resulting in fewer trips, lower transportation costs, and reduced CO₂ emissions.</>
+                    ) : (
+                      <>Our packaging is made from <span className="font-bold text-green-600 relative inline-block group text-xl">100% recyclable materials <span className="absolute bottom-0 left-0 w-full h-0.5 bg-green-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></span>, contributing to a circular economy and reducing environmental impact.</>
+                    )}
+                  </motion.div>
 
                   <div className="space-y-4">
-                    <h4 className="font-semibold text-gray-900">
+                    <h4 className="font-bold text-gray-900 text-xl flex items-center gap-2">
+                      <span className="p-1.5 rounded-full bg-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                      </span>
                       {t('home.differentiators.keyBenefits', 'Key Benefits')}:
                     </h4>
-                    <ul className="space-y-3">
+                    <ul className="space-y-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {currentDifferentiator.benefits.map((benefit, idx) => (
-                        <li key={idx} className={`${styles.benefitItem} flex items-start`}>
-                          <div
-                            className={`${styles.benefitIcon} p-1.5 rounded-full mr-3 flex-shrink-0 mt-0.5`}
-                            style={{ backgroundColor: `${currentDifferentiator.color}20` }}
+                        <motion.li
+                          key={idx}
+                          className={`${styles.benefitItem} flex items-start p-3 rounded-lg bg-white/90 backdrop-blur-sm border border-gray-100 shadow-sm`}
+                          whileHover={{
+                            x: 5,
+                            backgroundColor: `${currentDifferentiator.color}05`,
+                            boxShadow: `0 4px 6px -1px ${currentDifferentiator.color}20, 0 2px 4px -2px ${currentDifferentiator.color}10`,
+                            borderColor: `${currentDifferentiator.color}30`
+                          }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <motion.div
+                            className={`${styles.benefitIcon} p-2 rounded-full mr-3 flex-shrink-0 mt-0.5 shadow-sm`}
+                            style={{
+                              backgroundColor: `${currentDifferentiator.color}20`,
+                              boxShadow: `0 2px 4px -1px ${currentDifferentiator.color}20`
+                            }}
+                            whileHover={{ scale: 1.1, backgroundColor: `${currentDifferentiator.color}30` }}
                           >
                             {(() => {
                               const IconComponent = currentDifferentiator.benefitIcons[idx % currentDifferentiator.benefitIcons.length];
                               return <IconComponent className="h-4 w-4" style={{ color: currentDifferentiator.color }} />;
                             })()}
-                          </div>
-                          <span className="text-gray-700">{benefit}</span>
-                        </li>
+                          </motion.div>
+                          <span className="text-gray-700 font-medium">
+                            {benefit.includes(':') ? (
+                              <>
+                                <span className="font-bold" style={{ color: currentDifferentiator.color }}>
+                                  {benefit.split(':')[0]}:
+                                </span>
+                                {benefit.split(':')[1]}
+                              </>
+                            ) : benefit.includes('=') ? (
+                              <>
+                                <span className="font-bold" style={{ color: currentDifferentiator.color }}>
+                                  {benefit.split('=')[0]}
+                                </span>
+                                = {benefit.split('=')[1]}
+                              </>
+                            ) : (
+                              <>
+                                {benefit.split(' ').slice(0, 2).join(' ')} <span className="font-bold" style={{ color: currentDifferentiator.color }}>{benefit.split(' ').slice(2).join(' ')}</span>
+                              </>
+                            )}
+                          </span>
+                        </motion.li>
                       ))}
                     </ul>
                   </div>

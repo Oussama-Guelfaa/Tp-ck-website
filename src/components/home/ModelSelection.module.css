@@ -173,7 +173,7 @@
 .loadingSpinner {
   border: 4px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  border-top: 4px solid #ff3333;
+  border-top: 4px solid #ff3343;
   width: 40px;
   height: 40px;
   animation: spin 1s linear infinite;

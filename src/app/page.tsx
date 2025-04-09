@@ -24,7 +24,6 @@ export default function HomePage() {
         <ProductsSection />
         <TestimonialsSection />
         <SocialMediaSection />
-        <CtaSection />
       </MainLayout>
     </>
   );

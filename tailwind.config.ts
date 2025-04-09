@@ -77,6 +77,27 @@ export default {
         '2xl': '1536px',
       },
       },
+      keyframes: {
+        'slow-pulse': {
+          '0%, 100%': { opacity: '0.6' },
+          '50%': { opacity: '0.3' },
+        },
+        'slow-float': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-15px)' },
+        },
+        'slow-float-reverse': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(15px)' },
+        },
+      },
+      animation: {
+        'slow-pulse': 'slow-pulse 8s ease-in-out infinite',
+        'slow-pulse-delay': 'slow-pulse 8s ease-in-out 2s infinite',
+        'slow-float': 'slow-float 12s ease-in-out infinite',
+        'slow-float-delay': 'slow-float 12s ease-in-out 3s infinite',
+        'slow-float-reverse': 'slow-float-reverse 10s ease-in-out infinite',
+      },
     }
   },
   plugins: [require("tailwindcss-animate")],
