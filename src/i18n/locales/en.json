@@ -27,11 +27,88 @@
         "view3dModels": "View 3D Models",
         "videoTitle": "TP@CK Product Overview",
         "subheading": "A French-made, auto-sealing packaging solution—no glue, no plastic—designed to reduce waste, optimize costs, and drive your ecological transition.",
+        "differentiators": {
+            "sectionLabel": "What Makes Us Different",
+            "sectionTitle": "Key Differentiators",
+            "sectionDescription": "Discover what sets TP@CK apart from legacy solutions with our innovative approach to packaging technology.",
+            "keyBenefits": "Key Benefits",
+            "learnMore": "Learn more",
+            "plastic-free": {
+                "title": "Up to 100% Plastic-Free",
+                "description": "Our innovative auto-sealing technology uses recyclable paper materials without requiring glue, tape, or any plastic components.",
+                "benefit1": "Auto-sealing with recyclable paper",
+                "benefit2": "No glue or adhesives required",
+                "benefit3": "No plastic tape or fasteners",
+                "benefit4": "Fully biodegradable packaging"
+            },
+            "ecovadis": {
+                "title": "EcoVadis Certified",
+                "description": "Our solutions are EcoVadis certified, verifying our commitment to sustainability and ethical compliance throughout our supply chain and operations.",
+                "benefit1": "Verified sustainability practices",
+                "benefit2": "Ethical compliance certification",
+                "benefit3": "Supply chain transparency",
+                "benefit4": "Environmental responsibility"
+            },
+            "zero-overpackaging": {
+                "title": "Zero Overpackaging",
+                "description": "Our intelligent sizing technology creates perfectly fitted packaging for each product, eliminating the need for fillers and reducing material waste.",
+                "benefit1": "Intelligent sizing = no fillers",
+                "benefit2": "Custom-fit packaging for each product",
+                "benefit3": "Elimination of void fill materials",
+                "benefit4": "Reduced packaging waste"
+            },
+            "logistics": {
+                "title": "Saving Logistic Costs",
+                "description": "Our volume-optimized packaging reduces shipping space requirements, resulting in fewer trips, lower transportation costs, and reduced CO₂ emissions.",
+                "benefit1": "Volume-optimized packaging",
+                "benefit2": "Fewer transportation trips",
+                "benefit3": "Reduced CO₂ emissions",
+                "benefit4": "Lower shipping costs"
+            },
+            "recyclable": {
+                "title": "100% Recyclable Materials",
+                "description": "We exclusively use paper, kraft, and cardboard materials that are 100% recyclable, avoiding composite materials that complicate the recycling process.",
+                "benefit1": "Paper, kraft, cardboard only",
+                "benefit2": "No composite materials",
+                "benefit3": "Easy single-stream recycling",
+                "benefit4": "Supports circular economy"
+            }
+        },
         "stats": {
             "waste": "Waste Reduction",
             "energy": "Energy Efficient",
             "certifications": "Global Certifications",
             "trees": "Trees Saved"
+        },
+        "profitable": {
+            "title": "Profitable by Design",
+            "description": "Tp@ck redefines efficiency with its advanced automation, delivering measurable business impact from day one.",
+            "footer": "With Tp@ck, performance is not a promise — it's engineered.",
+            "item1": "+40% productivity gains with cutting-edge automation",
+            "item2": "6-month average ROI vs. traditional packaging",
+            "item3": "35% reduction in consumable usage, cutting inventory and supply costs",
+            "item4": "98% machine uptime, ensuring uninterrupted operations",
+            "item5": "Compatible with WMS/WCS/TMS systems for seamless integration"
+        },
+        "sustainable": {
+            "title": "Built for Tomorrow. Sustainably.",
+            "description": "Eco-design is embedded at every level — material, method, and mission.",
+            "footer": "Tp@ck doesn't just reduce waste — it makes sustainability operational.",
+            "item1": "100% recyclable packaging: kraft paper, corrugated cardboard",
+            "item2": "No glue, no plastic, no chemical adhesives = zero environmental compromise",
+            "item3": "Custom-fit packaging eliminates void fillers and reduces material waste",
+            "item4": "Accepts materials from 80g/m² to 300g/m²",
+            "item5": "Certified by EcoVadis"
+        },
+        "responsible": {
+            "title": "A Responsible Technology, Ready to Scale",
+            "description": "Tp@ck is more than a machine — it's a future-proof ecosystem designed for global impact.",
+            "footer": "Because tomorrow's packaging isn't just efficient — it's ethical, modular, and global.",
+            "item1": "Fully designed and manufactured in France",
+            "item2": "Supports local employment, short circuits, and regional sourcing",
+            "item3": "Adapts to global compliance standards",
+            "item4": "Scalable, low-energy integration",
+            "item5": "Aligned with modern ESG and transparency expectations"
         },
         "certification": "Certified for all major international markets",
         "wms_integration": "WMS Integration",
@@ -39,9 +116,13 @@
         "ai_maintenance": "AI Predictive Maintenance",
         "downtime_reduction": "Reduces downtime by 74%",
         "hero": {
-            "title": "Revolutionary Packaging Solutions",
+            "title": "Tp@ck: Smart, Sustainable & Profitable Packaging",
             "subtitle": "Advanced Technology Integration for Modern Businesses",
-            "cta": "Explore Our Solutions"
+            "cta": "Explore Our Solutions",
+            "smart": "Smart",
+            "sustainable": "Sustainable",
+            "profitable": "Profitable",
+            "packaging": "Packaging"
         },
         "features": {
             "title": "Why Choose TP@CK",
@@ -128,6 +209,7 @@
         "linkedin": "LinkedIn",
         "youtube": "YouTube"
     },
+
 
     "testimonials": {
         "sectionLabel": "Client Success Stories",
@@ -508,5 +590,57 @@
         "search_placeholder": "Search articles...",
         "no_results": "No articles found matching your search.",
         "filter_by": "Filter by"
+    },
+    "about": {
+        "title": "TP@CK – Eco-Responsible Auto-Sealing Packaging",
+        "subtitle": "A revolutionary packaging solution that combines efficiency, sustainability, and innovation",
+        "cards": {
+            "range": {
+                "title": "Product Range",
+                "description": "T20 (500 u/h), T30 (500 u/h), T50 (250 u/h)"
+            },
+            "benefits": {
+                "title": "Key Benefits",
+                "description": "Zero glue, 100% paper, waste reduction"
+            },
+            "performance": {
+                "title": "Throughput & Performance",
+                "description": "Logistics optimization, space saving"
+            }
+        },
+        "stats": {
+            "waste": "-25% plastic waste",
+            "transport": "-15% transport costs",
+            "compliance": "AGEC & EPR law compliant"
+        },
+        "learnMore": {
+            "title": "Learn More About TP@CK",
+            "more": "Show More",
+            "less": "Show Less"
+        },
+        "content": {
+            "intro": "TP@CK is a 100% paper auto-sealing packaging solution, without glue or adhesive, developed by Tecnimodern Automation.",
+            "range": {
+                "title": "Machine Range:",
+                "t20": "T20: envelopes, 500 u/h",
+                "t30": "T30: packages, 500 u/h",
+                "t50": "T50: large formats, 250 u/h"
+            },
+            "benefits": {
+                "title": "Key Benefits:",
+                "plastic": "Elimination of plastic consumables (glue/tape)",
+                "waste": "Up to 25% reduction in packaging waste",
+                "volume": "Optimized transport volume (15% logistics cost reduction)",
+                "compliance": "Compliance with CSR standards (AGEC law, EPR directive, PPWR 2026)"
+            },
+            "models": {
+                "title": "Economic Models:",
+                "description": "Direct purchase, green leasing, payment per box (0.03 €/unit)"
+            },
+            "integration": {
+                "title": "Integration & Traceability:",
+                "description": "WMS/ERP API, optional RFID chips, Digital Twin"
+            }
+        }
     }
 }

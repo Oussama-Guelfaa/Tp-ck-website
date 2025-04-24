@@ -42,7 +42,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-white text-gray-800 pt-16 pb-8 relative overflow-hidden border-t border-gray-100">
+    <footer className="bg-white pt-16 pb-8 relative overflow-hidden border-t border-gray-100">
       {/* Subtle eco pattern background */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div className="absolute h-32 w-32 top-[10%] left-[5%] rotate-12">

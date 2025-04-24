@@ -27,11 +27,88 @@
         "view3dModels": "3D-Modelle anzeigen",
         "videoTitle": "TP@CK Produktübersicht",
         "subheading": "Eine in Frankreich hergestellte, selbstversiegelnde Verpackungslösung—ohne Klebstoff, ohne Plastik—entwickelt, um Abfall zu reduzieren, Kosten zu optimieren und Ihren ökologischen Wandel voranzutreiben.",
+        "differentiators": {
+            "sectionLabel": "Was uns unterscheidet",
+            "sectionTitle": "Wichtige Unterschiede",
+            "sectionDescription": "Entdecken Sie, was TP@CK von herkömmlichen Lösungen mit unserem innovativen Ansatz für Verpackungstechnologie unterscheidet.",
+            "keyBenefits": "Hauptvorteile",
+            "learnMore": "Mehr erfahren",
+            "plastic-free": {
+                "title": "Bis zu 100% Plastikfrei",
+                "description": "Unsere innovative Selbstversiegelungstechnologie verwendet recycelbare Papiermaterialien ohne Klebstoff, Klebeband oder Plastikkomponenten.",
+                "benefit1": "Selbstversiegelung mit recycelbarem Papier",
+                "benefit2": "Kein Klebstoff oder Klebemittel erforderlich",
+                "benefit3": "Kein Plastikband oder Plastikbefestigungen",
+                "benefit4": "Vollständig biologisch abbaubare Verpackung"
+            },
+            "ecovadis": {
+                "title": "EcoVadis-zertifiziert",
+                "description": "Unsere Lösungen sind EcoVadis-zertifiziert und bestätigen unser Engagement für Nachhaltigkeit und ethische Compliance in unserer gesamten Lieferkette und unseren Betriebsabläufen.",
+                "benefit1": "Verifizierte Nachhaltigkeitspraktiken",
+                "benefit2": "Ethische Compliance-Zertifizierung",
+                "benefit3": "Transparenz der Lieferkette",
+                "benefit4": "Umweltverantwortung"
+            },
+            "zero-overpackaging": {
+                "title": "Null Überverpackung",
+                "description": "Unsere intelligente Größenanpassungstechnologie erstellt perfekt angepasste Verpackungen für jedes Produkt, eliminiert den Bedarf an Füllmaterialien und reduziert Materialabfall.",
+                "benefit1": "Intelligente Größenanpassung = keine Füllstoffe",
+                "benefit2": "Maßgeschneiderte Verpackung für jedes Produkt",
+                "benefit3": "Eliminierung von Füllmaterialien",
+                "benefit4": "Reduzierter Verpackungsabfall"
+            },
+            "logistics": {
+                "title": "Logistikkosteneinsparung",
+                "description": "Unsere volumenoptimierte Verpackung reduziert den Versandplatzbedarf, was zu weniger Fahrten, niedrigeren Transportkosten und reduzierten CO₂-Emissionen führt.",
+                "benefit1": "Volumenoptimierte Verpackung",
+                "benefit2": "Weniger Transportfahrten",
+                "benefit3": "Reduzierte CO₂-Emissionen",
+                "benefit4": "Niedrigere Versandkosten"
+            },
+            "recyclable": {
+                "title": "100% Recycelbare Materialien",
+                "description": "Wir verwenden ausschließlich Papier-, Kraft- und Kartonmaterialien, die zu 100% recycelbar sind, und vermeiden Verbundmaterialien, die den Recyclingprozess verkomplizieren.",
+                "benefit1": "Nur Papier, Kraft, Karton",
+                "benefit2": "Keine Verbundmaterialien",
+                "benefit3": "Einfaches Einströmrecycling",
+                "benefit4": "Unterstützt die Kreislaufwirtschaft"
+            }
+        },
         "stats": {
             "waste": "Abfallreduzierung",
             "energy": "Energieeffizienz",
             "certifications": "Globale Zertifizierungen",
             "trees": "Gerettete Bäume"
+        },
+        "profitable": {
+            "title": "Profitabel durch Design",
+            "description": "Tp@ck definiert Effizienz neu mit seiner fortschrittlichen Automatisierung und liefert messbare Geschäftsvorteile vom ersten Tag an.",
+            "footer": "Mit Tp@ck ist Leistung kein Versprechen — sie ist konstruiert.",
+            "item1": "+40% Produktivitätssteigerung durch modernste Automatisierung",
+            "item2": "6-monatige durchschnittliche Amortisationszeit im Vergleich zu herkömmlichen Verpackungen",
+            "item3": "35% Reduzierung des Verbrauchsmaterialeinsatzes, Senkung der Lager- und Beschaffungskosten",
+            "item4": "98% Maschinenverfügbarkeit, die einen unterbrechungsfreien Betrieb gewährleistet",
+            "item5": "Kompatibel mit WMS/WCS/TMS-Systemen für nahtlose Integration"
+        },
+        "sustainable": {
+            "title": "Gebaut für Morgen. Nachhaltig.",
+            "description": "Öko-Design ist auf jeder Ebene integriert — Material, Methode und Mission.",
+            "footer": "Tp@ck reduziert nicht nur Abfall — es macht Nachhaltigkeit operativ.",
+            "item1": "100% recycelbare Verpackung: Kraftpapier, Wellpappe",
+            "item2": "Kein Klebstoff, kein Plastik, keine chemischen Klebemittel = null Umweltkompromisse",
+            "item3": "Maßgeschneiderte Verpackung eliminiert Füllmaterialien und reduziert Materialabfall",
+            "item4": "Akzeptiert Materialien von 80g/m² bis 300g/m²",
+            "item5": "Zertifiziert durch EcoVadis"
+        },
+        "responsible": {
+            "title": "Eine verantwortungsvolle Technologie, bereit zu skalieren",
+            "description": "Tp@ck ist mehr als eine Maschine — es ist ein zukunftssicheres Ökosystem, konzipiert für globale Wirkung.",
+            "footer": "Denn die Verpackung von morgen ist nicht nur effizient — sie ist ethisch, modular und global.",
+            "item1": "Vollständig in Frankreich entwickelt und hergestellt",
+            "item2": "Unterstützt lokale Beschäftigung, kurze Wege und regionale Beschaffung",
+            "item3": "Passt sich an globale Compliance-Standards an",
+            "item4": "Skalierbare, energiesparende Integration",
+            "item5": "Ausgerichtet an modernen ESG- und Transparenzerwartungen"
         },
         "certification": "Zertifiziert für alle wichtigen internationalen Märkte",
         "wms_integration": "WMS-Integration",
@@ -39,9 +116,13 @@
         "ai_maintenance": "KI-Prädiktive Wartung",
         "downtime_reduction": "Reduziert Ausfallzeiten um 74%",
         "hero": {
-            "title": "Revolutionäre Verpackungslösungen",
+            "title": "Tp@ck: Intelligente, Nachhaltige & Profitable Verpackung",
             "subtitle": "Fortschrittliche Technologieintegration für moderne Unternehmen",
-            "cta": "Entdecken Sie unsere Lösungen"
+            "cta": "Entdecken Sie unsere Lösungen",
+            "smart": "Intelligente",
+            "sustainable": "Nachhaltige",
+            "profitable": "Profitable",
+            "packaging": "Verpackung"
         },
         "features": {
             "title": "Warum TP@CK wählen",
@@ -128,6 +209,7 @@
         "linkedin": "LinkedIn",
         "youtube": "YouTube"
     },
+
 
     "testimonials": {
         "sectionLabel": "Erfolgsgeschichten unserer Kunden",
@@ -463,5 +545,57 @@
         "search_placeholder": "Artikel suchen...",
         "no_results": "Keine Artikel gefunden, die Ihrer Suche entsprechen.",
         "filter_by": "Filtern nach"
+    },
+    "about": {
+        "title": "TP@CK – Umweltfreundliche selbstversiegelnde Verpackung",
+        "subtitle": "Eine revolutionäre Verpackungslösung, die Effizienz, Nachhaltigkeit und Innovation vereint",
+        "cards": {
+            "range": {
+                "title": "Produktpalette",
+                "description": "T20 (500 E/h), T30 (500 E/h), T50 (250 E/h)"
+            },
+            "benefits": {
+                "title": "Hauptvorteile",
+                "description": "Kein Klebstoff, 100% Papier, Abfallreduzierung"
+            },
+            "performance": {
+                "title": "Durchsatz & Leistung",
+                "description": "Logistikoptimierung, Platzersparnis"
+            }
+        },
+        "stats": {
+            "waste": "-25% Plastikabfall",
+            "transport": "-15% Transportkosten",
+            "compliance": "AGEC & EPR konform"
+        },
+        "learnMore": {
+            "title": "Mehr über TP@CK erfahren",
+            "more": "Mehr anzeigen",
+            "less": "Weniger anzeigen"
+        },
+        "content": {
+            "intro": "TP@CK ist eine 100% Papier-Selbstversiegelungslösung ohne Klebstoff oder Klebemittel, entwickelt von Tecnimodern Automation.",
+            "range": {
+                "title": "Maschinenpalette:",
+                "t20": "T20: Umschläge, 500 E/h",
+                "t30": "T30: Pakete, 500 E/h",
+                "t50": "T50: Großformate, 250 E/h"
+            },
+            "benefits": {
+                "title": "Hauptvorteile:",
+                "plastic": "Beseitigung von Plastikverbrauchsmaterialien (Klebstoff/Klebeband)",
+                "waste": "Bis zu 25% Reduzierung von Verpackungsabfall",
+                "volume": "Optimiertes Transportvolumen (15% Logistikkosteneinsparung)",
+                "compliance": "Konformität mit CSR-Standards (AGEC-Gesetz, EPR-Richtlinie, PPWR 2026)"
+            },
+            "models": {
+                "title": "Wirtschaftsmodelle:",
+                "description": "Direktkauf, grünes Leasing, Zahlung pro Karton (0,03 €/Einheit)"
+            },
+            "integration": {
+                "title": "Integration & Rückverfolgbarkeit:",
+                "description": "WMS/ERP API, optionale RFID-Chips, Digital Twin"
+            }
+        }
     }
 }

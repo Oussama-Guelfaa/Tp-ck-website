@@ -14,6 +14,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { LanguageSelector } from "@/components/ui/language-selector";
 
+
 interface MenuItem {
   name: string;
   href: string;
@@ -63,8 +64,8 @@ export function Header() {
     <header
       className={`sticky top-0 z-50 w-full ${
         isScrolled
-          ? "bg-white shadow-md shadow-gray-100/50 dark:bg-gray-900"
-          : "bg-white/95 backdrop-blur-md dark:bg-gray-900/80 border-b border-gray-100"
+          ? "bg-white shadow-md shadow-gray-100/50"
+          : "bg-white/95 backdrop-blur-md border-b border-gray-100"
       } transition-all duration-300`}
     >
       <div className="container-custom mx-auto">
@@ -229,7 +230,7 @@ export function Header() {
                     </ul>
                   </nav>
 
-                  <div className="border-t pt-4">
+                  <div className="border-t pt-4 space-y-4">
                     <Link href="/admin/login">
                       <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
                         <Leaf className="h-4 w-4 mr-2" />

@@ -268,17 +268,7 @@ export function DifferentiatorsCarousel() {
                           backgroundImage: `linear-gradient(135deg, ${currentDifferentiator.color} 0%, ${currentDifferentiator.color}99 100%)`
                         }}
                       >
-                        {currentDifferentiator.id === 'plastic-free' ? (
-                          <>100% <span className="text-4xl md:text-6xl">Plastic-Free</span></>
-                        ) : currentDifferentiator.id === 'ecovadis-certified' ? (
-                          <><span className="text-4xl md:text-6xl">EcoVadis</span> Certified</>
-                        ) : currentDifferentiator.id === 'zero-overpackaging' ? (
-                          <>Zero <span className="text-4xl md:text-6xl">Overpackaging</span></>
-                        ) : currentDifferentiator.id === 'logistics-costs' ? (
-                          <>Saving <span className="text-4xl md:text-6xl">Logistic Costs</span></>
-                        ) : (
-                          <><span className="text-4xl md:text-6xl">100% Recyclable</span> Materials</>
-                        )}
+                        {currentDifferentiator.title}
                       </h3>
                       <motion.div
                         className="h-1 bg-gradient-to-r rounded-full mt-2"
@@ -296,19 +286,7 @@ export function DifferentiatorsCarousel() {
                     className="text-gray-700 text-lg leading-relaxed p-4 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm border border-gray-100"
                     whileHover={{ boxShadow: `0 10px 15px -3px ${currentDifferentiator.color}20, 0 4px 6px -4px ${currentDifferentiator.color}10` }}
                   >
-                    {currentDifferentiator.id === 'plastic-free' ? (
-                      <>Our innovative <span className="font-bold text-green-600 relative inline-block group text-xl">auto-sealing technology <span className="absolute bottom-0 left-0 w-full h-0.5 bg-green-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></span> uses recyclable paper materials without requiring glue, tape, or any plastic components.</>
-                    ) : currentDifferentiator.id === 'energy-consumption' ? (
-                      <>Our <span className="font-bold text-orange-600 relative inline-block group text-xl">optimized sealing process <span className="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></span> significantly reduces energy usage with a lower thermal footprint compared to traditional packaging methods.</>
-                    ) : currentDifferentiator.id === 'ecovadis-certified' ? (
-                      <>Our solutions are <span className="font-bold text-green-600 relative inline-block group text-xl">EcoVadis certified <span className="absolute bottom-0 left-0 w-full h-0.5 bg-green-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></span>, verifying our commitment to sustainability and ethical compliance throughout our supply chain and operations.</>
-                    ) : currentDifferentiator.id === 'zero-overpackaging' ? (
-                      <>Our intelligent <span className="font-bold text-orange-600 relative inline-block group text-xl">sizing technology <span className="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></span> creates perfectly fitted packaging for each product, eliminating the need for fillers and reducing material waste.</>
-                    ) : currentDifferentiator.id === 'logistics-costs' ? (
-                      <>Our <span className="font-bold text-blue-600 relative inline-block group text-xl">volume-optimized packaging <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></span> reduces shipping space requirements, resulting in fewer trips, lower transportation costs, and reduced CO₂ emissions.</>
-                    ) : (
-                      <>Our packaging is made from <span className="font-bold text-green-600 relative inline-block group text-xl">100% recyclable materials <span className="absolute bottom-0 left-0 w-full h-0.5 bg-green-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span></span>, contributing to a circular economy and reducing environmental impact.</>
-                    )}
+                    {currentDifferentiator.description}
                   </motion.div>
 
                   <div className="space-y-4">

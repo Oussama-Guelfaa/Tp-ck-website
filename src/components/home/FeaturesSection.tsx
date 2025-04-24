@@ -188,7 +188,7 @@ export function FeaturesSection() {
                       variants={itemVariants}
                     >
                       {feature.id === 'integration' ? (
-                        <>Seamless compatibility with all major <span className="font-bold text-red-600 px-1 py-0.5 rounded bg-red-50">WMS/WCS</span> systems enables efficient warehouse management.</>
+                        <>Seamless compatibility with all major <span className="font-bold text-red-600 dark:text-red-400 px-1 py-0.5 rounded bg-red-50 dark:bg-red-950">WMS/WCS</span> systems enables efficient warehouse management.</>
                       ) : feature.id === 'certifications' ? (
                         <><span className="font-bold text-green-600 px-1 py-0.5 rounded bg-green-50">UL certification</span> for the US market and international standards compliance for global operation.</>
                       ) : feature.id === 'ai-connect' ? (

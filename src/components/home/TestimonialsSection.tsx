@@ -62,30 +62,37 @@ const TestimonialCard = ({ testimonial, direction }: { testimonial: Testimonial;
   // Card variants for entrance animation
   const cardVariants = {
     enter: (direction: number) => ({
-      x: direction > 0 ? 1000 : -1000,
+      x: direction > 0 ? 300 : -300,
       opacity: 0,
-      rotateY: direction > 0 ? 30 : -30,
-      scale: 0.8,
+      rotateY: direction > 0 ? 15 : -15,
+      scale: 0.9,
+      filter: "blur(8px)",
     }),
     center: {
       x: 0,
       opacity: 1,
       rotateY: 0,
       scale: 1,
+      filter: "blur(0px)",
       transition: {
         duration: 0.5,
         type: "spring",
         stiffness: 300,
-        damping: 30,
+        damping: 25,
+        mass: 0.8,
       },
     },
     exit: (direction: number) => ({
-      x: direction < 0 ? 1000 : -1000,
+      x: direction < 0 ? 300 : -300,
       opacity: 0,
-      rotateY: direction < 0 ? 30 : -30,
-      scale: 0.8,
+      rotateY: direction < 0 ? 15 : -15,
+      scale: 0.9,
+      filter: "blur(8px)",
       transition: {
-        duration: 0.5,
+        duration: 0.4,
+        type: "spring",
+        stiffness: 250,
+        damping: 30,
       },
     }),
   };
@@ -108,13 +115,13 @@ const TestimonialCard = ({ testimonial, direction }: { testimonial: Testimonial;
 
   return (
     <motion.div
-      className="bg-white rounded-xl shadow-xl overflow-hidden w-full max-w-3xl mx-auto"
+      className="bg-white rounded-xl shadow-xl overflow-hidden w-full max-w-3xl mx-auto border border-gray-100"
       custom={direction}
       variants={cardVariants}
       initial="enter"
       animate="center"
       exit="exit"
-      whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+      whileHover={{ scale: 1.02, boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)", transition: { duration: 0.2 } }}
       style={{ transformPerspective: "1200px" }}
     >
       <div className="p-8 md:p-10 relative">
@@ -226,6 +233,18 @@ export function TestimonialsSection() {
 
   // Handle navigation
   const navigate = (newDirection: number) => {
+    // Prevent rapid clicking
+    if (document.querySelector('.testimonial-navigation-disabled')) {
+      return;
+    }
+
+    // Temporarily disable navigation buttons
+    const buttons = document.querySelectorAll('.testimonial-navigation');
+    buttons.forEach(button => {
+      button.classList.add('testimonial-navigation-disabled');
+      (button as HTMLButtonElement).disabled = true;
+    });
+
     setIsAutoScrolling(false);
 
     setActiveIndex(prev => {
@@ -238,6 +257,14 @@ export function TestimonialsSection() {
       return [nextIndex, newDirection];
     });
 
+    // Re-enable navigation buttons after animation completes
+    setTimeout(() => {
+      buttons.forEach(button => {
+        button.classList.remove('testimonial-navigation-disabled');
+        (button as HTMLButtonElement).disabled = false;
+      });
+    }, 600);
+
     // Re-enable auto-scrolling after a delay
     setTimeout(() => {
       setIsAutoScrolling(true);
@@ -246,12 +273,37 @@ export function TestimonialsSection() {
 
   // Handle dot navigation
   const goToSlide = (index: number) => {
+    // Don't do anything if clicking the current slide
+    if (index === activeIndex) {
+      return;
+    }
+
+    // Prevent rapid clicking
+    if (document.querySelector('.testimonial-navigation-disabled')) {
+      return;
+    }
+
+    // Temporarily disable navigation buttons
+    const buttons = document.querySelectorAll('.testimonial-navigation');
+    buttons.forEach(button => {
+      button.classList.add('testimonial-navigation-disabled');
+      (button as HTMLButtonElement).disabled = true;
+    });
+
     setIsAutoScrolling(false);
 
     setActiveIndex(prev => {
       const newDirection = index > prev[0] ? 1 : -1;
       return [index, newDirection];
     });
+
+    // Re-enable navigation buttons after animation completes
+    setTimeout(() => {
+      buttons.forEach(button => {
+        button.classList.remove('testimonial-navigation-disabled');
+        (button as HTMLButtonElement).disabled = false;
+      });
+    }, 600);
 
     // Re-enable auto-scrolling after a delay
     setTimeout(() => {
@@ -314,28 +366,28 @@ export function TestimonialsSection() {
           {/* Navigation buttons */}
           <div className="absolute -bottom-16 left-0 right-0 flex justify-center items-center gap-4 mt-8">
             <motion.button
-              className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors"
-              whileHover={{ scale: 1.05 }}
+              className="testimonial-navigation w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors border border-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+              whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)" }}
               whileTap={{ scale: 0.95 }}
               onClick={() => navigate(-1)}
               aria-label="Previous testimonial"
             >
-              <ChevronLeft className="h-5 w-5" />
+              <ChevronLeft className="h-6 w-6" />
             </motion.button>
 
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-4">
               {translatedTestimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`testimonial-navigation w-4 h-4 rounded-full transition-all duration-300 relative ${
                     index === activeIndex ? "bg-green-600" : "bg-gray-300 hover:bg-gray-400"
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 >
                   {index === activeIndex && (
                     <motion.div
-                      className="absolute inset-0 rounded-full bg-green-400"
+                      className="absolute -inset-1 rounded-full bg-green-400"
                       initial={{ scale: 1, opacity: 0.5 }}
                       animate={{ scale: [1, 1.8], opacity: [0.5, 0] }}
                       transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop" }}
@@ -346,13 +398,13 @@ export function TestimonialsSection() {
             </div>
 
             <motion.button
-              className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors"
-              whileHover={{ scale: 1.05 }}
+              className="testimonial-navigation w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors border border-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+              whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)" }}
               whileTap={{ scale: 0.95 }}
               onClick={() => navigate(1)}
               aria-label="Next testimonial"
             >
-              <ChevronRight className="h-5 w-5" />
+              <ChevronRight className="h-6 w-6" />
             </motion.button>
           </div>
         </div>

@@ -27,11 +27,88 @@
         "view3dModels": "Voir les modèles 3D",
         "videoTitle": "Présentation de TP@CK",
         "subheading": "Une solution d'emballage auto-scellante fabriquée en France—sans colle, sans plastique—conçue pour réduire les déchets, optimiser les coûts et favoriser votre transition écologique.",
+        "differentiators": {
+            "sectionLabel": "Ce qui Nous Différencie",
+            "sectionTitle": "Différenciateurs Clés",
+            "sectionDescription": "Découvrez ce qui distingue TP@CK des solutions traditionnelles avec notre approche innovante de la technologie d'emballage.",
+            "keyBenefits": "Avantages Clés",
+            "learnMore": "En savoir plus",
+            "plastic-free": {
+                "title": "Jusqu'à 100% Sans Plastique",
+                "description": "Notre technologie d'auto-scellage innovante utilise des matériaux en papier recyclable sans nécessiter de colle, de ruban adhésif ou de composants plastiques.",
+                "benefit1": "Auto-scellage avec du papier recyclable",
+                "benefit2": "Pas de colle ni d'adhésifs nécessaires",
+                "benefit3": "Pas de ruban adhésif ni d'attaches en plastique",
+                "benefit4": "Emballage entièrement biodégradable"
+            },
+            "ecovadis": {
+                "title": "Certifié EcoVadis",
+                "description": "Nos solutions sont certifiées EcoVadis, vérifiant notre engagement envers la durabilité et la conformité éthique dans toute notre chaîne d'approvisionnement et nos opérations.",
+                "benefit1": "Pratiques de durabilité vérifiées",
+                "benefit2": "Certification de conformité éthique",
+                "benefit3": "Transparence de la chaîne d'approvisionnement",
+                "benefit4": "Responsabilité environnementale"
+            },
+            "zero-overpackaging": {
+                "title": "Zéro Suremballage",
+                "description": "Notre technologie de dimensionnement intelligent crée un emballage parfaitement adapté à chaque produit, éliminant le besoin de matériaux de remplissage et réduisant les déchets.",
+                "benefit1": "Dimensionnement intelligent = pas de remplissage",
+                "benefit2": "Emballage sur mesure pour chaque produit",
+                "benefit3": "Élimination des matériaux de calage",
+                "benefit4": "Réduction des déchets d'emballage"
+            },
+            "logistics": {
+                "title": "Économie des Coûts Logistiques",
+                "description": "Notre emballage à volume optimisé réduit les besoins en espace d'expédition, ce qui se traduit par moins de trajets, des coûts de transport réduits et une diminution des émissions de CO₂.",
+                "benefit1": "Emballage à volume optimisé",
+                "benefit2": "Moins de trajets de transport",
+                "benefit3": "Réduction des émissions de CO₂",
+                "benefit4": "Coûts d'expédition réduits"
+            },
+            "recyclable": {
+                "title": "Matériaux 100% Recyclables",
+                "description": "Nous utilisons exclusivement du papier, du kraft et du carton qui sont 100% recyclables, évitant les matériaux composites qui compliquent le processus de recyclage.",
+                "benefit1": "Uniquement papier, kraft, carton",
+                "benefit2": "Pas de matériaux composites",
+                "benefit3": "Recyclage facile en flux unique",
+                "benefit4": "Soutient l'économie circulaire"
+            }
+        },
         "stats": {
             "waste": "Réduction des déchets",
             "energy": "Efficacité énergétique",
             "certifications": "Certifications mondiales",
             "trees": "Arbres sauvés"
+        },
+        "profitable": {
+            "title": "Rentable par Conception",
+            "description": "Tp@ck redéfinit l'efficacité avec son automatisation avancée, offrant un impact commercial mesurable dès le premier jour.",
+            "footer": "Avec Tp@ck, la performance n'est pas une promesse — elle est conçue.",
+            "item1": "+40% de gains de productivité avec une automatisation de pointe",
+            "item2": "6 mois de ROI moyen par rapport à l'emballage traditionnel",
+            "item3": "35% de réduction de l'utilisation des consommables, réduisant les coûts d'inventaire et d'approvisionnement",
+            "item4": "98% de disponibilité des machines, assurant des opérations ininterrompues",
+            "item5": "Compatible avec les systèmes WMS/WCS/TMS pour une intégration transparente"
+        },
+        "sustainable": {
+            "title": "Conçu pour Demain. Durablement.",
+            "description": "L'éco-conception est intégrée à tous les niveaux — matériau, méthode et mission.",
+            "footer": "Tp@ck ne réduit pas seulement les déchets — il rend la durabilité opérationnelle.",
+            "item1": "Emballage 100% recyclable : papier kraft, carton ondulé",
+            "item2": "Pas de colle, pas de plastique, pas d'adhésifs chimiques = zéro compromis environnemental",
+            "item3": "L'emballage sur mesure élimine les matériaux de calage et réduit les déchets",
+            "item4": "Accepte des matériaux de 80g/m² à 300g/m²",
+            "item5": "Certifié par EcoVadis"
+        },
+        "responsible": {
+            "title": "Une Technologie Responsable, Prête à Évoluer",
+            "description": "Tp@ck est plus qu'une machine — c'est un écosystème à l'épreuve du futur conçu pour un impact global.",
+            "footer": "Parce que l'emballage de demain n'est pas seulement efficace — il est éthique, modulaire et global.",
+            "item1": "Entièrement conçu et fabriqué en France",
+            "item2": "Soutient l'emploi local, les circuits courts et l'approvisionnement régional",
+            "item3": "S'adapte aux normes de conformité mondiales",
+            "item4": "Intégration évolutive à faible consommation d'énergie",
+            "item5": "Aligné sur les attentes modernes en matière d'ESG et de transparence"
         },
         "certification": "Certifié pour tous les principaux marchés internationaux",
         "wms_integration": "Intégration WMS",
@@ -39,9 +116,13 @@
         "ai_maintenance": "Maintenance prédictive IA",
         "downtime_reduction": "Réduit les temps d'arrêt de 74%",
         "hero": {
-            "title": "Solutions d'Emballage Révolutionnaires",
+            "title": "Tp@ck: Emballage Intelligent, Durable et Rentable",
             "subtitle": "Intégration de Technologies Avancées pour les Entreprises Modernes",
-            "cta": "Explorez Nos Solutions"
+            "cta": "Explorez Nos Solutions",
+            "smart": "Intelligent",
+            "sustainable": "Durable",
+            "profitable": "Rentable",
+            "packaging": "Emballage"
         },
         "features": {
             "title": "Pourquoi Choisir TP@CK",
@@ -128,6 +209,7 @@
         "linkedin": "LinkedIn",
         "youtube": "YouTube"
     },
+
 
     "testimonials": {
         "sectionLabel": "Histoires de Réussite Clients",
@@ -480,5 +562,57 @@
         "search_placeholder": "Rechercher des articles...",
         "no_results": "Aucun article trouvé correspondant à votre recherche.",
         "filter_by": "Filtrer par"
+    },
+    "about": {
+        "title": "TP@CK – Emballage auto-scellant éco-responsable",
+        "subtitle": "Une solution d'emballage révolutionnaire qui allie efficacité, durabilité et innovation",
+        "cards": {
+            "range": {
+                "title": "Gamme de Produits",
+                "description": "T20 (500 u/h), T30 (500 u/h), T50 (250 u/h)"
+            },
+            "benefits": {
+                "title": "Avantages Clés",
+                "description": "Zéro colle, 100% papier, réduction des déchets"
+            },
+            "performance": {
+                "title": "Cadence & Performance",
+                "description": "Optimisation logistique, gain de place"
+            }
+        },
+        "stats": {
+            "waste": "-25% déchets plastiques",
+            "transport": "-15% coûts transport",
+            "compliance": "Conforme loi AGEC & EPR"
+        },
+        "learnMore": {
+            "title": "En savoir plus sur TP@CK",
+            "more": "Voir Plus",
+            "less": "Voir Moins"
+        },
+        "content": {
+            "intro": "TP@CK est une solution d'emballage 100% papier auto-scellant, sans colle ni adhésif, développée par Tecnimodern Automation.",
+            "range": {
+                "title": "Gamme de machines :",
+                "t20": "T20 : enveloppes, 500 u/h",
+                "t30": "T30 : colis, 500 u/h",
+                "t50": "T50 : grands formats, 250 u/h"
+            },
+            "benefits": {
+                "title": "Bénéfices clés :",
+                "plastic": "Suppression des consommables plastiques (colle/scotch)",
+                "waste": "Réduction jusqu'à 25% des déchets d'emballage",
+                "volume": "Optimisation du volume transporté (–15% coûts logistiques)",
+                "compliance": "Conformité aux normes RSE (loi AGEC, directive EPR, PPWR 2026)"
+            },
+            "models": {
+                "title": "Modèles économiques :",
+                "description": "Achat direct, leasing vert, paiement au carton (0,03 €/unité)"
+            },
+            "integration": {
+                "title": "Intégration & traçabilité :",
+                "description": "API WMS/ERP, puces RFID optionnelles, jumeau numérique (Digital Twin)"
+            }
+        }
     }
 }

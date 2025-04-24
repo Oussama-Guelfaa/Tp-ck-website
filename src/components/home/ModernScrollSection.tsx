@@ -3,29 +3,30 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import Image from 'next/image';
-// import { useTranslation } from '@/components/ui/language-selector';
+import { useTranslation } from '@/components/ui/language-selector';
 import styles from './ModernScrollSection.module.css';
 
 
 
 // Section 1: Profitable by Design
 const ProfitableSection = ({ inView }: { inView: boolean }) => {
+  const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
 
   const listItems = [
-    '<span class="font-bold text-red-600">+40%</span> productivity gains with cutting-edge automation',
-    '<span class="font-bold text-red-600">6-month</span> average ROI vs. traditional packaging',
-    '<span class="font-bold text-red-600">35%</span> reduction in consumable usage, cutting inventory and supply costs',
-    '<span class="font-bold text-red-600">98%</span> machine uptime, ensuring uninterrupted operations',
-    'Compatible with <span class="font-bold text-red-600 px-1 py-0.5 rounded bg-red-50">WMS/WCS/TMS</span> systems for seamless integration',
+    t('home.profitable.item1', '+40% productivity gains with cutting-edge automation'),
+    t('home.profitable.item2', '6-month average ROI vs. traditional packaging'),
+    t('home.profitable.item3', '35% reduction in consumable usage, cutting inventory and supply costs'),
+    t('home.profitable.item4', '98% machine uptime, ensuring uninterrupted operations'),
+    t('home.profitable.item5', 'Compatible with WMS/WCS/TMS systems for seamless integration'),
   ];
 
   return (
     <div ref={containerRef} className={styles.section}>
-      <div className={styles.contentContainer}>
-        {/* Text content in vertical stack */}
+      <div className="flex flex-col md:flex-row items-start gap-8 container mx-auto px-4">
+        {/* Text content on the left */}
         <motion.div
-          className={styles.textContent}
+          className="w-full md:w-1/2"
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -36,7 +37,7 @@ const ProfitableSection = ({ inView }: { inView: boolean }) => {
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6 }}
           >
-            Profitable by Design
+            {t('home.profitable.title', 'Profitable by Design')}
             <motion.div
               className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-red-500 to-red-300 rounded-full"
               initial={{ width: 0 }}
@@ -51,7 +52,7 @@ const ProfitableSection = ({ inView }: { inView: boolean }) => {
             animate={inView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            Tp@ck <span className="font-bold">redefines efficiency</span> with its <span className="font-bold text-red-600">advanced automation</span>, delivering <span className="font-bold text-red-600">measurable business impact</span> from day one.
+            {t('home.profitable.description', 'Tp@ck redefines efficiency with its advanced automation, delivering measurable business impact from day one.')}
           </motion.p>
 
           <motion.ul className={styles.featureList}>
@@ -69,7 +70,7 @@ const ProfitableSection = ({ inView }: { inView: boolean }) => {
                     <polyline points="9 18 15 12 9 6"></polyline>
                   </svg>
                 </span>
-                <span dangerouslySetInnerHTML={{ __html: item }} />
+                <span>{item}</span>
               </motion.li>
             ))}
           </motion.ul>
@@ -80,13 +81,13 @@ const ProfitableSection = ({ inView }: { inView: boolean }) => {
             animate={inView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
           >
-            With Tp@ck, performance is not a promise — it's engineered.
+            {t('home.profitable.footer', 'With Tp@ck, performance is not a promise — it\'s engineered.')}
           </motion.p>
         </motion.div>
 
-        {/* Image below all text content */}
+        {/* Image on the right */}
         <motion.div
-          className={`${styles.imageContainer} ${styles.fullWidthImage}`}
+          className="w-full md:w-1/2 h-[450px] relative rounded-xl overflow-hidden shadow-xl self-end mt-16"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
           transition={{
@@ -94,7 +95,7 @@ const ProfitableSection = ({ inView }: { inView: boolean }) => {
             delay: 0.5
           }}
         >
-          <div className={styles.machineImage}>
+          <div className="relative w-full h-full">
             <Image
               src="/images/t20-machine.jpg"
               alt="Tp@ck Machine"
@@ -113,6 +114,7 @@ const ProfitableSection = ({ inView }: { inView: boolean }) => {
 
 // Section 2: Built for Tomorrow. Sustainably.
 const SustainableSection = ({ inView }: { inView: boolean }) => {
+  const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -125,103 +127,105 @@ const SustainableSection = ({ inView }: { inView: boolean }) => {
   const foldRotate = useTransform(scrollYProgress, [0, 0.5], [0, 180]);
 
   const listItems = [
-    '<span class="font-bold text-green-600">100% recyclable</span> packaging: kraft paper, corrugated cardboard',
-    '<span class="font-bold text-green-600">No glue, no plastic</span>, no chemical adhesives = zero environmental compromise',
-    '<span class="font-bold text-green-600">Custom-fit packaging</span> eliminates void fillers and reduces material waste',
-    'Accepts materials from <span class="font-bold text-green-600">80g/m²</span> to <span class="font-bold text-green-600">300g/m²</span>',
-    'Certified by <span class="font-bold text-green-600 px-1 py-0.5 rounded bg-green-50">EcoVadis</span>',
+    t('home.sustainable.item1', '100% recyclable packaging: kraft paper, corrugated cardboard'),
+    t('home.sustainable.item2', 'No glue, no plastic, no chemical adhesives = zero environmental compromise'),
+    t('home.sustainable.item3', 'Custom-fit packaging eliminates void fillers and reduces material waste'),
+    t('home.sustainable.item4', 'Accepts materials from 80g/m² to 300g/m²'),
+    t('home.sustainable.item5', 'Certified by EcoVadis'),
   ];
 
   return (
     <div ref={containerRef} className={`${styles.section} ${styles.sustainableSection}`}>
-      <div className={styles.contentContainer}>
-        {/* Title at the top */}
-        <motion.h2
-          className={`${styles.sectionTitle} ${styles.greenTitle} bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-green-500 relative inline-block w-full mb-8`}
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6 }}
-        >
-          Built for Tomorrow. Sustainably.
-          <motion.div
-            className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-green-500 to-green-300 rounded-full"
-            initial={{ width: 0 }}
-            animate={inView ? { width: '100%' } : { width: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-          />
-        </motion.h2>
-
-        {/* Paper folding animation elements */}
-        <motion.div
-          className={styles.paperFoldContainer}
-          style={{ opacity: foldOpacity }}
-        >
-          <motion.div
-            className={styles.paperSheet}
-            style={{
-              transform: `perspective(1000px) rotateY(${foldRotate.get()}deg)`,
-              backgroundImage: 'url(/images/kraft-paper-texture.jpg)'
-            }}
-          />
-          <motion.div
-            className={styles.paperFold}
-            style={{
-              width: foldProgress.get() + '%',
-              backgroundImage: 'url(/images/cardboard-texture.jpg)'
-            }}
-          />
-        </motion.div>
-
-        {/* Text content first, just like in Profitable by Design section */}
-        <motion.div
-          className={styles.textContent}
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <motion.p
-            className={styles.sectionDescription}
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+      <div className="flex flex-col md:flex-row items-start gap-8 container mx-auto px-4">
+        {/* Left side - Text content */}
+        <div className="w-full md:w-1/2">
+          {/* Title at the top */}
+          <motion.h2
+            className={`${styles.sectionTitle} ${styles.greenTitle} bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-green-500 relative inline-block mb-8`}
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6 }}
           >
-            <span className="font-bold">Eco-design</span> is embedded at every level — <span className="font-bold text-green-600">material</span>, <span className="font-bold text-green-600">method</span>, and <span className="font-bold text-green-600">mission</span>.
-          </motion.p>
+            {t('home.sustainable.title', 'Built for Tomorrow. Sustainably.')}
+            <motion.div
+              className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-green-500 to-green-300 rounded-full"
+              initial={{ width: 0 }}
+              animate={inView ? { width: '100%' } : { width: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+            />
+          </motion.h2>
 
-          <motion.ul className={styles.featureList}>
-            {listItems.map((item, index) => (
-              <motion.li
-                key={index}
-                className={`${styles.featureItem} p-2 rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-start gap-2 text-green-900`}
-                initial={{ opacity: 0, x: -20 }}
-                animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                whileHover={{ x: 5, backgroundColor: 'rgba(22, 163, 74, 0.05)' }}
-              >
-                <span className="text-green-500 mt-0.5">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
-                    <path d="m9 12 2 2 4-4"></path>
-                  </svg>
-                </span>
-                <span dangerouslySetInnerHTML={{ __html: item }} />
-              </motion.li>
-            ))}
-          </motion.ul>
-
-          <motion.p
-            className={styles.sectionFooter}
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.6, delay: 0.9 }}
+          {/* Paper folding animation elements */}
+          <motion.div
+            className={styles.paperFoldContainer}
+            style={{ opacity: foldOpacity }}
           >
-            Tp@ck doesn't just reduce waste — it makes sustainability operational.
-          </motion.p>
-        </motion.div>
+            <motion.div
+              className={styles.paperSheet}
+              style={{
+                transform: `perspective(1000px) rotateY(${foldRotate.get()}deg)`,
+                backgroundImage: 'url(/images/kraft-paper-texture.jpg)'
+              }}
+            />
+            <motion.div
+              className={styles.paperFold}
+              style={{
+                width: foldProgress.get() + '%',
+                backgroundImage: 'url(/images/cardboard-texture.jpg)'
+              }}
+            />
+          </motion.div>
 
-        {/* Image below all text content */}
+          {/* Text content */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <motion.p
+              className={styles.sectionDescription}
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              {t('home.sustainable.description', 'Eco-design is embedded at every level — material, method, and mission.')}
+            </motion.p>
+
+            <motion.ul className={styles.featureList}>
+              {listItems.map((item, index) => (
+                <motion.li
+                  key={index}
+                  className={`${styles.featureItem} p-2 rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-start gap-2 text-green-900`}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                  transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                  whileHover={{ x: 5, backgroundColor: 'rgba(22, 163, 74, 0.05)' }}
+                >
+                  <span className="text-green-500 mt-0.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+                      <path d="m9 12 2 2 4-4"></path>
+                    </svg>
+                  </span>
+                  <span>{item}</span>
+                </motion.li>
+              ))}
+            </motion.ul>
+
+            <motion.p
+              className={styles.sectionFooter}
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
+            >
+              {t('home.sustainable.footer', 'Tp@ck doesn\'t just reduce waste — it makes sustainability operational.')}
+            </motion.p>
+          </motion.div>
+        </div>
+
+        {/* Right side - Image */}
         <motion.div
-          className={`${styles.imageContainer} ${styles.fullWidthImage}`}
+          className="w-full md:w-1/2 h-[450px] relative rounded-xl overflow-hidden shadow-xl self-end mt-16"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
           transition={{
@@ -229,7 +233,7 @@ const SustainableSection = ({ inView }: { inView: boolean }) => {
             delay: 0.5
           }}
         >
-          <div className={styles.sustainableImage}>
+          <div className="relative w-full h-full">
             <Image
               src="/images/built-for-tomorrow.jpeg"
               alt="Built for Tomorrow - Sustainable Design"
@@ -248,35 +252,31 @@ const SustainableSection = ({ inView }: { inView: boolean }) => {
 
 // Section 3: A Responsible Technology, Ready to Scale
 const ResponsibleSection = ({ inView }: { inView: boolean }) => {
+  const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
 
   // No animation needed for static image
 
   const listItems = [
-    '<span class="font-bold text-blue-600">Fully designed and manufactured</span> in France',
-    'Supports <span class="font-bold text-blue-600">local employment</span>, short circuits, and regional sourcing',
-    'Adapts to <span class="font-bold text-blue-600">global compliance standards</span>',
-    '<span class="font-bold text-blue-600">Scalable, low-energy</span> integration',
-    'Aligned with modern <span class="font-bold text-blue-600 px-1 py-0.5 rounded bg-blue-50">ESG</span> and transparency expectations',
+    t('home.responsible.item1', 'Fully designed and manufactured in France'),
+    t('home.responsible.item2', 'Supports local employment, short circuits, and regional sourcing'),
+    t('home.responsible.item3', 'Adapts to global compliance standards'),
+    t('home.responsible.item4', 'Scalable, low-energy integration'),
+    t('home.responsible.item5', 'Aligned with modern ESG and transparency expectations'),
   ];
 
   return (
     <div ref={containerRef} className={`${styles.section} ${styles.responsibleSection}`}>
-      <div className={styles.contentContainer}>
-        {/* Text content in vertical stack */}
-        <motion.div
-          className={styles.textContent}
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
+      <div className="flex flex-col md:flex-row items-start gap-8 container mx-auto px-4">
+        {/* Left side - Text content */}
+        <div className="w-full md:w-1/2">
           <motion.h2
             className={`${styles.sectionTitle} ${styles.blueTitle} bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-blue-500 relative inline-block`}
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6 }}
           >
-            A Responsible Technology, Ready to Scale
+            {t('home.responsible.title', 'A Responsible Technology, Ready to Scale')}
             <motion.div
               className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full"
               initial={{ width: 0 }}
@@ -291,7 +291,7 @@ const ResponsibleSection = ({ inView }: { inView: boolean }) => {
             animate={inView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            Tp@ck is more than a <span className="font-bold">machine</span> — it's a <span className="font-bold text-blue-600">future-proof ecosystem</span> designed for <span className="font-bold text-blue-600">global impact</span>.
+            {t('home.responsible.description', 'Tp@ck is more than a machine — it\'s a future-proof ecosystem designed for global impact.')}
           </motion.p>
 
           <motion.ul className={styles.featureList}>
@@ -317,7 +317,7 @@ const ResponsibleSection = ({ inView }: { inView: boolean }) => {
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                   )}
                 </span>
-                <span dangerouslySetInnerHTML={{ __html: item }} />
+                <span>{item}</span>
               </motion.li>
             ))}
           </motion.ul>
@@ -328,41 +328,27 @@ const ResponsibleSection = ({ inView }: { inView: boolean }) => {
             animate={inView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
           >
-            Because tomorrow's packaging isn't just <span className="font-bold text-blue-600 relative inline-block group">
-              efficient
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-            </span> — it's <span className="font-bold text-blue-600 relative inline-block group">
-              ethical
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-            </span>, <span className="font-bold text-blue-600 relative inline-block group">
-              modular
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-            </span>, and <span className="font-bold text-blue-600 relative inline-block group">
-              global
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-            </span>.
+            {t('home.responsible.footer', 'Because tomorrow\'s packaging isn\'t just efficient — it\'s ethical, modular, and global.')}
           </motion.p>
-        </motion.div>
+        </div>
 
-        {/* Image below all text content */}
+        {/* Right side - Image */}
         <motion.div
-          className={`${styles.imageContainer} ${styles.fullWidthImage}`}
+          className="w-full md:w-1/2 h-[450px] relative rounded-xl overflow-hidden shadow-xl self-end mt-16"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <div className={styles.worldMapContainer}>
-            <div className={styles.worldMap}>
-              <Image
-                src="/images/responsible-technology.jpeg"
-                alt="Responsible Technology"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
-                priority
-              />
-              <div className={`${styles.imageOverlay} ${styles.blueOverlay}`} />
-            </div>
+          <div className="relative w-full h-full">
+            <Image
+              src="/images/responsible-technology.jpeg"
+              alt="Responsible Technology"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+              priority
+            />
+            <div className={`${styles.imageOverlay} ${styles.blueOverlay}`} />
           </div>
         </motion.div>
       </div>
@@ -371,6 +357,7 @@ const ResponsibleSection = ({ inView }: { inView: boolean }) => {
 };
 
 export function ModernScrollSection() {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLElement>(null);
   const section1Ref = useRef<HTMLDivElement>(null);
   const section2Ref = useRef<HTMLDivElement>(null);
@@ -396,10 +383,10 @@ export function ModernScrollSection() {
             transition={{ duration: 0.7 }}
           >
             <h2 className={styles.mainTitle}>
-              Tp@ck: The Future of Packaging
+              {t('home.modernScroll.title', 'Tp@ck: The Future of Packaging')}
             </h2>
             <p className={styles.mainDescription}>
-              Redefining industrial packaging with innovation, sustainability, and responsibility.
+              {t('home.modernScroll.description', 'Redefining industrial packaging with innovation, sustainability, and responsibility.')}
             </p>
           </motion.div>
         </div>

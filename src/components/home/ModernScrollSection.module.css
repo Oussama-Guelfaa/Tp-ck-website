@@ -141,16 +141,18 @@
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* Changed from column to row */
   position: relative;
   z-index: 2;
+  gap: 3rem; /* Add gap between text and image */
+  align-items: center; /* Center items vertically */
 }
 
 /* Content layout */
 .textContent {
-  width: 100%;
-  margin-bottom: 1.5rem; /* Reduced bottom margin */
+  width: 50%; /* Take half the container width */
   padding-top: 2rem; /* Added top padding to position text higher */
+  order: 1; /* Ensure text comes first */
 }
 
 .contentRow {
@@ -188,8 +190,8 @@
 }
 
 .fullWidthImage {
-  width: 100%;
-  margin-top: 1rem; /* Reduced top margin */
+  width: 50%; /* Take half the container width */
+  order: 2; /* Ensure image comes second */
 }
 
 /* Specific adjustments for each section */
@@ -553,6 +555,7 @@
   width: 100%;
   max-width: 500px;
   aspect-ratio: 1/1;
+  margin-left: auto; /* Push to the right */
 }
 
 /* Ensure the image container in standardContainer is on the right */
@@ -570,8 +573,18 @@
 /* Responsive styles */
 @media (max-width: 1024px) {
   .contentContainer {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 2rem;
+  }
+
+  .textContent {
+    width: 100%;
+    order: 1;
+  }
+
+  .fullWidthImage {
+    width: 100%;
+    order: 2;
   }
 
   .reversedContainer {

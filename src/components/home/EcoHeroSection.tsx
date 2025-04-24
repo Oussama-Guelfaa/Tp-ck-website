@@ -278,7 +278,7 @@ export function EcoHeroSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   // Typing effect for the headline
-  const headlineText = "Tp@ck: Smart, Sustainable & Profitable Packaging";
+  const headlineText = t('home.hero.title', "Tp@ck: Smart, Sustainable & Profitable Packaging");
   const [hasTyped, setHasTyped] = useState(false);
   // Removed unused finalText state
 
@@ -364,7 +364,7 @@ export function EcoHeroSection() {
                   <span className={styles.gradientText}>
                     {hasTyped ? (
                       <>
-                        <span className="font-extrabold">Tp@ck:</span> <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-green-600 hover:scale-105 transition-transform inline-block font-normal">Smart</span>, <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-green-500 hover:scale-105 transition-transform inline-block font-normal">Sustainable</span> & <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-green-500 hover:scale-105 transition-transform inline-block font-normal">Profitable</span> <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-green-500 hover:scale-105 transition-transform inline-block font-normal">Pack@ging</span>
+                        <span className="font-extrabold">Tp@ck:</span> <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-green-600 hover:scale-105 transition-transform inline-block font-normal">{t('home.hero.smart', 'Smart')}</span>, <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-green-500 hover:scale-105 transition-transform inline-block font-normal">{t('home.hero.sustainable', 'Sustainable')}</span> & <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-green-500 hover:scale-105 transition-transform inline-block font-normal">{t('home.hero.profitable', 'Profitable')}</span> <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-green-500 hover:scale-105 transition-transform inline-block font-normal">{t('home.hero.packaging', 'Packaging')}</span>
                       </>
                     ) : displayText}
                     <AnimatePresence>
@@ -391,16 +391,7 @@ export function EcoHeroSection() {
                     transition={{ duration: 0.5 }}
                     className="text-xl text-gray-600 max-w-xl mx-auto"
                   >
-                    A French-made, <span className="font-bold text-green-600 relative group">
-                      auto-sealing
-                      <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-green-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-                    </span> packaging solution—<span className="font-bold text-red-600 relative group">
-                      no glue
-                      <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-                    </span>, <span className="font-bold text-blue-600 relative group">
-                      no plastic
-                      <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-                    </span>—designed to reduce waste, optimize costs, and drive your ecological transition.
+                    {t('home.subheading', 'A French-made, auto-sealing packaging solution—no glue, no plastic—designed to reduce waste, optimize costs, and drive your ecological transition.')}
                   </motion.p>
                 )}
               </AnimatePresence>
