@@ -283,6 +283,12 @@
         "accessText": "Access the admin dashboard for detailed analytics and controls"
     },
     "products": {
+        "downloadSpecs": "Download Specifications",
+        "downloading": "Downloading...",
+        "technicalSpecs": "Technical Specifications",
+        "physicalSpecs": "Physical & Performance Specifications",
+        "integrationCapabilities": "Integration Capabilities",
+        "certifications": "Certifications & Compliance",
         "header": {
             "label": "Our Product Range",
             "title": "Choose the Perfect TP@CK Machine for Your Needs",

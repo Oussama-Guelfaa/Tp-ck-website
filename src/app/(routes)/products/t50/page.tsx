@@ -5,12 +5,10 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
-import { Tabs } from "@/components/ui/tabs";
+import { ProductDownloadButton } from "@/components/ui/product-download-button";
 import {
   ArrowRight,
   Check,
-  Download,
-  BarChart,
   Cpu,
   Server,
   Shield,
@@ -101,9 +99,12 @@ export default function T50ProductPage() {
                       Request a Demo <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
-                  <Button variant="outline" className="border-white text-white hover:bg-white/10 px-6 py-6 h-auto">
-                    <Download className="mr-2 h-4 w-4" /> Download Specifications
-                  </Button>
+                  <ProductDownloadButton
+                    productName="T50"
+                    technicalSpecs={technicalSpecs}
+                    integrationCapabilities={integrationCapabilities}
+                    certifications={certifications}
+                  />
                 </div>
               </motion.div>
             </div>
@@ -226,86 +227,7 @@ export default function T50ProductPage() {
         </div>
       </section>
 
-      {/* Technical Specifications Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="heading-lg mb-4">Technical Specifications</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              Detailed technical information about the T50 model to help you determine if it meets your operational requirements.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <motion.div
-                className="bg-white p-6 rounded-xl shadow-sm"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              >
-                <h3 className="text-xl font-bold mb-6 flex items-center">
-                  <BarChart className="mr-3 text-primary" />
-                  Physical & Performance Specifications
-                </h3>
-                <div className="space-y-4">
-                  {technicalSpecs.map((spec, index) => (
-                    <div key={index} className="flex justify-between pb-2 border-b border-gray-100">
-                      <span className="font-medium text-gray-700">{spec.name}</span>
-                      <span className="text-gray-600">{spec.value}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
-
-            <div className="space-y-8">
-              <motion.div
-                className="bg-white p-6 rounded-xl shadow-sm"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              >
-                <h3 className="text-xl font-bold mb-6 flex items-center">
-                  <Server className="mr-3 text-primary" />
-                  Integration Capabilities
-                </h3>
-                <div className="space-y-4">
-                  {integrationCapabilities.map((spec, index) => (
-                    <div key={index} className="flex justify-between pb-2 border-b border-gray-100">
-                      <span className="font-medium text-gray-700">{spec.name}</span>
-                      <span className="text-gray-600">{spec.value}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-
-              <motion.div
-                className="bg-white p-6 rounded-xl shadow-sm"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-              >
-                <h3 className="text-xl font-bold mb-6 flex items-center">
-                  <Shield className="mr-3 text-primary" />
-                  Certifications & Compliance
-                </h3>
-                <div className="space-y-4">
-                  {certifications.map((cert, index) => (
-                    <div key={index} className="flex justify-between pb-2 border-b border-gray-100">
-                      <span className="font-medium text-gray-700">{cert.name}</span>
-                      <span className="text-gray-600">{cert.value}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Case Study Section */}
       <section className="py-16 bg-white">
@@ -321,7 +243,7 @@ export default function T50ProductPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="relative h-64 lg:h-auto">
                 <Image
-                  src="/images/company-logo-4.svg"
+                  src="/images/T50.jpg"
                   alt="Case Study T50 Implementation"
                   fill
                   className="object-cover"

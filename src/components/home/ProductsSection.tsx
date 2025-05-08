@@ -23,7 +23,7 @@ const getProducts = (t: (key: string, fallback?: string) => string) => [
       t("products.t20.feature4", "Electrical Supply: Triphasé 16A"),
 
     ],
-    image: "/images/t20-machine.jpg",
+    image: "/images/T20.jpg",
     href: "/products/t20",
   },
   {
@@ -39,7 +39,7 @@ const getProducts = (t: (key: string, fallback?: string) => string) => [
       t("products.t30.feature7", "Package Size Range: See technical documentation"),
       t("products.t30.feature8", "Operating Temperature: 10°C to 30°C"),
     ],
-    image: "/images/t30-machine.jpg",
+    image: "/images/T30.jpg",
     href: "/products/t30",
   },
   {
@@ -56,7 +56,7 @@ const getProducts = (t: (key: string, fallback?: string) => string) => [
       t("products.t50.feature13", "Real-time Monitoring: Iconect Application"),
       t("products.t50.feature14", "Remote Management: Via 4G Module")
     ],
-    image: "/images/t50-machine.jpg",
+    image: "/images/T50.jpg",
     href: "/products/t50",
   },
 ];

@@ -273,6 +273,12 @@
         "accessText": "Accédez au tableau de bord administrateur pour des analyses et contrôles détaillés"
     },
     "products": {
+        "downloadSpecs": "Télécharger les Spécifications",
+        "downloading": "Téléchargement...",
+        "technicalSpecs": "Spécifications Techniques",
+        "physicalSpecs": "Spécifications Physiques et de Performance",
+        "integrationCapabilities": "Capacités d'Intégration",
+        "certifications": "Certifications et Conformité",
         "header": {
             "label": "Notre Gamme de Produits",
             "title": "Choisissez la Machine TP@CK Parfaite pour Vos Besoins",

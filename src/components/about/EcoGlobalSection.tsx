@@ -43,10 +43,10 @@ export function EcoGlobalSection() {
 
   // Carousel images
   const carouselImages: CarouselImage[] = [
-    { src: "/images/t20-machine.jpg", alt: "T20 Machine in action" },
-    { src: "/images/t30-machine.jpg", alt: "T30 Machine in action" },
-    { src: "/images/t50-machine.jpg", alt: "T50 Machine in action" },
-    { src: "/images/paper-sealing.jpg", alt: "Auto-sealing paper technology" },
+    { src: "/images/1.jpg", alt: "T20 Machine in action" },
+    { src: "/images/5.jpg", alt: "T30 Machine in action" },
+    { src: "/images/6.jpg", alt: "T50 Machine in action" },
+    { src: "/images/7.jpg", alt: "Auto-sealing paper technology" },
   ];
 
   // Product cards data

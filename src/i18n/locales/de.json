@@ -283,6 +283,12 @@
         "accessText": "Greifen Sie auf das Admin-Dashboard für detaillierte Analysen und Steuerungen zu"
     },
     "products": {
+        "downloadSpecs": "Spezifikationen herunterladen",
+        "downloading": "Wird heruntergeladen...",
+        "technicalSpecs": "Technische Spezifikationen",
+        "physicalSpecs": "Physische & Leistungsspezifikationen",
+        "integrationCapabilities": "Integrationsfähigkeiten",
+        "certifications": "Zertifizierungen & Konformität",
         "header": {
             "label": "Unsere Produktpalette",
             "title": "Wählen Sie die perfekte TP@CK-Maschine für Ihre Bedürfnisse",
